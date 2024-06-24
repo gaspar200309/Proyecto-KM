@@ -1,0 +1,144 @@
+
+
+.container {
+    position: fixed; 
+  bottom: 20px; 
+  margin: 30px;
+  z-index: 1000;
+  width: 500px;
+  max-height: 70vh;
+}
+
+.chat-container {
+    
+    height: 70vh;
+    margin: 0;
+    padding: 20px;
+    background-color: #343631;
+    border-radius: 0;
+    overflow: scroll;
+    scrollbar-width: none;
+
+  }
+
+  
+  .chat-header {
+    text-align: center; 
+    padding: 10px;
+    margin-bottom: 0;
+    background-color: #c58735; 
+    border-radius: 10px 10px 0 0; 
+  }
+
+  .chat-history {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .message {
+    margin: 8px;
+    padding: 10px;
+    border-radius: 8px;
+    color: #fff;
+    background-color: #b67a4a;
+    align-self: flex-start;
+    border-radius: 0 10px 12px 10px; 
+  }
+  
+  .user {
+    background-color: #67794c;
+    align-self: flex-end;
+    border-radius: 12px 10px  0px 10px; 
+    
+  }
+  
+  .assistant {
+    color: #fff;
+    background-color: #b67a4a;
+    align-self: flex-start;
+    border-radius: 0 10px 12px 10px;    
+    
+  }
+  
+  .chat-input {
+    display: flex;
+    margin-top: 0px;
+    padding: 10px;
+    background-color: #1d1f1b;
+    border-radius: 0 0 10px 10px;
+  }
+  
+  input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    margin-left: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+
+  .material-symbols-outlined{
+    background-color: #3a3938;
+    padding: 20px;
+    margin: 0px;
+    border-radius: 10px;
+
+  }
+
+  .material-symbols-rounded {
+    background-color: #1f1d1a;
+    padding: 20px;
+    margin: 0, 10px, 0,  0;
+    border-radius: 50%;
+  }
+  
+  .logo-chat {
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    margin: 0;
+
+  }
+
+  .container {
+    position: fixed;
+    bottom: 70vh;
+    margin: 30px;
+    z-index: 10000;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-100.3%);
+  }
+  
+  .expanded {
+    transform: translateY(88%); 
+  }
+  
+  .chat-container {
+    max-height: 50vh;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #343631;
+    border-radius: 0, 0, 10px 10px;
+    overflow: scroll;
+    scrollbar-width: none;
+    transition: transform 0.3s ease-in-out; 
+  }
+  
+  .container.expanded .chat-container {
+    transform: translateY(2px); 
+  }
+  
+  

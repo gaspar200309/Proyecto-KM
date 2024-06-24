@@ -1,0 +1,172 @@
+
+
+.containerC {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.containerC h1 {
+    font-size: 2.5rem; 
+    color: #0c0b0b;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.containerC h2 {
+    font-size: 2rem; 
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.containerC p {
+    font-size: 17px;
+    color: #080808;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.containerC ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.containerC li {
+    font-size: 1.2rem;
+    color: #080808;
+    margin-bottom: 10px;
+}
+.contenidoC li {
+    font-size: 15px;
+}
+.navigation-barC a {
+    font-size: 20px;
+    line-height: 40px;
+
+}
+.enlacesC a {
+    display: table;
+    text-decoration: none;
+    color: brown;
+    font-size: 20px;
+    line-height: 40px;
+
+}
+
+.image-containerC img {
+    filter: brightness(50%);
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    margin-bottom: 0;
+
+}
+.image-containerC {
+    position: relative;
+}
+.image-textC {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+}
+.image-textC h1{
+    color: #fff;
+}
+
+.image-textC span {
+    color: #fff;
+    font-size: 20px;
+}
+
+.image-containerC img {
+    filter: brightness(50%); 
+}
+.headerC{
+    margin-bottom: 0;
+}
+
+ .navigation-barC {
+    display: flex; 
+    background-color: #333; 
+    color: #fff;
+    padding: 10px;
+}
+
+.navigation-barC a {
+    color: #fff; 
+    text-decoration: none;
+    margin-right: 10px; 
+}
+
+.imgCarL {
+  height: 30px;
+  width: 40px;
+  padding: 3px;
+  margin-right: 20px;
+  margin-top: 10px
+ }
+ 
+/* Estilos para pantallas más pequeñas (dispositivos móviles) */
+@media screen and (max-width: 600px) {
+    .containerC {
+      padding: 10px; /* Reduce el relleno en pantallas más pequeñas */
+    }
+  
+    .containerC h1 {
+      font-size: 2rem; /* Reduzca el tamaño de la fuente del encabezado principal */
+      margin-bottom: 10px;
+    }
+  
+    .containerC h2 {
+      font-size: 1.5rem; /* Reduzca el tamaño de la fuente del encabezado secundario */
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+  
+    .containerC p {
+      font-size: 16px; /* Reduzca el tamaño de la fuente del párrafo */
+      margin-bottom: 5px;
+    }
+  
+    .containerC ul {
+      margin-left: 10px; /* Reduzca el margen izquierdo de las listas */
+    }
+  
+    .containerC li {
+      font-size: 1rem; /* Reduzca el tamaño de la fuente de los elementos de lista */
+      margin-bottom: 5px;
+    }
+  
+    .navigation-barC {
+      padding: 5px;
+    }
+  
+    .navigation-barC a {
+        font-size: 18px;
+      margin: 5px 0; 
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  
+    .image-containerC img {
+      height: auto; 
+      margin-top: 70px;
+    }
+  }
+  
+  
+  @media screen and (min-width: 601px) {
+    .containerC {
+      max-width: 1200px; 
+    }
+  }
+  
