@@ -1,0 +1,107 @@
+
+.login-container {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 25%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 475px;
+    max-height: 550px;
+    height: 100%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-sizing: border-box;
+    border: 1px solid var(--primary-color);
+  }
+  
+  .login-form {
+    width: 100%;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .login-form input[type="text"], input[type="password"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s;
+  }
+  
+  .login-form input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .password-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .password-container input {
+    flex: 1;
+  }
+  
+  .toggle-password {
+    background: none;
+    border: none;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .toggle-password svg {
+    color: #555;
+    font-size: 20px;
+  }
+  
+  .toggle-password:hover svg {
+    color: #007bff;
+  }
+  
+  .button-primary {
+    padding: 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .button-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .login-form a {
+    color: #007bff;
+    text-decoration: none;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    text-align: right;
+  }
+  
+  .login-form a:hover {
+    text-decoration: underline;
+  }
+  

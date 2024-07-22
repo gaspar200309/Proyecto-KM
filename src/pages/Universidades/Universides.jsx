@@ -3,6 +3,7 @@ import "./universidades.css";
 import ImagenesApp from "../../../src/assets/ImagenesApp";
 import universidadesData from "./UniversidadesApp";
 import ScrollToTop from "../../components/Scrooll";
+import Buscador from "../../components/Buscador";
 
 
 const Universidades = () => {
@@ -36,7 +37,7 @@ const Universidades = () => {
             Cochabamba:
           </p>
         </div>
-
+        <Buscador/>
         {Object.entries(academias).map(([academia, universidadesDa]) => (
           <div key={academia}>
             <h2 className="academia">{academia}</h2>

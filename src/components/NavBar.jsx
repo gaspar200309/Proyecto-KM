@@ -75,6 +75,9 @@ const NavBarReact = () => {
               <li className="nav-link" style={{ "--i": "1.35s" }}>
                 <NavLink to="contacto">Contacto</NavLink>
               </li>
+              <li className='nav-link' style={{ "--i": "1.35s"}}>
+                <NavLink to = "login"> Login</NavLink>
+              </li>
             </ul>
           </div>
         </div>

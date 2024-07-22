@@ -160,6 +160,7 @@ color: var(--blanco);
 
 
 .pie-pagina{
+  margin-top: 15%;
   background-color: rgb(20,20,20);
   padding: 5rem;
 }
