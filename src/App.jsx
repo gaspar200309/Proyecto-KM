@@ -12,6 +12,7 @@ import InformacionCarreras from "./pages/infoCarreras/InformacionCarreras";
 import CareerForm from "./pages/forms/CareerForm";
 import UniversidadForm from "./pages/forms/UniversidadForm";
 import BecaForm from "./pages/forms/BecaForm";
+import ListForms from "./pages/listForms/ListForms";
 
 export const App2 = () => {
 
@@ -29,6 +30,8 @@ export const App2 = () => {
         <Route path="/becas" element={<Becas />} />
 
         <Route path="/carrera/:idCar" element={<InformacionCarreras />} />
+
+        <Route path = "/listForm" element = {<ListForms/>}/>
         <Route path="/career/new" element= {<CareerForm/>}/>
         <Route path="/university/new" element= {<UniversidadForm/>}/>
         <Route path="/beca/new" element= {<BecaForm/>}/>

@@ -32,7 +32,7 @@ export default function LoginUser() {
       if (result.data.token) {
         saveToken(result.data.token);
         //saveUser({ username: result.data.username, role: result.data.role, foto_base64: result.data.foto_base64 });
-        navigate('/career/new');
+        navigate('/listForm');
         window.location.reload();
       } else {
         console.log('Login failed: No token received');
