@@ -54,13 +54,13 @@ const Universidades = () => {
         <Buscador />
         {Object.entries(academias).map(([academia, universidades]) => (
           <div key={academia}>
-            <h2 className="academia">{academia}</h2>
+            <h2 className="acaxdemia">{academia}</h2>
             <div className="container-cardU">
               {universidades.map((universidad, idU) => (
                 <div className="cardU" key={idU}>
                   <figure>
                     <img
-                      src={universidad.logo} 
+                      src={`http://localhost:3000${universidad.logo}`} 
                       height="100px"
                       width="80px"
                       alt={universidad.nombre}
