@@ -6,12 +6,12 @@ import './Form.css';
 const BecaForm = () => {
   const [beca, setBeca] = useState({
     nombre: '',
-    institucion: 'publica', // 'publica' or 'privada'
-    tipo: 'universidad', // 'universidad', 'instituto', or 'normal'
+    institucion: 'publica',
+    tipo: 'universidad',
     descripcionUniversidad: '',
     importante: '',
     promedioRequerido: '',
-    imgSrc: '',
+    imgSrc: null,
     becas: {
       social: { descripcion: '' },
       trabajo: { descripcion: '' },
@@ -33,7 +33,12 @@ const BecaForm = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    if (name.includes('beca')) {
+    if (name === 'imgSrc') {
+      setBeca({
+        ...beca,
+        imgSrc: e.target.files[0] 
+      });
+    } else if (name.includes('beca')) {
       const tipoBeca = name.split('.')[0];
       const key = name.split('.')[1];
 
@@ -57,10 +62,18 @@ const BecaForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const formData = new FormData();
+    for (const key in beca) {
+      if (key === 'becas') {
+        formData.append('becas', JSON.stringify(beca[key]));
+      } else {
+        formData.append(key, beca[key]);
+      }
+    }
     if (isEdit) {
-      await updateBeca(id, beca);
+      await updateBeca(id, formData);
     } else {
-      await createBeca(beca);
+      await createBeca(formData);
     }
     navigate('/becas');
   };
@@ -80,7 +93,7 @@ const BecaForm = () => {
       <textarea name="descripcionUniversidad" value={beca.descripcionUniversidad} onChange={handleChange} placeholder="Descripción de la Universidad" required />
       <input name="importante" value={beca.importante} onChange={handleChange} placeholder="Importante (opcional)" />
       <input name="promedioRequerido" value={beca.promedioRequerido} onChange={handleChange} placeholder="Promedio Requerido (opcional)" />
-      <input name="imgSrc" value={beca.imgSrc} onChange={handleChange} placeholder="Imagen" required />
+      <input type="file" name="imgSrc" onChange={handleChange} placeholder="Imagen" required />
       
       <h3>Beca Social</h3>
       <textarea name="social.descripcion" value={beca.becas.social.descripcion} onChange={handleChange} placeholder="Descripción de Beca Social" />

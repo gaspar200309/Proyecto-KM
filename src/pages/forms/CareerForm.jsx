@@ -47,12 +47,32 @@ const CareerForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        
+        // Usar FormData para manejar tanto los datos del formulario como el archivo
+        const formData = new FormData();
+        for (const key in career) {
+            if (key === 'imgSrc' && career[key]) {
+                formData.append(key, career[key]);  // Añadir el archivo si existe
+            } else if (Array.isArray(career[key])) {
+                career[key].forEach(item => formData.append(key, item));  // Añadir arrays al FormData
+            } else {
+                formData.append(key, career[key]);
+            }
+        }
+    
         if (id) {
-            await updateCareer(id, career);
+            await updateCareer(id, formData);
         } else {
-            await createCareer(career);
+            await createCareer(formData);
         }
         navigate('/carreras');
+    };
+
+    const handleFileChange = (e) => {
+        setCareer({
+            ...career,
+            imgSrc: e.target.files[0]  // Guarda el archivo en el estado
+        });
     };
 
     return (
@@ -105,7 +125,12 @@ const CareerForm = () => {
                 <option value="licenciatura">Licenciatura</option>
             </select>
             <input name="duracion" value={career.duracion} onChange={handleChange} placeholder="Años de Estudio (opcional)" />
-            <input name="imgSrc" value={career.imgSrc} onChange={handleChange} placeholder="Imagen" required />
+            <input
+            type="file"
+            name="imgSrc"
+            onChange={handleFileChange}
+            accept="image/*"
+        />
             <button type="submit">{id ? 'Actualizar' : 'Crear'}</button>
 
             {showModal && (

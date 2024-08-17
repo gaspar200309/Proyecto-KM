@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import './App.css'
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import NavBarReact from "./components/NavBar";
 import { Inicio}  from "./pages/Inicio/Inicio";

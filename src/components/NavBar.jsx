@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Link} from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import './Nav2.css';
 
 const NavBarReact = () => {
@@ -10,7 +10,7 @@ const NavBarReact = () => {
 
         <div className="logo-container2">
           <NavLink to="/">
-            <img src="public/Logo.png" alt="" />
+            <img src="public/Logo.png" alt="Logo" />
           </NavLink>
         </div>
         <div className="nav-btn">
@@ -20,63 +20,60 @@ const NavBarReact = () => {
                 <NavLink to="/">Inicio</NavLink>
               </li>
               <li className="nav-link" style={{ "--i": ".85s" }}>
-                <NavLink to="carrera">Carreras<i className="fas fa-caret-down"></i></NavLink>
+                <NavLink to="/carrera">Carreras<i className="fas fa-caret-down"></i></NavLink>
                 <div className="dropdown">
                   <ul>
                     <li className="dropdown-link">
-                      <NavLink to="#">Área salud</NavLink>
+                      <NavLink to="#ÁREA DE SALUD">Área salud</NavLink>
                     </li>
                     <li className="dropdown-link">
-                      <NavLink to="#">Ingenierías</NavLink>
+                      <NavLink to="#ingenierias">Ingenierías</NavLink>
                     </li>
                     <li className="dropdown-link">
-                      <NavLink to="#">Carreras empresariales</NavLink>
+                      <NavLink to="#empresariales">Carreras empresariales</NavLink>
                     </li>
                     <li className="dropdown-link">
-                      <NavLink to="#">Carreras Tecnológicas</NavLink>
+                      <NavLink to="#tecnologicas">Carreras Tecnológicas</NavLink>
                     </li>
                     <li className="dropdown-link">
-                      <NavLink to="#">Carreras sociales</NavLink>
+                      <NavLink to="#sociales">Carreras sociales</NavLink>
                     </li>
                     <li className="dropdown-link">
-                      <Link to="#territorio">Urbanismo y territorio</Link>
+                      <NavLink to="#urbanismo">Urbanismo y territorio</NavLink>
                     </li>
-                    <div className="arrow"></div>
                   </ul>
-                  <div className="arrow"></div>
                 </div>
               </li>
               <li className="nav-link" style={{ "--i": "1.1s" }}>
-                <NavLink to="facultad">Universidades<i className="fas fa-caret-down"></i></NavLink>
+                <NavLink to="/facultad">Universidades<i className="fas fa-caret-down"></i></NavLink>
                 <div className="dropdown">
                   <ul>
                     <li className="dropdown-link">
-                      <NavLink to="#">universidades publicas</NavLink>
+                      <NavLink to="#universidades-publicas">Universidades públicas</NavLink>
                     </li>
                     <li className="dropdown-link">
-                      <NavLink to="#">Univeridades privadas</NavLink>
+                      <NavLink to="#universidades-privadas">Universidades privadas</NavLink>
                     </li>
                     <li className="dropdown-link">
-                      <NavLink to="#">Normales</NavLink>
+                      <NavLink to="#normales">Normales</NavLink>
                     </li>
                     <li className="dropdown-link">
-                      <NavLink to="#">Institutos publicas</NavLink>
+                      <NavLink to="#institutos-publicos">Institutos públicos</NavLink>
                     </li>
                     <li className="dropdown-link">
-                      <NavLink to="#">Institutos privadas</NavLink>
+                      <NavLink to="#institutos-privados">Institutos privados</NavLink>
                     </li>
-                    <div className="arrow"></div>
                   </ul>
                 </div>
               </li>
               <li className="nav-link" style={{ "--i": "1.35s" }}>
-                <NavLink to="becas">Becas</NavLink>
+                <NavLink to="/becas">Becas</NavLink>
               </li>
               <li className="nav-link" style={{ "--i": "1.35s" }}>
-                <NavLink to="contacto">Contacto</NavLink>
+                <NavLink to="/contacto">Contacto</NavLink>
               </li>
-              <li className='nav-link' style={{ "--i": "1.35s"}}>
-                <NavLink to = "login"> Login</NavLink>
+              <li className='nav-link' style={{ "--i": "1.35s" }}>
+                <NavLink to="/login">Login</NavLink>
               </li>
             </ul>
           </div>
