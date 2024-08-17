@@ -1,0 +1,98 @@
+.pie-pagina {
+    background-color: var(--color-neutral-dark);
+    color: var(--color-neutral-light);
+    padding: var(--spacing-large) 0;
+    font-family: var(--font-primary);
+  }
+  
+  .contenedor-piepagina {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--spacing-large);
+  }
+  
+  .info {
+    flex: 1;
+    min-width: 220px;
+    margin-bottom: var(--spacing-large);
+  }
+  
+  .info h3 {
+    color: var(--color-primary);
+    font-family: var(--font-primary);
+    margin-bottom: var(--spacing-small);
+  }
+  
+  .info p, .info input, .info a {
+    color: var(--color-neutral-light);
+    margin-bottom: var(--spacing-small);
+    font-size: var(--font-size-large);
+  }
+  
+  .info a {
+    display: block;
+    text-decoration: none;
+    margin-bottom: var(--spacing-small);
+    color: var(--color-primary-light);
+    transition: color var(--transition-speed) var(--transition-timing);
+  }
+  
+  .info a:hover {
+    color: var(--color-primary);
+  }
+  
+  .redes-sociales .redes-icons {
+    font-size: 20px;
+    margin-right: var(--spacing-large);
+    color: var(--color-primary-light);
+    transition: color var(--transition-speed) var(--transition-timing);
+  }
+  
+  .redes-sociales i:hover {
+    color: var(--color-primary);
+  }
+  
+  input[type="email"] {
+    width: calc(100% - var(--spacing-medium));
+    padding: var(--spacing-small);
+    border-radius: var(--border-radius-base);
+    border: 1px solid var(--color-neutral-light);
+    margin-bottom: var(--spacing-small);
+    font-size: var(--font-size-base);
+    background-color: var(--color-neutral-dark);
+    color: var(--color-neutral-light);
+  }
+  
+  input[type="submit"].btnF {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: var(--spacing-small) var(--spacing-medium);
+    border-radius: var(--border-radius-base);
+    cursor: pointer;
+    transition: background-color var(--transition-speed) var(--transition-timing);
+    font-size: var(--font-size-base);
+  }
+  
+  input[type="submit"].btnF:hover {
+    background-color: var(--color-primary-dark);
+  }
+  
+  .footer {
+    background-color: var(--color-tertiary-dark);
+    text-align: center;
+    padding: var(--spacing-medium) 0;
+  }
+  
+  .footer .logo h2 {
+    color: var(--color-primary);
+    font-family: var(--font-secondary);
+    margin-bottom: var(--spacing-small);
+  }
+  
+  .footer p {
+    color: var(--color-neutral-light);
+    font-size: var(--font-size-small);
+  }
+  

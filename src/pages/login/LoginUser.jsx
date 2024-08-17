@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './Login.css';
 import { FaRegEyeSlash } from "react-icons/fa";
 import { IoEyeOutline } from "react-icons/io5";
 import { saveToken, saveUser } from './authFunctions';
-import {loginUser} from '../../service/api'
+import { loginUser } from '../../service/api';
+import './Login.css';
 
 export default function LoginUser() {
   const [credentials, setCredentials] = useState({
@@ -13,6 +13,7 @@ export default function LoginUser() {
   });
 
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -24,8 +25,8 @@ export default function LoginUser() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');  // Reset error message
     try {
-      
       const result = await loginUser(credentials);
       console.log('Login result:', result); 
       
@@ -35,10 +36,11 @@ export default function LoginUser() {
         navigate('/listForm');
         window.location.reload();
       } else {
-        console.log('Login failed: No token received');
+        setError('Login failed: No token received');
       }
     } catch (error) {
       console.error('Login error:', error);
+      setError('Invalid username or password.');
     }
   };
 
@@ -48,7 +50,7 @@ export default function LoginUser() {
 
   return (
     <div className="login-container">
-      <div className="login-form">
+      <div className="login-form card">
         <h2>Inicia sesión</h2>
         <form onSubmit={handleSubmit}>
           <label>Correo electrónico</label>
@@ -68,6 +70,7 @@ export default function LoginUser() {
               onChange={handleChange}
               required
             />
+            {error && <p className="error-message">{error}</p>}
             <button type="button" onClick={toggleShowPassword} className="toggle-password">
               {showPassword ? <IoEyeOutline /> : <FaRegEyeSlash />}
             </button>

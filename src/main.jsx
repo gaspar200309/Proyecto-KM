@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 //import './index.css'
 import { App2 } from './App';
-import { PieDePagina } from './components/PieDePagina';
+import { PieDePagina } from './components/footer/PieDePagina';
 
 const root = createRoot(document.getElementById('root'));
 

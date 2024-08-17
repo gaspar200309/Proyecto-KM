@@ -6,6 +6,48 @@
   margin-bottom: var(--spacing-large);
 }
 
+.areas.área-de-salud {
+  margin: 0;
+  background: linear-gradient(to right, #ffcccb, #382b2b); /* Degradado de rosa claro a rosa más oscuro */
+}
+
+.areas.ingenierías {
+  margin: 0;
+  background: linear-gradient(to right, #cceeff, #99ddee); /* Degradado de azul claro a azul más intenso */
+}
+
+.areas.carreras-empresariales {
+  margin: 0;
+  background: linear-gradient(to right, #d3ffd3, #aaffaa); /* Degradado de verde claro a verde más oscuro */
+}
+
+.areas.tecnologia {
+  margin: 0;
+  background: linear-gradient(to right, #f0e68c, #cc6f11); /* Degradado de amarillo claro a amarillo más intenso */
+}
+
+.areas.carreras-sociales {
+  margin: 0;
+  background: linear-gradient(to right, #dda0dd, #cc7fcc); /* Degradado de púrpura claro a púrpura más oscuro */
+}
+
+.areas.urbanismo-y-territorio {
+  margin: 0;
+  background: linear-gradient(to right, #ffd700, #ffcc00); /* Degradado de dorado claro a dorado más intenso */
+}
+
+.areas {
+  background-color: var(--color-area);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: white;
+}
+
+
 .card {
   background-color: white;
   border-radius: var(--border-radius-base);

@@ -1,7 +1,7 @@
 import React from "react";
 import becasData from "./BecasApp";
 import "./Becas.css";
-import ScrollToTop from "../../components/Scrooll";
+import ScrollToTop from "../../components/scrooll/Scrooll";
 
 
 

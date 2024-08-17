@@ -35,6 +35,8 @@
   
     /* Border Radius */
     --border-radius-base: 5px;
+    --border-radius-secundary: 10px;
+    --border-radius-tertiary: 20px;
   
     /* Transitions */
     --transition-speed: 0.3s;
@@ -44,7 +46,13 @@
     --box-shadow-base: 0 2px 5px rgba(0, 0, 0, 0.1);
     --box-shadow-hover: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
-  
+  html{
+    box-sizing: border-box;
+    font-size: 70%;
+    background-color: var(--oscuro);
+    scroll-behavior: smooth; 
+  }
+
   body {
     font-family: var(--font-primary);
     font-size: var(--font-size-base);
@@ -112,3 +120,10 @@
     transform: translateY(-5px);
     box-shadow: var(--box-shadow-hover);
   }
+
+  .contenedor{
+    margin: 0 auto;
+    max-width: 120rem;
+    width: 95%;
+  }
+  

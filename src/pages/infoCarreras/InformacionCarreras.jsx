@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { getCareerById } from "../../service/api"; 
-import ScrollToTop from "../../components/Scrooll";
+import { getCareerById } from "../../service/api";
+import ScrollToTop from "../../components/scrooll/Scrooll";
 import "./InformacionesCarrera.css";
 
 const InformacionCarreras = () => {
@@ -13,7 +13,7 @@ const InformacionCarreras = () => {
   useEffect(() => {
     const fetchCarrera = async () => {
       try {
-        const response = await getCareerById(idCar); 
+        const response = await getCareerById(idCar);
         setCarreraSelect(response.data);
       } catch (error) {
         setError(error.message);
@@ -32,11 +32,12 @@ const InformacionCarreras = () => {
   return (
     <>
       <ScrollToTop />
-      <div>
-        <div className="headerC">
+      <div className="informacion-carrera-container">
+        <div className="Header1">
+        <header className="headerC">
           <div className="image-containerC">
             <img
-              src={`http://localhost:3000${carreraSelect.imgSrc}`} 
+              src={`http://localhost:3000${carreraSelect.imgSrc}`}
               alt={carreraSelect.titulo}
             />
             <div className="image-textC">
@@ -45,50 +46,58 @@ const InformacionCarreras = () => {
               </h1>
             </div>
           </div>
-        </div>
-        <div className="navigation-barC">
+        </header>
+
+        <nav className="navigation-barC">
           <Link to="/">Inicio /</Link>
           <Link to="/carrera">Carreras /</Link>
           <Link to="#">{carreraSelect.titulo}</Link>
+        </nav>
         </div>
 
-        <div className="containerC">
-          <div className="content">
-            <h1>Información de la Carrera: {carreraSelect.titulo}</h1>
-            <div className="contenidoC">
-              <h2>¿Qué es la Carrera?</h2>
-              <p>{carreraSelect.descripcion}</p>
-            </div>
+        <div className="contentC">
+          <div className="contentC-contenido">
+          <h1>Información de la Carrera: {carreraSelect.titulo}</h1>
+          <section className="contenidoC">
+            <h2>¿Qué es la Carrera?</h2>
+            <p>{carreraSelect.descripcion}</p>
+          </section>
 
-            <div className="contenidoC">
-              <h2>Áreas de trabajo de la carrera: {carreraSelect.titulo}</h2>
-              <ul>
-                {carreraSelect.lugaresDeTrabajo.map((area, index) => (
-                  <li key={index}>{area}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="contenidoC">
-              <h2>Materias que te sirven de base</h2>
-              <ul>
-                {carreraSelect.materias.map((materia, index) => (
-                  <li key={index}>{materia}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="enlacesC">
-              <h2>Universidades para Estudiar {carreraSelect.titulo}</h2>
+          <section className="contenidoC">
+            <h2>Áreas de trabajo de la carrera: {carreraSelect.titulo}</h2>
+            <ul>
+              {carreraSelect.lugaresDeTrabajo.map((area, index) => (
+                <li key={index}>{area}</li>
+              ))}
+            </ul>
+          </section>
+
+          <section className="contenidoC">
+            <h2>Materias que te sirven de base</h2>
+            <ul>
+              {carreraSelect.materias.map((materia, index) => (
+                <li key={index}>{materia}</li>
+              ))}
+            </ul>
+          </section>
+
+          <section className="contenidoC">
+            <h2>Universidades para Estudiar {carreraSelect.titulo}</h2>
+            <ul className="universidades-list">
               {carreraSelect.universidades.map((universidad, index) => (
-                <a key={index} href={universidad.enlace} target="_blank" rel="noopener noreferrer">
+                <li key={index} className="universidad-item">
                   <img
-                    className="imgCarL"
-                    src={`http://localhost:3000${universidad.logo}`} 
+                    className="universidad-logo"
+                    src={`http://localhost:3000${universidad.logo}`}
                     alt={universidad.nombre}
                   />
-                  {universidad.nombre}
-                </a>
+                  <a href={universidad.enlace} target="_blank" rel="noopener noreferrer">
+                    {universidad.nombre}
+                  </a>
+                </li>
               ))}
-            </div>
+            </ul>
+          </section>
           </div>
         </div>
       </div>
