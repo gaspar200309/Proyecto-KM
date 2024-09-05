@@ -44,7 +44,6 @@ import itpm from './img/Itpm.png'
 import Itait from './img/Itait.png'
 import Etsalud from './img/Etsalud.png'
 import Itsi from './img/Itsi.png'
-import Logo from '../../public/Logo.png'
 import kawsay from './img/kawsay.png'
 
 // carreras
@@ -152,7 +151,6 @@ export default {
   "imgItait": Itait,
   "imgEtsalud": Etsalud,
   "imgItsi": Itsi,
-  "imgLogo": Logo,
   "kawsay": kawsay,
   // Carreras 
  "imgAdministracion": administracion,
