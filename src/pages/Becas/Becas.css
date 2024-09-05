@@ -1,107 +1,87 @@
-
-.cardB {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; 
-    background: #fff;
-    box-shadow: 0 1px 5px 5px #855f59;
-    border-radius: 10px;
-    transition: 0.1s;
-    margin: 20px auto;
-    max-width: 413px; 
-    overflow: hidden;
-  }
-.contenedorB {
-  display: grid;
-
+/* Becas.css */
+.becas-title {
+  text-align: center;
+  font-size: var(--font-size-large);
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-large);
 }
 
-  .img-cardB img {
-    margin-top: 10px;
-    border-radius: 2%;
-  }
-  
-  .cardB:hover {
-    transform: scale(1.02);
-    box-shadow: 0 5px 20px #855f59;
-  }
-  
-  .cardB .contentB {
-    padding: 10px 15px;
-  }
-  
-  .cardB .contentB .titleB h3 {
-    justify-content: center;
-    text-align: center;
-    color: #e63e24;
-  }
-  
-  .cardB .contentB .titleB span {
-    color: #ff0000;
-    font-size: 12px;
-  }
-  
-  .cardB .contentB .textB p {
-    color: rgba(0, 0, 0, 0.6);
-    font-size: 15px;
-    color: black;
-    justify-content: center;
-    text-align: center;
-  }
-  
-  .cardB .contentB .btn-containerB button {
-    background: #0089ba;
-    padding: 5px 10px;
-    color: #fff;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    
-  }
+.becas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(3000px, 1fr));
+  gap: var(--spacing-large);
+  padding: var(--spacing-medium);
+}
 
-  .btn-containerB button {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-  }
-  
-  .becas {
-    text-align: center;
-    font-size: 40px;
-    color: #c64c36;
-  }
-  
-  
-  .cardB .contentB .btn-containerB button:hover {
-    background: #017eac;
-  }
-  
-  
-  @media only screen and (max-width: 768px) {
-    .cardB {
-      flex-direction: column; 
-      max-width: 100%; 
-      margin: 10px auto; 
-      margin-top: 40px;
-    }
-  
-    .cardB .img-cardB {
-      width: 100%;
-    }
-  
-    .cardB .img-cardB img {
-      width: 100%;
-      height: auto;
-      background-size: cover;
-    }
-  
-    .cardB .contentB {
-      width: 100%;
-    }
-  
-    .cardB .contentB .titleB {
-      margin-top: 10px; 
-    }
-  }
+.beca-card {
+  background-color: var(--color-neutral-light);
+  border-radius: var(--border-radius-secundary);
+  box-shadow: var(--box-shadow-base);
+  overflow: hidden;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.beca-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.img-cardB img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 5px solid var(--color-primary);
+}
+
+.contentB {
+  padding: var(--spacing-medium);
+}
+
+.titleB {
+  font-size: var(--font-size-large);
+  color: var(--color-tertiary-dark);
+  margin-bottom: var(--spacing-small);
+}
+
+.sub-titleB {
+  font-size: var(--font-size-small);
+  color: var(--color-secondary-dark);
+  margin-bottom: var(--spacing-small);
+}
+
+.descriptionB, .important-noteB, .average-requiredB {
+  font-size: var(--font-size-base);
+  color: var(--color-neutral-dark);
+  margin-bottom: var(--spacing-small);
+}
+
+.important-noteB {
+  background-color: var(--color-secondary-light);
+  padding: var(--spacing-small);
+  border-radius: var(--border-radius-base);
+  font-weight: bold;
+}
+
+.scholarshipsB {
+  margin-top: var(--spacing-medium);
+}
+
+.scholarship-typeB h4 {
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-small);
+}
+
+.scholarship-typeB p {
+  font-size: var(--font-size-small);
+  color: var(--color-neutral-dark);
+}
+
+.addressB {
+  font-size: var(--font-size-small);
+  color: var(--color-tertiary-dark);
+  margin-top: var(--spacing-medium);
+  font-weight: bold;
+}

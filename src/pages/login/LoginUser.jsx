@@ -34,13 +34,13 @@ export default function LoginUser() {
         saveToken(result.data.token);
         //saveUser({ username: result.data.username, role: result.data.role, foto_base64: result.data.foto_base64 });
         navigate('/listForm');
-        window.location.reload();
+        //window.location.reload();
       } else {
-        setError('Login failed: No token received');
+        setError('Credenciales incorrectas');
       }
     } catch (error) {
       console.error('Login error:', error);
-      setError('Invalid username or password.');
+      setError('Credenciales incorrectas');
     }
   };
 

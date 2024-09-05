@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import './Nav2.css';
+import ImagenesApp from '../assets/ImagenesApp';
 
 const NavBarReact = () => {
   return (
@@ -10,7 +11,7 @@ const NavBarReact = () => {
 
         <div className="logo-container2">
           <NavLink to="/">
-            <img src="public/Logo.png" alt="Logo" />
+            <img src={ImagenesApp.kawsay} alt="Logo" />
           </NavLink>
         </div>
         <div className="nav-btn">
