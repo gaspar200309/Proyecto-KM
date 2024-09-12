@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { MdMessage } from "react-icons/md";
 import { CgClose } from "react-icons/cg";
@@ -36,7 +36,7 @@ function Chat() {
 
   return (
     <div className={`container ${expanded ? 'expanded' : ''}`}>
-      <div className="chat-bubble" onClick={toggleChat}>
+      <div onClick={toggleChat}>
         {expanded ? (
           <span className="material-symbols-outlined"><CgClose className="logo-chat" /></span>
         ) : (

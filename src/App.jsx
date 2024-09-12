@@ -1,12 +1,11 @@
-import React, { useEffect } from "react";
-import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { Navigate, Route, Routes} from "react-router-dom";
 import NavBarReact from "./components/NavBar";
 import { Inicio}  from "./pages/Inicio/Inicio";
 import Universidades from "./pages/Universidades/Universides";
 import Carrera from "./pages/carreras/Carrera";
 import { Contacto } from "./pages/Contacto/Contacto";
 import LoginUser from "./pages/login/LoginUser";
-import Chat from "./chat/Chat";
+//import Chat from "./chat/Chat";
 import Becas from "./pages/Becas/Becas";
 import InformacionCarreras from "./pages/infoCarreras/InformacionCarreras";
 import CareerForm from "./pages/forms/CareerForm";
@@ -17,7 +16,6 @@ export const App2 = () => {
 
   return (
     <>
-      <Chat></Chat>
       <NavBarReact />
       <Routes>
         <Route path="/" element={<Inicio />} />
