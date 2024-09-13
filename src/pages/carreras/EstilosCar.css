@@ -1,111 +1,120 @@
-
 /*Carreras **/
 .container-card {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap; 
-  justify-content: center; 
-  max-width: 1100px;
-  margin: auto;
-}
-.title-cards h2{
 	width: 100%;
-	max-width: 1080px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	max-width: 1200px;
+	margin: auto;
+}
+.title-cards h2 {
+	width: 100%;
+	max-width: 720px;
 	margin: auto;
 	padding: 20px;
 	text-align: center;
 	color: #e7302a;
-  font-size: 50px;
+	font-size: 50px;
 }
 .card {
-    position: relative;
-    width: calc(33.33% - 40px);
-    margin: 20px;
-    border-radius: 6px;
-    overflow: hidden;
-    background: #fff;
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
-    transition: all 400ms ease-out;
-    cursor: pointer;
-  }
+	position: relative;
+	text-align: center;
+	width: calc(33.33% - 40px);
+	margin: 20px;
+	border-radius: 6px;
+	overflow: hidden;
+	background: #fff;
+	box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+	transition: all 400ms ease-out;
+	cursor: pointer;
+}
 
-
-.card:hover{
-	box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+.card:hover {
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
 	transform: translateY(-3%);
 }
-.card img{
-	width: 100%;
-	height: 210px;
-    object-fit: cover;
-  border-radius: 6px; 
-} 
-.card .contenido-card{
-  position: absolute;
-	text-align: center;
-    top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+.card img {
+	margin-top: 20px;
+	width: 85%;
+	height: 180px;
+	object-fit: cover;
+	border-radius: 6px;
+}
+.card .contenido-card {
+	display: flex;
+	justify-content: space-between;
+	margin-left: 32px;
+	margin-right: 32px;
+	align-items: center;
 }
 
-.card .contenido-card h3{
-	margin-bottom: 15px;
-  font-family: system-ui;
+.card .contenido-card h3 {
+	width: 50%;
+	text-align: left;
+	font-size: 16px;
+	font-family: system-ui;
 	color: #892a19;
-    z-index: 1;
+	z-index: 1;
 }
-.card .contenido-card a{
-	display: inline-block;
-	padding: 10px;
-	margin-top: 10px;
+.card .contenido-card a {
+	padding: 5px;
+	margin-block: 5%;
+	font-size: 14px;
 	text-decoration: none;
 	color: #812110;
 	border: 1px solid #812110;
 	border-radius: 4px;
 	transition: all 400ms ease;
-    z-index: 1;
+	z-index: 1;
 }
-.card .contenido-card a:hover{
+.card .contenido-card a:hover {
 	background: #812110;
 	color: #fff;
 }
 .areas {
-  display: initial;
-  justify-content: center;
-  text-align: center;
-  padding: 5px;
-  border-radius: 5%;
-  box-shadow: rgba(0, 0, 0, 0.5);
+	padding: 5px;
+	border-radius: 5%;
+}
+
+.areas h2 {
+	font-size: 36px;
+	color: #892a19;
+	font-weight: 600;
+	margin-top: 3%;
 }
 .mejorarImg {
-  z-index: 999;
-  height: 100%;
-  width: 100%;
-  
+	z-index: 999;
+	height: 100%;
+	width: 100%;
 }
 @media only screen and (max-width: 768px) {
-  .card {
-    width: calc(50% - 40px); 
-  }
-  .title-cards h2{
-    margin-top: 70px;
-    padding: 10px;
-  }
+	.card {
+		width: calc(50% - 40px);
+	}
+	.title-cards h2 {
+		margin-top: 70px;
+		padding: 10px;
+	}
 
-  @media only screen and (max-width: 480px) {
-    .card {
-      width: calc(100% - 40px); 
-    }
-  }
+	@media only screen and (max-width: 480px) {
+		.card {
+			width: calc(100% - 40px);
+		}
+	}
+}
+
+.leerMas {
+	display: flex;
+	align-items: center;
+	margin-block: 3%;
 }
 
 .carRecomend {
-  display: inline-block;
+	display: inline-block;
 	padding: 10px;
 	margin-top: 10px;
 	text-decoration: none;
-  background-color: #812110;
+	background-color: #812110;
 	color: #fff;
 	border: 1px solid #812110;
 	border-radius: 4px;
@@ -113,9 +122,8 @@
 	margin-bottom: 5px;
 }
 .center-button {
-  display: block;
-  width: 200px; 
-  margin: 0 auto;
-  text-align: center;
-  margin-top: 20px; 
+	width: 200px;
+	margin: 0 auto;
+	text-align: center;
+	margin-bottom: 20px;
 }

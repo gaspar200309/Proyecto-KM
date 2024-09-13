@@ -4,7 +4,7 @@ export const Informacion = () => {
 	return (
 		<>
 			<section className="nosotros contenedor" id="nosotros">
-				<img src={Logo} alt="Kawsay Muju" />
+				<img src={Logo} width="400px" alt="Kawsay Muju" />
 
 				<div>
 					<h2>ORIENTACIÓN VOCACIONAL</h2>
