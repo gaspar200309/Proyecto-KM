@@ -5,37 +5,35 @@
   gap: var(--spacing-medium);
   margin-bottom: var(--spacing-large);
 }
-
 .areas.área-de-salud {
   margin: 0;
-  background: linear-gradient(to right, #ffcccb, #382b2b); /* Degradado de rosa claro a rosa más oscuro */
+  background: linear-gradient(to right, #ffe5e5, #d1c0c0); 
 }
 
 .areas.ingenierías {
   margin: 0;
-  background: linear-gradient(to right, #cceeff, #99ddee); /* Degradado de azul claro a azul más intenso */
+  background: linear-gradient(to right, #e6f7ff, #b3e0f0); 
 }
 
 .areas.carreras-empresariales {
   margin: 0;
-  background: linear-gradient(to right, #d3ffd3, #aaffaa); /* Degradado de verde claro a verde más oscuro */
+  background: linear-gradient(to right, #e6ffe6, #c8ffc8); 
 }
 
 .areas.tecnologia {
   margin: 0;
-  background: linear-gradient(to right, #f0e68c, #cc6f11); /* Degradado de amarillo claro a amarillo más intenso */
+  background: linear-gradient(to right, #f9f4cc, #e09d55); 
 }
 
 .areas.carreras-sociales {
   margin: 0;
-  background: linear-gradient(to right, #dda0dd, #cc7fcc); /* Degradado de púrpura claro a púrpura más oscuro */
+  background: linear-gradient(to right, #f3d0f3, #db9fdb); 
 }
 
 .areas.urbanismo-y-territorio {
   margin: 0;
-  background: linear-gradient(to right, #ffd700, #ffcc00); /* Degradado de dorado claro a dorado más intenso */
+  background: linear-gradient(to right, #ffeb99, #ffdb66); 
 }
-
 .areas {
   background-color: var(--color-area);
   padding: 20px;
