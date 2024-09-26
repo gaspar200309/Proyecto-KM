@@ -4,6 +4,7 @@ import { FaRegEyeSlash } from "react-icons/fa";
 import { IoEyeOutline } from "react-icons/io5";
 import { saveToken, saveUser } from './authFunctions';
 import { loginUser } from '../../service/api';
+import ScrollToTop from '../../components/scrooll/Scrooll';
 import './Login.css';
 
 export default function LoginUser() {
@@ -32,7 +33,7 @@ export default function LoginUser() {
       
       if (result.data.token) {
         saveToken(result.data.token);
-        //saveUser({ username: result.data.username, role: result.data.role, foto_base64: result.data.foto_base64 });
+        saveUser({ username: result.data.username, role: result.data.role, foto_base64: result.data.foto_base64 });
         navigate('/listForm');
         //window.location.reload();
       } else {
@@ -50,6 +51,7 @@ export default function LoginUser() {
 
   return (
     <div className="login-container">
+      <ScrollToTop />
       <div className="login-form card">
         <h2>Inicia sesión</h2>
         <form onSubmit={handleSubmit}>
