@@ -1,13 +1,20 @@
 import React from 'react';
 import './Informacion.css';
 import ImagenesApp from '../../assets/ImagenesApp';
+import VideoBackground from '../../assets/video/fondoV.mp4'; // Asegúrate de tener el video en esta ruta
 
 export const Informacion = () => {
   return (
     <>
       <section className="hero-section">
+        {/* Video de fondo */}
+        <video className="video-background" autoPlay muted loop>
+          <source src={VideoBackground} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        
         <div className="hero-content">
-        <img src={ImagenesApp.kawsay} alt="Logo" className="hero-logo" />
+          <img src={ImagenesApp.kawsay} alt="Logo" className="hero-logo" />
           <h1 className="hero-title">ORIENTACIÓN VOCACIONAL</h1>
           <h2 className="hero-subtitle">¿Qué carrera debo estudiar?</h2>
         </div>

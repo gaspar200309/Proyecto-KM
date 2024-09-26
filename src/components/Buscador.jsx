@@ -40,7 +40,7 @@ const Buscador = ({ updateFilteredCarreras }) => {
         className="search-input"
       ></input>
       <button onClick={handleSearch} className="search-button">
-      <img src="/src/assets/icons/search.svg" alt="Buscar" /> {/* Usar SVG como imagen */}
+      <img src="/src/assets/icons/search.svg" alt="Buscar" /> 
       </button>
     </div>
   );

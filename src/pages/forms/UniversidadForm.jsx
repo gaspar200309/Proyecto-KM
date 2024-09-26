@@ -97,6 +97,7 @@ const UniversidadForm = () => {
             <form onSubmit={handleSubmit}>
                 <InputText
                     name="nombre"
+                    label = "Nombre"
                     value={universidad.nombre}
                     onChange={handleChange}
                     placeholder="Nombre"
@@ -107,6 +108,7 @@ const UniversidadForm = () => {
                     <div key={index} className="direccion-group">
                         <InputText
                             name="direccion"
+                            label = "Dirección"
                             value={dir.direccion}
                             onChange={(e) => handleDireccionChange(index, e)}
                             placeholder="Dirección"
@@ -114,30 +116,35 @@ const UniversidadForm = () => {
                         />
                         <InputText
                             name="telefono"
+                            label = "Teléfono"
                             value={dir.telefono}
                             onChange={(e) => handleDireccionChange(index, e)}
                             placeholder="Teléfono"
                         />
                         <InputText
                             name="fax"
+                            label = "Fax"
                             value={dir.fax}
                             onChange={(e) => handleDireccionChange(index, e)}
                             placeholder="Fax"
                         />
                         <InputText
                             name="celular"
+                            label = "Celular"
                             value={dir.celular}
                             onChange={(e) => handleDireccionChange(index, e)}
                             placeholder="Celular"
                         />
                         <InputText
                             name="whatsapp"
+                            label = "WhatsApp"
                             value={dir.whatsapp}
                             onChange={(e) => handleDireccionChange(index, e)}
                             placeholder="WhatsApp"
                         />
                         <InputText
                             name="correo"
+                            label = "Correo"
                             value={dir.correo}
                             onChange={(e) => handleDireccionChange(index, e)}
                             placeholder="Correo"
@@ -150,6 +157,7 @@ const UniversidadForm = () => {
                 
                 <Select
                     name="tipoEscuela"
+                    label = "Tipo de Escuela"
                     value={universidad.tipoEscuela}
                     onChange={handleChange}
                     options={[
@@ -163,6 +171,7 @@ const UniversidadForm = () => {
                 
                 <Select
                     name="esPublica"
+                    label = "Pública o Privada"
                     value={universidad.esPublica}
                     onChange={handleChange}
                     options={[
@@ -175,6 +184,7 @@ const UniversidadForm = () => {
                 
                 <InputText
                     name="enlace"
+                    label = "Enlace"
                     value={universidad.enlace}
                     onChange={handleChange}
                     placeholder="Enlace al sitio web"

@@ -68,7 +68,7 @@ const CareerForm = () => {
         } else {
             await createCareer(formData);
         }
-        navigate('/carreras');
+        navigate('/listForm');
     };
 
     const handleFileChange = (e) => {
@@ -89,6 +89,7 @@ const CareerForm = () => {
             
                 <InputText
                     name="titulo"
+                    label="Título de la carrera"
                     value={career.titulo}
                     onChange={handleChange}
                     placeholder="Nombre de la carrera"
@@ -96,6 +97,7 @@ const CareerForm = () => {
                 />
                 <textarea
                     name="descripcion"
+                    label="Descripción de la carrera"
                     value={career.descripcion}
                     onChange={handleChange}
                     placeholder="Descripción"
@@ -106,6 +108,7 @@ const CareerForm = () => {
                     <div key={index}>
                         <InputText
                             name={`lugaresDeTrabajo-${index}`}
+                            label="Lugar de trabajo"
                             value={lugar}
                             onChange={(e) => handleArrayChange(e, index, 'lugaresDeTrabajo')}
                             placeholder="Lugar de Trabajo"
@@ -118,6 +121,7 @@ const CareerForm = () => {
                     <div key={index}>
                         <InputText
                             name={`materias-${index}`}
+                            label="Materia"
                             value={materia}
                             onChange={(e) => handleArrayChange(e, index, 'materias')}
                             placeholder="Materia"
@@ -141,6 +145,7 @@ const CareerForm = () => {
 
                 <Select
                     name="area"
+                    label="Área de la carrera"
                     value={career.area}
                     onChange={handleChange}
                     options={[
@@ -157,6 +162,7 @@ const CareerForm = () => {
 
                 <Select
                     name="nivel"
+                    label="Nivel de la carrera"
                     value={career.nivel}
                     onChange={handleChange}
                     options={[
@@ -170,12 +176,13 @@ const CareerForm = () => {
 
                 <InputText
                     name="duracion"
+                    label="Duración de la carrera"
                     value={career.duracion}
                     onChange={handleChange}
                     placeholder="Años de Estudio (opcional)"
                 />
-
                 <input
+
                     type="file"
                     name="imgSrc"
                     onChange={handleFileChange}

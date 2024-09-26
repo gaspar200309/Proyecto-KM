@@ -1,63 +1,74 @@
-.hero-section {
-    background-color: #fff;
-    position: relative;
-    padding: 100px 0;
-    text-align: center;
-    color: rgb(7, 2, 2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 400px;
-  }
-  
-  .hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-  }
-  
-  .hero-content {
-    position: relative;
-    z-index: 2;
-  }
-  
-  .hero-title {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: var(--color-neutral-dark);
-  }
-  
-  .hero-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-    color: var(--color-neutral-dark);
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
 
-  }
-  
-  .hero-logo {
-    width: 100px;
-    height: auto;
-  }
-  
-  .contenido-nosotros {
-    padding: 40px 20px;
-    text-align: center;
-  }
-  
-  .titulo-nosotros {
-    font-size: 2rem;
-    color: var(--color-tertiary-dark);
-    margin-bottom: var(--spacing-large);
-  }
-  
-  .texto-nosotros p {
-    font-size: 1.5rem;
-    color: var(--color-neutral-dark);
-    line-height: var(--line-height-base);
-    margin-bottom: var(--spacing-large);
-  }
-  
+.hero-section {
+  background-color: #fff;
+  position: relative;
+  padding: 100px 0;
+  text-align: center;
+  color: rgb(7, 2, 2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  overflow: hidden; 
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; 
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ffff;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: var(--color-neutral-dark);
+}
+
+.hero-logo {
+  width: 100px;
+  height: auto;
+}
+
+/* Contenido adicional de la sección */
+.contenido-nosotros {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.titulo-nosotros {
+  font-size: 2rem;
+  color: var(--color-tertiary-dark);
+  margin-bottom: var(--spacing-large);
+}
+
+.texto-nosotros p {
+  font-size: 1.5rem;
+  color: var(--color-neutral-dark);
+  line-height: var(--line-height-base);
+  margin-bottom: var(--spacing-large);
+}

@@ -1,7 +1,4 @@
-:root {
-    --highlight-color: var(--color-secondary-dark); 
-  }
-  
+
   .contenedorU {
     max-width: 1200px;
     margin: 0 auto;
@@ -13,7 +10,6 @@
     align-items: center;
     margin: 0;
     filter: brightness(50%);
-    clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%);
     padding: 0;
     margin-bottom: var(--spacing-large);
   }
