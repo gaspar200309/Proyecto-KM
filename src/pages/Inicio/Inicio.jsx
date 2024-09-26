@@ -1,4 +1,3 @@
-import React from 'react'
 import CarreraRecomendada from '../carreras/CarRecomendadas'
 import UniversidadesRec from '../Universidades/UniversidadesRecomendadas'
 import { Contacto } from '../Contacto/Contacto'

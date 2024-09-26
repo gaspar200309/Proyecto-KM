@@ -2,12 +2,14 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ListForms.css'; 
 import ImagenesApp from '../../assets/ImagenesApp';
+import ScrollToTop from '../../components/scrooll/Scrooll';
 
 export default function ListForms() {
   const navigate = useNavigate();
 
   return (
     <div className="container1">
+      <ScrollToTop />
       <h1>Selecciona un formulario</h1>
       <div className="card-container1">
         <div className="card1" onClick={() => navigate('/career/new')}>

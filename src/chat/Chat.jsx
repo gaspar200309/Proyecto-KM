@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { MdMessage } from "react-icons/md";
 import { CgClose } from "react-icons/cg";

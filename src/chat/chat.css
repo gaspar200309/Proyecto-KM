@@ -1,3 +1,4 @@
+
 .chat-container {
   width: 60px;
   height: 60px;
@@ -12,6 +13,11 @@
   z-index: 9999;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
+
+.container {
+  position: fixed; 
+  width: 500px;
+  max-height: 70vh;
 }
 
 .chat-container.show {
@@ -140,4 +146,5 @@ button {
 button:disabled {
   background-color: var(--color-tertiary);
   cursor: not-allowed;
+}
 }

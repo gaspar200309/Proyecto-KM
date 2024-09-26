@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, Link } from 'react-router-dom';
 import { createBeca, updateBeca, getBecaById } from '../../service/api';
+import ScrollToTop from '../../components/scrooll/Scrooll';
+import { IoArrowBackCircleSharp } from "react-icons/io5";
 import './Form.css';
 
 const BecaForm = () => {
@@ -79,6 +81,12 @@ const BecaForm = () => {
   };
 
   return (
+    <div className=''>
+    <ScrollToTop />
+            <header className="form-header">
+                <h1>{isEdit ? 'Editar Universidad' : 'Crear Universidad'}</h1>
+                <Link to="/listForm" className="form-back-link"><IoArrowBackCircleSharp/>x</Link>
+            </header>
     <form className="form-container" onSubmit={handleSubmit}>
       <input name="nombre" value={beca.nombre} onChange={handleChange} placeholder="Nombre" required />
       <select name="institucion" value={beca.institucion} onChange={handleChange} required>
@@ -107,6 +115,7 @@ const BecaForm = () => {
       <input name="direccion" value={beca.direccion} onChange={handleChange} placeholder="Dirección (opcional)" />
       <button type="submit">{isEdit ? 'Actualizar' : 'Crear'}</button>
     </form>
+    </div>
   );
 };
 

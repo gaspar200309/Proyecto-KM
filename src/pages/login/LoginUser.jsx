@@ -33,7 +33,7 @@ export default function LoginUser() {
       
       if (result.data.token) {
         saveToken(result.data.token);
-        saveUser({ username: result.data.username, role: result.data.role, foto_base64: result.data.foto_base64 });
+        /* saveUser({ username: result.data.username, role: result.data.role, foto_base64: result.data.foto_base64 }); */
         navigate('/listForm');
         //window.location.reload();
       } else {

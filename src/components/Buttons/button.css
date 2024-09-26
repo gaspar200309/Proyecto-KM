@@ -1,0 +1,11 @@
+.buttonStyle {
+	padding: 6.5px;
+  padding-inline: 15px;
+	margin-top: 10px;
+	text-decoration: none;
+  background-color: #F39200;
+	color: #ffffff;
+	border-radius: 8px;
+	transition: all 400ms ease;
+	margin-bottom: 5px;
+}

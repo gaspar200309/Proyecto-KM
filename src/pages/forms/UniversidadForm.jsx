@@ -3,6 +3,8 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import InputText from '../../components/inputs/InputText';
 import Select from '../../components/selected/Selected';
 import { createUniversidad, updateUniversidad, getUniversidadById } from '../../service/api';
+import ScrollToTop from '../../components/scrooll/Scrooll';
+import { IoArrowBackCircleSharp } from "react-icons/io5";
 import './Form.css';
 
 const UniversidadForm = () => {
@@ -85,11 +87,13 @@ const UniversidadForm = () => {
     };
 
     return (
-        <div className="form-container">
-            <header className="form-header">
+        <div className="form-container1">
+            <ScrollToTop />
+            <Link to="/listForm" className="icon"><IoArrowBackCircleSharp/></Link>
+
+            <div className="form-header">
                 <h1>{isEdit ? 'Editar Universidad' : 'Crear Universidad'}</h1>
-                <Link to="/listForm" className="form-back-link">Regresar</Link>
-            </header>
+            </div>
             <form onSubmit={handleSubmit}>
                 <InputText
                     name="nombre"
