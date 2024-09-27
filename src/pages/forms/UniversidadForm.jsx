@@ -176,7 +176,8 @@ const UniversidadForm = () => {
                     onChange={handleChange}
                     options={[
                         { label: 'Pública', value: 'publica' },
-                        { label: 'Privada', value: 'privada' }
+                        { label: 'Privada', value: 'privada' },
+                        { label: 'Policía y Militar', value: 'Policía y Militar'}
                     ]}
                     placeholder="Seleccione si es pública o privada"
                     required

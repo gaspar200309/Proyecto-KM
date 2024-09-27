@@ -101,6 +101,15 @@
     background-color: var(--color-secondary-light);
     color: #fff;
   }
+
+  .academia {
+    text-align: center;
+    font-size: 1.5em;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-medium);
+    font-weight: bold;
+  }
+  
   
   @media (max-width: 768px) {
     .cardU {

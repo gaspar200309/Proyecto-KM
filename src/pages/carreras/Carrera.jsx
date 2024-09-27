@@ -1,9 +1,10 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { getCareers } from '../../service/api';
-import SearchBar from '../../components/search/Search'; 
+import SearchBar from '../../components/search/Search';
 import ScrollToTop from '../../components/scrooll/Scrooll';
-import './EstilosCar.css';
+//import './EstilosCar.css';
+import './Carrera.css';
 
 const Carrera = () => {
   const [carreras, setCarreras] = useState([]);
@@ -11,12 +12,14 @@ const Carrera = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const saludRef = useRef(null);
-  const ingenieriasRef = useRef(null);
-  const empresarialesRef = useRef(null);
-  const tecnologicasRef = useRef(null);
-  const socialesRef = useRef(null);
-  const urbanismoRef = useRef(null);
+  const refs = {
+    salud: useRef(null),
+    ingenierias: useRef(null),
+    empresariales: useRef(null),
+    tecnologicas: useRef(null),
+    sociales: useRef(null),
+    urbanismo: useRef(null)
+  };
 
   useEffect(() => {
     const fetchCareers = async () => {
@@ -45,59 +48,71 @@ const Carrera = () => {
 
   filteredCarreras.forEach((carrera) => {
     if (!areas[carrera.area]) {
-      areas[carrera.area] = [];
+      areas[carrera.area] = {
+        licenciatura: [],
+        tecnicoSuperior: [],
+        tecnicoMedio: []
+      };
     }
-    areas[carrera.area].push(carrera);
+
+    switch (carrera.nivel) {
+      case 'licenciatura':
+        areas[carrera.area].licenciatura.push(carrera);
+        break;
+      case 'tecnico-superior':
+        areas[carrera.area].tecnicoSuperior.push(carrera);
+        break;
+      case 'tecnico-medio':
+        areas[carrera.area].tecnicoMedio.push(carrera);
+        break;
+      default:
+        break;
+    }
   });
 
   if (loading) return <p>Cargando carreras...</p>;
   if (error) return <p>Error al cargar carreras: {error}</p>;
 
   return (
-      <>
-      <ScrollToTop></ScrollToTop>
-        <SearchBar
-          searchValue={search}
-          onSearchChange={handleSearchChange}
-          onSearchSubmit={() => {}}
-          placeholder="Buscar Carreras"
-        />
-        <div>
-          {Object.entries(areas).map(([area, carrerasEnArea]) => (
-            <div 
-              key={area} 
-              className={`areas ${area.replace(/\s+/g, '-').toLowerCase()}`}
-              ref={
-                area === 'ÁREA DE SALUD' ? saludRef :
-                area === 'Ingenierías' ? ingenieriasRef :
-                area === 'Carreras empresariales' ? empresarialesRef :
-                area === 'tecnologia' ? tecnologicasRef :
-                area === 'Carreras sociales' ? socialesRef :
-                area === 'Urbanismo y territorio' ? urbanismoRef :
-                null
-              }>
-              <h2>{area}</h2>
-              <div className="container-card">
-                {carrerasEnArea.map((carrera) => (
-                  <div className="card" key={carrera._id}>
-                    <figure>
-                      <img
-                        className="mejorarImg"
-                        src={`http://localhost:3000${carrera.imgSrc}`}
-                        alt={carrera.descripcion}
-                      />
-                    </figure>
-                    <div className="contenido-card">
-                      <h3>{carrera.titulo}</h3>
-                      <Link to={`/carrera/${carrera._id}`}>Leer Más</Link>
-                    </div>
+    <>
+      <ScrollToTop />
+      <SearchBar
+        searchValue={search}
+        onSearchChange={handleSearchChange}
+        placeholder="Buscar Carreras"
+      />
+      <div>
+        {Object.entries(areas).map(([area, niveles]) => (
+          <div key={area} className={`areas ${area.toLowerCase().replace(/\s+/g, '-')}`}>
+            <h2 className="titulo-area">{area}</h2>
+            {Object.entries(niveles).map(([nivel, carrerasEnNivel]) => (
+              carrerasEnNivel.length > 0 && (
+                <div key={nivel}>
+                  <h3 className="titulo-nivel">{nivel.replace('-', ' ').toUpperCase()}</h3>
+                  <div className="container-card">
+                    {carrerasEnNivel.map((carrera) => (
+                      <div className="card" key={carrera._id}>
+                        <figure>
+                          <img
+                            className="mejorarImg"
+                            src={`http://localhost:3000${carrera.imgSrc}`}
+                            alt={carrera.descripcion}
+                          />
+                        </figure>
+                        <div className="contenido-card">
+                          <h3>{carrera.titulo}</h3>
+                          <Link to={`/carrera/${carrera._id}`}>Leer Más</Link>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </>
+                </div>
+              )
+            ))}
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 
