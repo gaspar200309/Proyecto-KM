@@ -155,6 +155,7 @@ const CareerForm = () => {
                         { label: 'ÁREA SOCIAL Y HUMANA', value: 'ÁREA SOCIAL Y HUMANA' },
                         { label: 'ÁREA URBANISMO Y TERRITORIO', value: 'ÁREA URBANISMO Y TERRITORIO' },
                         { label: 'ÁREA MEDIO AMBIENTE Y AGROPECUARIO', value: 'ÁREA MEDIO AMBIENTE Y AGROPECUARIO' },
+                        { label: 'ÁREA AGRÍCOLA', value: 'ÁREA AGRÍCOLA'}
                     ]}
                     placeholder="Seleccione el área"
                     required
