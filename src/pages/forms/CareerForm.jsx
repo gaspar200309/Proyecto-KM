@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import { createCareer, updateCareer, getCareerById, getUniversidades } from '../../service/api';
 import InputText from '../../components/inputs/InputText';  // Import InputText component

@@ -1,7 +1,6 @@
-import React from 'react';
 import './Informacion.css';
 import ImagenesApp from '../../assets/ImagenesApp';
-import VideoBackground from '../../assets/video/fondoV.mp4'; // Asegúrate de tener el video en esta ruta
+import VideoBackground from '../../assets/video/fondoV.mp4'; 
 
 export const Informacion = () => {
   return (
@@ -23,7 +22,7 @@ export const Informacion = () => {
         <h2 className="titulo-nosotros">PÁGINA PROFESIOGRÁFICA</h2>
         <div className="texto-nosotros">
           <p>
-            Bienvenid@ a la página Profesiográfica "Semillas". Aquí podrás descubrir información esencial sobre diversos centros de educación superior y las carreras que ofrecen. Este sitio está diseñado para ayudarte a tomar decisiones informadas sobre tu futuro académico y profesional. 
+            Bienvenid@ a la página Profesiográfica Semillas. Aquí podrás descubrir información esencial sobre diversos centros de educación superior y las carreras que ofrecen. Este sitio está diseñado para ayudarte a tomar decisiones informadas sobre tu futuro académico y profesional. 
             Explora las oportunidades que te esperan y encuentra la carrera que mejor se alinee con tus intereses y aspiraciones.
           </p>
         </div>
