@@ -12,7 +12,7 @@ export const Informacion = () => {
           <source src={VideoBackground} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        
+        {/* video fondo */}
         <div className="hero-content">
           <img src={ImagenesApp.kawsay} alt="Logo" className="hero-logo" />
           <h1 className="hero-title">ORIENTACIÓN VOCACIONAL</h1>
