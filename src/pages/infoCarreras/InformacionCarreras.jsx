@@ -1,91 +1,108 @@
-import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import servicios from "../carreras/CarreraApp";
+import React, { useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
+import { getCareerById } from "../../service/api";
+import ScrollToTop from "../../components/scrooll/Scrooll";
 import "./InformacionesCarrera.css";
-import { Link } from "react-router-dom";
-import ScrollToTop from "../../components/Scrooll";
 
 const InformacionCarreras = () => {
-    let { idCar } = useParams();
+  const { idCar } = useParams();
+  const [carreraSelect, setCarreraSelect] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-    let carreraSelect = servicios.find((carrera) => carrera.idCar == idCar);
+  useEffect(() => {
+    const fetchCarrera = async () => {
+      try {
+        const response = await getCareerById(idCar);
+        setCarreraSelect(response.data);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-    if (!carreraSelect) {
-        return (
-            <div>
-                <p>Carrera no encontrada</p>
+    fetchCarrera();
+  }, [idCar]);
+
+  if (loading) return <p>Cargando información de la carrera...</p>;
+  if (error) return <p>Error al cargar la carrera: {error}</p>;
+  if (!carreraSelect) return <p>Carrera no encontrada</p>;
+
+  return (
+    <>
+      <ScrollToTop />
+      <div className="informacion-carrera-container">
+        <div className="Header1">
+        <header className="headerC">
+          <div className="image-containerC">
+            <img
+              src={`http://localhost:3000${carreraSelect.imgSrc}`}
+              alt={carreraSelect.titulo}
+            />
+            <div className="image-textC">
+              <h1>
+                {carreraSelect.titulo} <span>{carreraSelect.duracion}</span>
+              </h1>
             </div>
-        );
-    }
+          </div>
+        </header>
 
-    return (
-        <>
-            <ScrollToTop></ScrollToTop>
-            <div>
-                <div className="headerC">
-                    <div className="image-containerC">
-                        <img
-                            src={carreraSelect.imgSrc}
-                            alt="Título de la Carrera"
-                        />
-                        <div className="image-textC">
-                            <h1>
-                                {carreraSelect.titulo} <span>{carreraSelect.duracion}</span>
-                            </h1>
-                        </div>
-                    </div>
-                </div>
-                <div className="navigation-barC">
-                    <Link to="/">Inicio /</Link>
-                    <Link to="/carrera">Carreras /</Link>
-                    <Link to="#">{carreraSelect.titulo}</Link>
-                </div>
+        <nav className="navigation-barC">
+          <Link to="/">Inicio /</Link>
+          <Link to="/carrera">Carreras /</Link>
+          <Link to="#">{carreraSelect.titulo}</Link>
+        </nav>
+        </div>
 
-            <div className="containerC">
-                <div className="content">
-                    <h1>Información de la Carrera: {carreraSelect.titulo} </h1>
-                    <div className="contenidoC">
-                        <h2>¿Qué es la Carrera?</h2>
-                        <p>{carreraSelect.descripcion}</p>
-                    </div>
+        <div className="contentC">
+          <div className="contentC-contenido">
+          <h1>Información de la Carrera: {carreraSelect.titulo}</h1>
+          <section className="contenidoC">
+            <h2>¿Qué es la Carrera?</h2>
+            <p>{carreraSelect.descripcion}</p>
+          </section>
 
-                    <div className="contenidoC">
-                        <h2>Áreas de trabajo de la carrera: {carreraSelect.titulo}</h2>
-                        <ul>
-                            {carreraSelect.lugaresDeTrabajo.map((area, index) => (
-                                <li key={index}>{area}</li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div className="contenidoC">
-                        <h2>Materias que te sirven de base</h2>
-                        <ul>
-                            {carreraSelect.materias.map((materia, index) => (
-                                <li key={index}>{materia}</li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div className="enlacesC">
-                        <h2>Universidades para Estudiar {carreraSelect.titulo}</h2>
-                        {carreraSelect.universidades.map((universidad, index) => (
-                            <a
-                                key={index}
-                                href={universidad.enlace}
-                                target="blank">
-                                <img
-                                    className="imgCarL"
-                                    src={universidad.logo}
-                                />
-                                {universidad.nombre}
-                            </a>
-                        ))}
-                    </div>
-                </div>
-            </div>
-            </div>
+          <section className="contenidoC">
+            <h2>Áreas de trabajo de la carrera: {carreraSelect.titulo}</h2>
+            <ul>
+              {carreraSelect.lugaresDeTrabajo.map((area, index) => (
+                <li key={index}>{area}</li>
+              ))}
+            </ul>
+          </section>
 
-        </>
-    );
+          <section className="contenidoC">
+            <h2>Materias que te sirven de base</h2>
+            <ul>
+              {carreraSelect.materias.map((materia, index) => (
+                <li key={index}>{materia}</li>
+              ))}
+            </ul>
+          </section>
+
+          <section className="contenidoC">
+            <h2>Universidades para Estudiar {carreraSelect.titulo}</h2>
+            <ul className="universidades-list">
+              {carreraSelect.universidades.map((universidad, index) => (
+                <li key={index} className="universidad-item">
+                  <img
+                    className="universidad-logo"
+                    src={`http://localhost:3000${universidad.logo}`}
+                    alt={universidad.nombre}
+                  />
+                  <a href={universidad.enlace} target="_blank" rel="noopener noreferrer">
+                    {universidad.nombre}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default InformacionCarreras;

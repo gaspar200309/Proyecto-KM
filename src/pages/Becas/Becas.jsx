@@ -1,36 +1,66 @@
 import React from "react";
 import becasData from "./BecasApp";
 import "./Becas.css";
-import ScrollToTop from "../../components/Scrooll";
-
-
-
+import ScrollToTop from "../../components/scrooll/Scrooll";
 
 const Becas = () => {
-  
   return (
     <>
-    <ScrollToTop></ScrollToTop>
-      <h1 className="becas">Becas</h1>
-      {becasData.map((beca) => (
-        <div className="cardB" key={beca.id}>
-          <div className="img-cardB">
-            <img src={beca.imgSrc} alt="" height="250px" width="300px" />
-          </div>
-          <div className="contentB">
-            <div className="titleB">
-              <h3>{beca.universidad}</h3>
-              <span>{beca.dato}</span>
+      <ScrollToTop />
+      <h1 className="becas-title">Becas Disponibles</h1>
+      <div className="becas-grid contenedor">
+        {becasData.map((beca) => (
+          <div className="card beca-card" key={beca._id}>
+            <div className="img-cardB">
+              {beca.imgSrc ? (
+                <img src={beca.imgSrc} alt={beca.nombre || 'Imagen de beca'} />
+              ) : (
+                <div className="img-placeholder">Imagen no disponible</div>
+              )}
             </div>
-            <div className="textB">
-              <p>{beca.descripcion}</p>
+            <div className="contentB">
+              <h3 className="titleB">{beca.nombre || 'Nombre no disponible'}</h3>
+              <p className="sub-titleB">
+                {beca.institucion || 'Institución no disponible'} - {beca.tipo || 'Tipo no disponible'}
+              </p>
+              <p className="descriptionB">{beca.descripcionUniversidad || 'Descripción no disponible'}</p>
+              {beca.importante && (
+                <p className="important-noteB">
+                  <strong>Importante: </strong>{beca.importante || 'Información importante no disponible'}
+                </p>
+              )}
+              {beca.promedioRequerido && (
+                <p className="average-requiredB">
+                  <strong>Promedio Requerido: </strong>{beca.promedioRequerido || 'Promedio no disponible'}
+                </p>
+              )}
+              <div className="scholarshipsB">
+                {beca.becas?.social?.descripcion && (
+                  <div className="scholarship-typeB">
+                    <h4>Beca Social</h4>
+                    <p>{beca.becas.social.descripcion}</p>
+                  </div>
+                )}
+                {beca.becas?.trabajo?.descripcion && (
+                  <div className="scholarship-typeB">
+                    <h4>Beca de Trabajo</h4>
+                    <p>{beca.becas.trabajo.descripcion}</p>
+                  </div>
+                )}
+                {beca.becas?.excelencia?.descripcion && (
+                  <div className="scholarship-typeB">
+                    <h4>Beca de Excelencia</h4>
+                    <p>{beca.becas.excelencia.descripcion}</p>
+                  </div>
+                )}
+              </div>
+              <p className="addressB">
+                <strong>Dirección: </strong>{beca.direccion || 'Dirección no disponible'}
+              </p>
             </div>
-            {/* <div className="btn-containerB">
-              <button>Visitar</button>
-            </div> */}
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </>
   );
 };

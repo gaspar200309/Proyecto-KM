@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import servicios from '../pages/carreras/CarreraApp';
-import './EstilosBuscador.css'
+import './EstilosBuscador.css' // Importar SVG como componente
 
 const Buscador = ({ updateFilteredCarreras }) => {
   const [search, setSearch] = useState('');
@@ -39,7 +39,9 @@ const Buscador = ({ updateFilteredCarreras }) => {
         placeholder="Buscar Carreras"
         className="search-input"
       ></input>
-      <button onClick={handleSearch} className="search-button">Buscar</button>
+      <button onClick={handleSearch} className="search-button">
+      <img src="/src/assets/icons/search.svg" alt="Buscar" /> 
+      </button>
     </div>
   );
 };

@@ -1,0 +1,28 @@
+/* Select.css */
+
+.select-container {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.select-label {
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.select-field {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.select-field:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}

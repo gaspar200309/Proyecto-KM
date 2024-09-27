@@ -1,200 +1,118 @@
 
-.contenedorU {
+  .contenedorU {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .encabezadoU {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    filter: brightness(50%);
+    padding: 0;
+    margin-bottom: var(--spacing-large);
+  }
+  
+  .imgUniversidades img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-base);
+  }
+  
+  .universidades {
+    text-align: center;
+    margin-bottom: var(--spacing-medium);
+  }
+  
+  .textoU {
+    color: var(--color-neutral-dark);
+    margin-bottom: var(--spacing-medium);
+  }
+  
+  .container-cardU {
+    display: flex;
+    flex-wrap: wrap;
+    padding: var(--spacing-medium);
+    gap: var(--spacing-medium);
+    justify-content: center;
+  }
+  
+  .cardU {
+    background-color: white;
+    border-radius: var(--border-radius-secundary);
+    box-shadow: var(--box-shadow-base);
+    border-top: 15px solid var(--color-secondary); 
+    border-bottom: 15px solid var(--color-secondary-light); 
+    transition: transform var(--transition-speed) var(--transition-timing), 
+                box-shadow var(--transition-speed) var(--transition-timing);
+    flex: 1 1 calc(33.333% - var(--spacing-medium)); /* Tres columnas por fila */
+    max-width: calc(33.333% - var(--spacing-medium));
+    margin-bottom: var(--spacing-large);
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    align-items: center
-}
-
-.imgUniversidades img {
-    max-width: 100vw;
-    max-height: 50vh;
-    width: 100%; 
-    height: auto;
-    background-size: cover;
-    background-position: center; 
-}
-
-.textoU {
-    font-size: 24px;
-    color: #02060a;
-    text-align: center;
-    background-color: white;
-    margin-bottom: 0;
-    padding: 50px;
-}
-
-
-.universidades h2 {
-    text-align: center;
-    font-size: 50px;
-    color: #e7302a;
-    margin-top: 0;
-    margin-bottom: 0;
-    background-color: white;
-
-}
-
-
-.container-cardU {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; 
-    max-width: 1100px;
-    margin: auto;
-}
-
-.cardU {
-    width: calc(33.33% - 40px); 
-    margin: 20px;
-    border-radius: 6px;
-    overflow: hidden;
-    background: #fff;
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
-    transition: all 400ms ease-out;
-    cursor: pointer;  
-    background-color: white;
-}
-
-.cardU:hover {
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
-    transform: translateY(-3%);
-}
-
-.cardU figure {
-    display: flex; 
-    justify-content: center; 
     align-items: center; 
-}
-
-.cardU img {
-    max-width: 100%; 
-    height: auto; 
-    margin-top: 20px;
-}
-
-
-.contenido-cardU {
-    padding: 15px;
-    text-align: center;
-    background-blend-mode: color;
-    background-color: #fff;
-}
-
-.contenido-cardU h3 {
-    margin-bottom: 20px;
-    color: #892a19;
-    font-family: 'Verdana', sans-serif;
-    font-size: 24px;
-    
-}
-
-.contenido-cardU p {
-    line-height: 1.8;
-    color: #221d1d;
-    font-size: 17px;
-    margin-bottom: 5px;
-    font-family: 'Open sans', sans-serif;
-}
-
-.contenido-cardU a {
-    display: inline-block;
-    padding: 10px;
-    margin-top: 10px;
-    text-decoration: none;
-    color: #892a19;
-    border: 1px solid #892a19;
-    border-radius: 4px;
-    transition: all 400ms ease;
-    margin-bottom: 5px;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.contenido-cardU a:hover {
-    background: #892a19;
-    color: #fff;
-}
-
-.enlaceU {
-    text-decoration: none;
-}
-.academia {
-    text-align: center;
-}
-.contenedorUR {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 80px;
-    flex-wrap: wrap;
-    align-content: stretch;
-    justify-content: space-evenly;
-}
+    text-align: center; 
+  }
   
+  .cardU:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-hover);
+  }
+  
+  .cardU figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-medium);
+    box-shadow: var(--box-shadow-hover);
+  }
+  
+  .contenido-cardU {
+    padding: var(--spacing-medium);
+  }
+  
+  .contenido-cardU h3 {
+    margin-bottom: var(--spacing-small);
+    color: var(--color-primary);
+  }
+  
+  .contenido-cardU p {
+    margin-bottom: var(--spacing-small);
+    color: var(--color-neutral-dark);
+  }
+  
+  .contenido-cardU p span {
+    color: var(--highlight-color);
+    font-weight: bold;
+  }
+  
+  .contenido-cardU a {
+    color: var(--color-secondary);
+    font-weight: bold;
+    border: 1px solid var(--color-secondary-light);
+    margin: 40px;
+    padding: var(--spacing-small);
+    border-radius: var(--border-radius-tertiary);
+  }
 
-@media only screen and (min-width: 768px) {
-    .container-cardU {
-        width: 100%; 
-    }
-
+  .contenido-cardU a:hover{
+    background-color: var(--color-secondary-light);
+    color: #fff;
+  }
+  
+  @media (max-width: 768px) {
     .cardU {
-        width: calc(33.33% - 40px);
-        margin: 20px; 
+      flex: 1 1 calc(50% - var(--spacing-medium));
+      max-width: calc(50% - var(--spacing-medium));
     }
-
-
-    .cardU:only-child {
-        width: calc(100% - 40px); 
-        margin: 20px; 
-        
-    }
-
-    .contenido-cardU {
-        padding: 15px; 
-    }
-
-    .contenido-cardU h3 {
-        font-size: 24px; 
-    }
-
-    .contenido-cardU p {
-        font-size: 17px; 
-    }
-
-    .contenido-cardU a {
-        padding: 10px; 
-    }
-}
-
-/* Estilos para dispositivos pequeños */
-@media only screen and (min-width: 320px) and (max-width: 768px) {
-    .container-cardU {
-        width: 100%;
-    }
-
+  }
+  
+  @media (max-width: 480px) {
     .cardU {
-        width: calc(50% - 20px);
-        margin: 10px;
+      flex: 1 1 100%;
+      max-width: 100%;
     }
-
-    .cardU:first-child {
-        width: calc(100% - 20px); 
-        margin: 10px; 
-    }
-
-    .contenido-cardU {
-        padding: 10px;
-    }
-
-    .contenido-cardU h3 {
-        font-size: 20px;
-    }
-
-    .contenido-cardU p {
-        font-size: 14px;
-    }
-
-    .contenido-cardU a {
-        padding: 8px;
-    }
-}
+  }
+  

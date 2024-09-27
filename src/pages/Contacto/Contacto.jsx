@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ScrollToTop from '../../components/Scrooll';
+import ScrollToTop from '../../components/scrooll/Scrooll';
 import "./EstilosContacto.css"
 
 export const Contacto = () => {

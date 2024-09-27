@@ -44,7 +44,7 @@ import itpm from './img/Itpm.png'
 import Itait from './img/Itait.png'
 import Etsalud from './img/Etsalud.png'
 import Itsi from './img/Itsi.png'
-import Logo from '../../public/Logo.png'
+import kawsay from './img/kawsay.png'
 
 // carreras
 import administracion from './img/CarrerasImg/adminitración.jpg'
@@ -92,7 +92,8 @@ import UPBbecas from './img/UPBbecas.jpg'
 import UCBbecas from './img/UCBbecas.png'
 import PatinioBecas from './img/patinioBeca.png'
 import UnitepcBeca from './img/UnitepcBeca.png'
-import EmiBeca from './img/EmiBeca.jpg'
+import EmiBeca from './img/emiBeca.jpg'
+//Cambios en la image
 
 
 
@@ -150,7 +151,7 @@ export default {
   "imgItait": Itait,
   "imgEtsalud": Etsalud,
   "imgItsi": Itsi,
-  "imgLogo": Logo,
+  "kawsay": kawsay,
   // Carreras 
  "imgAdministracion": administracion,
  "imgAgricola":Agricola,

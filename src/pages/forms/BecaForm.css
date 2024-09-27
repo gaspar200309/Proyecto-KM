@@ -1,0 +1,129 @@
+/* Form.css */
+
+.form-headerBeca {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-headerBeca h1 {
+    font-size: 2em;
+    color: #333;
+  }
+  
+  .form-back-link {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    color: #007BFF;
+    text-decoration: none;
+  }
+  
+  .form-back-link:hover {
+    color: #0056b3;
+  }
+  
+  .form-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  input,
+  textarea,
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+  }
+  
+  textarea {
+    resize: none;
+    height: 80px;
+  }
+  
+  input[type="file"] {
+    padding: 5px;
+  }
+  
+  button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  h3 {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #444;
+  }
+  
+  input::placeholder,
+  textarea::placeholder {
+    color: #999;
+  }
+  
+  input[type="file"] {
+    background-color: #fff;
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  input[type="file"]::file-selector-button {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #eee;
+    cursor: pointer;
+  }
+  
+  input[type="file"]::file-selector-button:hover {
+    background-color: #ddd;
+  }
+  
+  input[type="file"]:hover {
+    border-color: #007BFF;
+  }
+  
+  /* Responsividad */
+  @media (min-width: 768px) {
+    .form-container {
+      padding: 40px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .form-header h1 {
+      font-size: 1.5em;
+    }
+  
+    button {
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    h3 {
+      font-size: 1em;
+    }
+  }
+  

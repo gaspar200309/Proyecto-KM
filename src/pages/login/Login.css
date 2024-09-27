@@ -1,107 +1,131 @@
-
 .login-container {
-    position: relative;
-    left: 50%;
-    transform: translate(-50%, 25%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 475px;
-    max-height: 550px;
-    height: 100%;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-sizing: border-box;
-    border: 1px solid var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--color-neutral-light);
+  padding: var(--spacing-large);
+  box-sizing: border-box;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 400px;
+  padding: var(--spacing-medium);
+  background-color: white;
+  border-radius: var(--border-radius-secundary);
+  box-shadow: var(--box-shadow-base);
+  box-sizing: border-box;
+}
+
+.login-form h2 {
+  text-align: center;
+  color: var(--color-tertiary-dark);
+  margin-bottom: var(--spacing-large);
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: var(--spacing-small);
+  font-weight: bold;
+  color: var(--color-tertiary);
+}
+
+.login-form input {
+  width: 100%;
+  padding: var(--spacing-small);
+  margin-bottom: var(--spacing-medium);
+  border: 1px solid var(--color-neutral-dark);
+  border-radius: var(--border-radius-base);
+  font-size: var(--font-size-base);
+  box-sizing: border-box;
+}
+
+.password-container {
+  position: relative;
+}
+
+.password-container input {
+  width: calc(100% - 40px); /* Adjust for the button */
+  border: 1px solid var(--color-neutral-dark);
+  border-radius: var(--border-radius-base);
+  padding-right: 40px; /* Ensure padding on the right for the icon */
+  box-sizing: border-box;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 20%; /* Center vertically */
+  right: 8px;
+  transform: translateY(-50%);
+  border: none;
+  cursor: pointer;
+  border-radius: 0px 6px 6px 0px;
+  font-size: 1.5rem;
+}
+
+.button-primary {
+  width: 100%;
+  background-color: var(--color-primary);
+  color: white;
+  padding: var(--spacing-small) 0;
+  border-radius: var(--border-radius-secundary);
+  font-size: var(--font-size-large);
+  margin-top: var(--spacing-medium);
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-bottom: var(--spacing-medium);
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    padding: var(--spacing-medium);
   }
-  
+
   .login-form {
-    width: 100%;
+    padding: var(--spacing-small);
   }
-  
-  h2 {
-    margin-bottom: 20px;
-    text-align: center;
-    color: #333;
+
+  .login-form h2 {
+    margin-bottom: var(--spacing-medium);
   }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    margin-bottom: 5px;
-    color: #555;
-  }
-  
-  .login-form input[type="text"], input[type="password"] {
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 16px;
-    transition: border-color 0.3s;
-  }
-  
-  .login-form input[type="text"]:focus, input[type="password"]:focus {
-    border-color: #007bff;
-    outline: none;
-  }
-  
-  .password-container {
-    display: flex;
-    align-items: center;
-  }
-  
-  .password-container input {
-    flex: 1;
-  }
-  
+
   .toggle-password {
-    background: none;
-    border: none;
-    margin-left: 10px;
-    cursor: pointer;
+    right: 5px;
+    font-size: 1.2rem;
   }
-  
-  .toggle-password svg {
-    color: #555;
-    font-size: 20px;
-  }
-  
-  .toggle-password:hover svg {
-    color: #007bff;
-  }
-  
+
   .button-primary {
-    padding: 10px;
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    font-size: var(--font-size-base);
+    padding: var(--spacing-small);
   }
-  
-  .button-primary:hover {
-    background-color: #0056b3;
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: var(--spacing-small);
   }
-  
-  .login-form a {
-    color: #007bff;
-    text-decoration: none;
-    margin-top: -10px;
-    margin-bottom: 20px;
-    text-align: right;
+
+  .login-form {
+    width: 90%;
+    padding: var(--spacing-small);
   }
-  
-  .login-form a:hover {
-    text-decoration: underline;
+
+  .login-form h2 {
+    font-size: var(--font-size-large);
+    margin-bottom: var(--spacing-medium);
   }
-  
+
+  .toggle-password {
+    font-size: 1rem;
+    right: 5px;
+  }
+
+  .button-primary {
+    font-size: var(--font-size-small);
+    padding: var(--spacing-small);
+  }
+}

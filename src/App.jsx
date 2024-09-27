@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import './App.css'
+import { Navigate, Route, Routes } from "react-router-dom";
 import NavBarReact from "./components/NavBar";
 import { Inicio}  from "./pages/Inicio/Inicio";
 import Universidades from "./pages/Universidades/Universides";
@@ -12,14 +12,19 @@ import InformacionCarreras from "./pages/infoCarreras/InformacionCarreras";
 import CareerForm from "./pages/forms/CareerForm";
 import UniversidadForm from "./pages/forms/UniversidadForm";
 import BecaForm from "./pages/forms/BecaForm";
+import ListForms from "./pages/listForms/ListForms";
+import ListUniversidades from './pages/list/ListUniversity';
+import ListCareer from './pages/list/ListCareer';
+import Listbeca from './pages/list/ListBecas';
 
 export const App2 = () => {
 
   return (
     <>
-      <Chat></Chat>
       <NavBarReact />
+      <Chat/>
       <Routes>
+
         <Route path="/" element={<Inicio />} />
         <Route path="/carrera" element={<Carrera />} />
         {/* <Route path="/carrera/:area" element={<Carrera />} /> */}
@@ -29,9 +34,14 @@ export const App2 = () => {
         <Route path="/becas" element={<Becas />} />
 
         <Route path="/carrera/:idCar" element={<InformacionCarreras />} />
+
+        <Route path = "/listForm" element = {<ListForms/>}/>
         <Route path="/career/new" element= {<CareerForm/>}/>
         <Route path="/university/new" element= {<UniversidadForm/>}/>
         <Route path="/beca/new" element= {<BecaForm/>}/>
+        <Route path="/listUniversidades" element={<ListUniversidades/>}/>
+        <Route path="/listCareers" element={<ListCareer/>}/>
+        <Route path='/listBecas' element = {<Listbeca/>}/>
 
         <Route path="/*" element={<Navigate to="/" />} />
 

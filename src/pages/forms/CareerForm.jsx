@@ -1,28 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import { Navigate, useParams } from 'react-router-dom';
-import { createCareer, updateCareer, getCareerById } from '../../service/api';
+import { useNavigate, useParams, Link } from 'react-router-dom';
+import { createCareer, updateCareer, getCareerById, getUniversidades } from '../../service/api';
+import InputText from '../../components/inputs/InputText';  // Import InputText component
+import Select from '../../components/selected/Selected';  // Import Select component
 import './CareerForm.css';
+import UniversitySelectorModal from '../../components/modal/UniversitySelectorModal';
+import ScrollToTop from '../../components/scrooll/Scrooll';
+import { IoArrowBackCircleSharp } from "react-icons/io5";
 
 const CareerForm = () => {
     const [career, setCareer] = useState({
-        idCar: '',
-        imgSrc: '',
         titulo: '',
-        duracion: '',
         descripcion: '',
+        lugaresDeTrabajo: [''],
+        materias: [''],
+        universidades: [],
         area: '',
-        lugaresDeTrabajo: [],
-        materias: [],
-        universidades: []
+        nivel: '',
+        duracion: '',
+        imgSrc: ''
     });
-    const [isEdit, setIsEdit] = useState(false);
+    const [universidades, setUniversidades] = useState([]);
+    const [showModal, setShowModal] = useState(false);
     const { id } = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (id) {
-            setIsEdit(true);
             getCareerById(id).then(response => setCareer(response.data));
         }
+        getUniversidades().then(response => setUniversidades(response.data));
     }, [id]);
 
     const handleChange = (e) => {
@@ -32,28 +39,168 @@ const CareerForm = () => {
         });
     };
 
+    const handleArrayChange = (e, index, arrayName) => {
+        const newArray = [...career[arrayName]];
+        newArray[index] = e.target.value;
+        setCareer({ ...career, [arrayName]: newArray });
+    };
+
+    const addArrayField = (arrayName) => {
+        setCareer({ ...career, [arrayName]: [...career[arrayName], ''] });
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (isEdit) {
-            await updateCareer(id, career);
-        } else {
-            await createCareer(career);
+
+        const formData = new FormData();
+        for (const key in career) {
+            if (key === 'imgSrc' && career[key]) {
+                formData.append(key, career[key]);
+            } else if (Array.isArray(career[key])) {
+                career[key].forEach(item => formData.append(key, item));
+            } else {
+                formData.append(key, career[key]);
+            }
         }
+
+        if (id) {
+            await updateCareer(id, formData);
+        } else {
+            await createCareer(formData);
+        }
+        navigate('/listForm');
+    };
+
+    const handleFileChange = (e) => {
+        setCareer({
+            ...career,
+            imgSrc: e.target.files[0]
+        });
     };
 
     return (
-        <form className="form-container" onSubmit={handleSubmit}>
-            <input name="idCar" value={career.idCar} onChange={handleChange} placeholder="ID" required />
-            <input name="imgSrc" value={career.imgSrc} onChange={handleChange} placeholder="Imagen" required />
-            <input name="titulo" value={career.titulo} onChange={handleChange} placeholder="Título" required />
-            <input name="duracion" value={career.duracion} onChange={handleChange} placeholder="Duración" required />
-            <textarea name="descripcion" value={career.descripcion} onChange={handleChange} placeholder="Descripción" required />
-            <input name="area" value={career.area} onChange={handleChange} placeholder="Área" required />
-            <input name="lugaresDeTrabajo" value={career.lugaresDeTrabajo} onChange={handleChange} placeholder="Lugares de Trabajo" required />
-            <input name="materias" value={career.materias} onChange={handleChange} placeholder="Materias" required />
-            <input name="universidades" value={career.universidades} onChange={handleChange} placeholder="Universidades" required />
-            <button type="submit">{isEdit ? 'Actualizar' : 'Crear'}</button>
-        </form>
+        <div className='contaniner-register'>
+            <ScrollToTop />
+            <Link to="/listForm" className="icon"><IoArrowBackCircleSharp /></Link>
+            <div className="form-header">
+                <h1>{id ? 'Editar Carrera ' : 'Crear carrera'}</h1>
+            </div>
+            <form className="form-container2" onSubmit={handleSubmit}>
+            
+                <InputText
+                    name="titulo"
+                    label="Título de la carrera"
+                    value={career.titulo}
+                    onChange={handleChange}
+                    placeholder="Nombre de la carrera"
+                    required
+                />
+                <textarea
+                    name="descripcion"
+                    label="Descripción de la carrera"
+                    value={career.descripcion}
+                    onChange={handleChange}
+                    placeholder="Descripción"
+                    required
+                />
+
+                {career.lugaresDeTrabajo.map((lugar, index) => (
+                    <div key={index}>
+                        <InputText
+                            name={`lugaresDeTrabajo-${index}`}
+                            label="Lugar de trabajo"
+                            value={lugar}
+                            onChange={(e) => handleArrayChange(e, index, 'lugaresDeTrabajo')}
+                            placeholder="Lugar de Trabajo"
+                        />
+                    </div>
+                ))}
+                <button type="button" onClick={() => addArrayField('lugaresDeTrabajo')}>Agregar Lugar de Trabajo</button>
+
+                {career.materias.map((materia, index) => (
+                    <div key={index}>
+                        <InputText
+                            name={`materias-${index}`}
+                            label="Materia"
+                            value={materia}
+                            onChange={(e) => handleArrayChange(e, index, 'materias')}
+                            placeholder="Materia"
+                        />
+                    </div>
+                ))}
+                <button type="button" onClick={() => addArrayField('materias')}>Agregar Materia</button>
+
+                <button type="button" onClick={() => setShowModal(true)}>
+                    Seleccionar Universidades
+                </button>
+
+                <div>
+                    <p>Universidades seleccionadas:</p>
+                    {career.universidades.map((uniId) => (
+                        <span key={uniId}>
+                            {universidades.find((uni) => uni._id === uniId)?.nombre}
+                        </span>
+                    ))}
+                </div>
+
+                <Select
+                    name="area"
+                    label="Área de la carrera"
+                    value={career.area}
+                    onChange={handleChange}
+                    options={[
+                        { label: 'ÁREA DE SALUD', value: 'ÁREA DE SALUD' },
+                        { label: 'ÁREA TECNOLÓGICA', value: 'ÁREA TECNOLÓGICA' },
+                        { label: 'ÁREA ECONÓMICA', value: 'ÁREA ECONÓMICA' },
+                        { label: 'ÁREA SOCIAL Y HUMANA', value: 'ÁREA SOCIAL Y HUMANA' },
+                        { label: 'ÁREA URBANISMO Y TERRITORIO', value: 'ÁREA URBANISMO Y TERRITORIO' },
+                        { label: 'ÁREA MEDIO AMBIENTE Y AGROPECUARIO', value: 'ÁREA MEDIO AMBIENTE Y AGROPECUARIO' },
+                    ]}
+                    placeholder="Seleccione el área"
+                    required
+                />
+
+                <Select
+                    name="nivel"
+                    label="Nivel de la carrera"
+                    value={career.nivel}
+                    onChange={handleChange}
+                    options={[
+                        { label: 'Técnico Superior', value: 'tecnico-superior' },
+                        { label: 'Técnico Medio', value: 'tecnico-medio' },
+                        { label: 'Licenciatura', value: 'licenciatura' }
+                    ]}
+                    placeholder="Seleccione el nivel"
+                    required
+                />
+
+                <InputText
+                    name="duracion"
+                    label="Duración de la carrera"
+                    value={career.duracion}
+                    onChange={handleChange}
+                    placeholder="Años de Estudio (opcional)"
+                />
+                <input
+
+                    type="file"
+                    name="imgSrc"
+                    onChange={handleFileChange}
+                    accept="image/*"
+                />
+
+                <button type="submit">{id ? 'Actualizar' : 'Crear'}</button>
+
+                {showModal && (
+                    <UniversitySelectorModal
+                        universidades={universidades}
+                        selectedUniversities={career.universidades}
+                        setSelectedUniversities={(selected) => setCareer({ ...career, universidades: selected })}
+                        onClose={() => setShowModal(false)}
+                    />
+                )}
+            </form>
+        </div>
     );
 };
 

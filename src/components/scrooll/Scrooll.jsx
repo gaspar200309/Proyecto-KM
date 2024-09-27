@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import './Scrooll.css'
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -7,7 +8,6 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    //Sumula cargando 
     setTimeout(() => {
       setLoading(false);
     }, 300);

@@ -20,15 +20,15 @@ export const getCareerById = (id) => api.get(`/api/carreras/carreras/${id}`);
 export const deleteCareer = (id) => api.delete(`/api/carreras/carreras/${id}`);
 
 export const createUniversidad = (data) => api.post('/api/universidades', data);
-export const updateUniversidad = (id, data) => api.put(`/universidades/${id}`, data);
-export const getUniversidades = () => api.get('/universidades');
-export const getUniversidadById = (id) => api.get(`/universidades/${id}`);
-export const deleteUniversidad = (id) => api.delete(`/universidades/${id}`);
+export const updateUniversidad = (id, data) => api.put(`/api/universidades/${id}`, data);
+export const getUniversidades = () => api.get('/api/universidades');
+export const getUniversidadById = (id) => api.get(`/api/universidades/${id}`);
+export const deleteUniversidad = (id) => api.delete(`/api/universidades/${id}`);
 
-export const createBeca = (data) => api.post('/becas', data);
-export const updateBeca = (id, data) => api.put(`/becas/${id}`, data);
-export const getBecas = () => api.get('/becas');
-export const getBecaById = (id) => api.get(`/becas/${id}`);
-export const deleteBeca = (id) => api.delete(`/becas/${id}`);
+export const createBeca = (data) => api.post('/api/becas', data);
+export const updateBeca = (id, data) => api.put(`/api/becas/${id}`, data);
+export const getBecas = () => api.get('/api/becas');
+export const getBecaById = (id) => api.get(`/api/becas/${id}`);
+export const deleteBeca = (id) => api.delete(`/api/becas/${id}`);
 
 
