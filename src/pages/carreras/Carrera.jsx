@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getCareers } from '../../service/api';
 import SearchBar from '../../components/search/Search';
@@ -12,14 +12,14 @@ const Carrera = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const refs = {
+/*   const refs = {
     salud: useRef(null),
     ingenierias: useRef(null),
     empresariales: useRef(null),
     tecnologicas: useRef(null),
     sociales: useRef(null),
     urbanismo: useRef(null)
-  };
+  }; */
 
   useEffect(() => {
     const fetchCareers = async () => {

@@ -24,7 +24,6 @@ export const App2 = () => {
       <NavBarReact />
       <Chat/>
       <Routes>
-
         <Route path="/" element={<Inicio />} />
         <Route path="/carrera" element={<Carrera />} />
         {/* <Route path="/carrera/:area" element={<Carrera />} /> */}
