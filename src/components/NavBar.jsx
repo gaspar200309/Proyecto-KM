@@ -71,6 +71,9 @@ const NavBarReact = () => {
 							<li className="nav-link" style={{ '--i': '1.35s' }}>
 								<NavLink to="becas">Becas</NavLink>
 							</li>
+							<li className="nav-link" style={{ '--i': '1.35s' }}>
+								<Link to="/instituto">Institutos</Link>
+							</li>
 						</ul>
 					</div>
 					<div>

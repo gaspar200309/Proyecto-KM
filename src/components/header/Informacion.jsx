@@ -15,7 +15,6 @@ export const Informacion = () => {
         <div className="hero-content">
           <img src={ImagenesApp.kawsay} alt="Logo" className="hero-logo" />
           <h1 className="hero-title">ORIENTACIÓN VOCACIONAL</h1>
-          <h2 className="hero-subtitle">¿Qué carrera debo estudiar?</h2>
         </div>
       </section>
       <section className="contenido-nosotros contenedor" id="nosotros">

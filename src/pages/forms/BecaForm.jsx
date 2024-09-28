@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import { createBeca, updateBeca, getBecaById } from '../../service/api';
 import ScrollToTop from '../../components/scrooll/Scrooll';
@@ -38,34 +38,27 @@ const BecaForm = () => {
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
-	  
 		if (name === 'imgSrc') {
-		  setBeca({
-			...beca,
-			imgSrc: e.target.files[0],
-		  });
+			setBeca({ ...beca, imgSrc: e.target.files[0], });
 		} else if (name.startsWith('becas')) {
-		  // Separar el nombre en partes
-		  const [, tipoBeca, key] = name.split('-');
-	  
-		  setBeca((prevBeca) => ({
-			...prevBeca,
-			becas: {
-			  ...prevBeca.becas,
-			  [tipoBeca]: {
-				...prevBeca.becas[tipoBeca],
-				[key]: value,
-			  },
-			},
-		  }));
+			const [, tipoBeca, key] = name.split('-');
+			setBeca((prevBeca) => ({
+				...prevBeca,
+				becas: {
+					...prevBeca.becas, [tipoBeca]: {
+						...prevBeca.becas[tipoBeca],
+						[key]: value,
+					},
+				},
+			}));
 		} else {
-		  setBeca({
-			...beca,
-			[name]: value,
-		  });
+			setBeca({
+				...beca,
+				[name]: value,
+			});
 		}
-	  };
-	  
+	};
+
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		const formData = new FormData();

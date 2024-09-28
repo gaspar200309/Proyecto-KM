@@ -1,65 +1,62 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import "./universidades.css";
-import universidadesData from "./UniversidadesApp";
+import { getUniversidadesRecomendadas } from "../../service/api";
 import { Link } from "react-router-dom";
 
 const UniversidadesRec = () => {
-  const academias = {};
+  const [universidadesToShow, setUniversidadesToShow] = useState([]);
 
-  universidadesData.forEach((universidadesDat) => {
-    if (!academias[universidadesDat.academia]) {
-      academias[universidadesDat.academia] = [];
-    }
-    academias[universidadesDat.academia].push(universidadesDat);
-  });
+  useEffect(() => {
+    const fetchUniversidadesRecomendadas = async () => {
+      try {
+        const response = await getUniversidadesRecomendadas();
+        setUniversidadesToShow(response.data);
+      } catch (error) {
+        console.error("Error al obtener universidades recomendadas:", error);
+      }
+    };
 
-  const universidadesToShow = [];
-  const academiasArray = Object.entries(academias);
-
-  for (let i = 0; i < academiasArray.length && universidadesToShow.length < 5; i++) {
-    const [, universidadesDa] = academiasArray[i];
-    if (universidadesDa.length > 0) {
-      universidadesToShow.push(universidadesDa.shift());
-    }
-  }
+    fetchUniversidadesRecomendadas();
+  }, []);
 
   return (
-    <>
-    <div className="universidades">
+    <div>
+
+        <div className="universidades">
           <h2 className="universidades">¿Dónde puedo estudiar?</h2>
         </div>
-      <div className="contenedorUR">
+      <div className="contenedorU">
+
         {universidadesToShow.map((universidad, idU) => (
           <div className="cardU" key={idU}>
             <figure>
-              <img src={universidad.info[0].imgU} height="100px" width="80px" alt={universidad.nombre} />
+              <img src={`http://localhost:3000${universidad.logo}`} height="100px" width="80px" alt={universidad.nombre} />
             </figure>
             <div className="contenido-cardU">
               <h3>{universidad.nombre}</h3>
-              {universidad.info.map((info, infoIndex) => (
-                <div key={infoIndex}>
-                  {info.enlace && (
-                    <>
-                      <p>{info.direccion}</p>
-                      <p>{info.telefono}</p>
-                      {info.fax && <p>{info.fax}</p>}
-                      {info.correo && <p>{info.correo}</p>}
-                      {info.cel && <p>{info.cel}</p>}
-                      {info.wss && <p>{info.wss}</p>}
-                      <a href={info.enlace} target="_blank">
-                        Visitar
-                      </a>
-                    </>
-                  )}
+              {universidad.direcciones.map((direccion, index) => (
+                <div key={index}>
+                  <p>{direccion.direccion}</p>
+                  <p>{direccion.telefono}</p>
+                  {direccion.fax && <p>{direccion.fax}</p>}
+                  {direccion.correo && <p>{direccion.correo}</p>}
+                  {direccion.celular && <p>{direccion.celular}</p>}
+                  {direccion.whatsapp && <p>{direccion.whatsapp}</p>}
                 </div>
               ))}
+              {universidad.enlace && (
+                <a href={universidad.enlace} target="_blank" rel="noopener noreferrer">
+                  Visitar
+                </a>
+              )}
             </div>
           </div>
         ))}
-        
       </div>
-      <Link to = './facultad#arriba' className="carRecomend center-button">Ver mas Universidades</Link>
-    </>
+      <Link to="/facultad#arriba" className="carRecomend center-button">
+        Ver más Universidades
+      </Link>
+    </div>
   );
 };
 
