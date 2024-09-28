@@ -16,6 +16,8 @@ import ListForms from "./pages/listForms/ListForms";
 import ListUniversidades from './pages/list/ListUniversity';
 import ListCareer from './pages/list/ListCareer';
 import Listbeca from './pages/list/ListBecas';
+import Institutos from './pages/institutos/Institutes';
+import TestVocacional from './pages/testVocacional/TestVocacional';
 
 export const App2 = () => {
 
@@ -41,6 +43,8 @@ export const App2 = () => {
         <Route path="/listUniversidades" element={<ListUniversidades/>}/>
         <Route path="/listCareers" element={<ListCareer/>}/>
         <Route path='/listBecas' element = {<Listbeca/>}/>
+        <Route path="/instituto" element={<Institutos/>}/>
+        <Route path="/testVocacional" element={<TestVocacional/>}/>
 
         <Route path="/*" element={<Navigate to="/" />} />
 

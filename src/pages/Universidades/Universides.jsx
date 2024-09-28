@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import{ useEffect, useState } from "react";
 import "./universidades.css";
 import ImagenesApp from "../../../src/assets/ImagenesApp";
 import { getUniversidades } from "../../service/api";
@@ -56,9 +56,7 @@ const Universidades = () => {
       <ScrollToTop />
       <div className="contenedorU">
         <div className="encabezadoU">
-          <div className="imgUniversidades">
-            <img src={ImagenesApp.imgFondo} alt="Fondo" />
-          </div>
+          
         </div>
         <div className="universidades">
           <h2 className="universidades">¿Dónde puedo estudiar?</h2>

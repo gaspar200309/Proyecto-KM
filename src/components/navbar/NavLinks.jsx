@@ -1,4 +1,3 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Dropdown from './Dropdown';
 
@@ -20,6 +19,9 @@ const NavLinks = () => (
       <Dropdown items={universidadItems} />
     </li>
     <li className="nav-link" style={{ "--i": "1.35s" }}>
+      <NavLink to="/instituto">Institutos</NavLink>
+    </li>
+    <li className="nav-link" style={{ "--i": "1.35s" }}>
       <NavLink to="/becas">Becas</NavLink>
     </li>
     <li className="nav-link" style={{ "--i": "1.35s" }}>
@@ -28,6 +30,7 @@ const NavLinks = () => (
     <li className="nav-link" style={{ "--i": "1.35s" }}>
       <NavLink to="/login">Login</NavLink>
     </li>
+    
   </ul>
 );
 

@@ -18,12 +18,16 @@ export const getCareers = () => api.get('/api/carreras/carreras');
 export const updateCareer = (id, data) => api.put(`/api/carreras/carreras/${id}`, data);
 export const getCareerById = (id) => api.get(`/api/carreras/carreras/${id}`);
 export const deleteCareer = (id) => api.delete(`/api/carreras/carreras/${id}`);
+export const getCareerRecomended = () => api.get('/api/carreras/recomendadas');
 
 export const createUniversidad = (data) => api.post('/api/universidades', data);
 export const updateUniversidad = (id, data) => api.put(`/api/universidades/${id}`, data);
 export const getUniversidades = () => api.get('/api/universidades');
 export const getUniversidadById = (id) => api.get(`/api/universidades/${id}`);
 export const deleteUniversidad = (id) => api.delete(`/api/universidades/${id}`);
+export const getUniversidadesRecomendadas = () => api.get('/api/universidades/recomendadas');
+export const getInstitutos = () => api.get('/api/universidades/institutos');
+
 
 export const createBeca = (data) => api.post('/api/becas', data);
 export const updateBeca = (id, data) => api.put(`/api/becas/${id}`, data);

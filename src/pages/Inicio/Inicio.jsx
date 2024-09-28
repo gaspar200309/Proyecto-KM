@@ -1,8 +1,8 @@
 import CarreraRecomendada from '../carreras/CarRecomendadas'
 import UniversidadesRec from '../Universidades/UniversidadesRecomendadas'
 import { Contacto } from '../Contacto/Contacto'
-import ImagenesApp from '../../assets/ImagenesApp'
 import { Informacion } from '../../components/header/Informacion'
+import InfTest from '../../components/testVocacionalDesc/InfTest'
 
 export const Inicio = () => {
   return (
@@ -12,7 +12,8 @@ export const Inicio = () => {
       <CarreraRecomendada></CarreraRecomendada>
       <hr></hr>
       <UniversidadesRec></UniversidadesRec>
-      <Contacto></Contacto>
+      <InfTest/>
+      <Contacto/>
     </>
   )
 }
