@@ -56,6 +56,7 @@
 .contenido-card h3 {
 	font-size: 18px;
 	margin: 10px 0;
+	text-align: left;
 	color: #333;
 }
 
@@ -75,8 +76,8 @@
 .card .contenido-card {
 	display: flex;
 	justify-content: space-between;
-	margin-left: 32px;
-	margin-right: 32px;
+	margin-left: 26px;
+	margin-right: 26px;
 	align-items: center;
 }
 .contenido-card a:hover {

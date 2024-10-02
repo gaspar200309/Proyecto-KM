@@ -1,11 +1,12 @@
 .buttonStyle {
-	padding: 3.5px;
+	padding: 2px;
 	padding-inline: 15px;
 	margin-top: 10px;
 	text-decoration: none;
 	background-color: #f39200;
 	color: #ffffff;
 	border-radius: 8px;
+	font-size: small;
 	transition: all 400ms ease;
 	margin-bottom: 5px;
 }

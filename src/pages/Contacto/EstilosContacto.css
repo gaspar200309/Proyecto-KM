@@ -1,111 +1,109 @@
 /*Seccion contacto*/
-.contacto{
-    padding-top: 5rem;  
-  }
-  .contacto h2{
-    text-align: center;
-    color: #812110;
-    font-size: 5rem;
-  }
-  .contacto p {
-    justify-content: center;
-    text-align: center;
-    font-family: 'Open sans', sans-serif;
-    font-size: 21px;
-  }
-  
-  @media(min-width: 768px) {
-    .contenido-contacto{
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-    }
-  }
-  
-  .informacion-contacto{
-    background-image: url('../../../src/assets/img/Economia.jpg');
-    filter: brightness(50%);
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  
-  }
-  
-  .informacion-contacto::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: rgba(0,0,0,0.5);
-    z-index: -1;
-  }
-  .informacion-contacto h3{
-    font-size: 4rem;
-    text-align: center;
-  }
-  .informacion-contacto p{
-    font-size: 2rem;
-  }
-  .informacion-contacto h3, .informacion-contacto p{
-    color: var(--blanco);
-  }
-  .formulario-contacto{
-    padding: 5rem;
-    display: flex;
-    flex-direction: column;
-    height: 75vh;
-    justify-content: center;
-    background-color: #49251e;
-  }
-  
-  @media(min-width: 768px) {
-    .informacion-contacto{
-        height: 75vh;
-    }
-  }
-  
-  @media(max-width:768px){
-    .formulario-contacto{
-      height: 100vh;
-    }
-  }
-  
-  .input-contacto label{
-    color: var(--blanco);
-    font-family: var(--parrafos);
-    display: block;
-    margin: 1rem 0;
-    font-weight: bold;
-  }
-  .input-contacto input{
-    padding: 1.2rem 1rem;
-    font-family: var(--parrafos);
-  }
-  
-  .input-contacto input, .input-contacto textarea{
-    width: 100%;
-    outline: none;
-  }
-  
-  .input-contacto textarea{
-    resize: none;
-  }
-  
-  .input-contacto input[type="submit"]{
-    width: auto;
-    padding: 1rem 3rem;
-    transition: background-color .3s ease-in-out;
-  }
-  .btnC {
-    background-color: #812110;
-    color: #07070A;
-  }
-  .btnC:hover {
-    color: #07070A;
-  }
-  
+.contacto {
+	padding-top: 5rem;
+}
+.contacto h2 {
+	text-align: center;
+	color: #812110;
+	font-size: 5rem;
+}
+.contacto p {
+	justify-content: center;
+	text-align: center;
+	font-family: Futura-texto;
+	font-size: 21px;
+}
+
+@media (min-width: 768px) {
+	.contenido-contacto {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.informacion-contacto {
+	background-image: url('../../../src/assets/img/Economia.jpg');
+	filter: brightness(50%);
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.informacion-contacto::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(255, 255, 255, 0.5);
+	z-index: -1;
+}
+.informacion-contacto h3 {
+	font-size: 4rem;
+	text-align: center;
+}
+.informacion-contacto p {
+	font-size: 2rem;
+}
+.informacion-contacto h3,
+.informacion-contacto p {
+	color: var(--blanco);
+}
+.formulario-contacto {
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: #49251e;
+}
+
+@media (min-width: 768px) {
+}
+
+@media (max-width: 768px) {
+	.formulario-contacto {
+		height: 100vh;
+	}
+}
+
+.input-contacto label {
+	margin-left: 25px !important;
+	color: #ffff;
+	font-family: Futura;
+	display: block;
+	margin: 1rem 0;
+	font-weight: bold;
+}
+.input-contacto input {
+	padding: 1.2rem 1rem;
+	font-family: Futura-texto;
+}
+
+.input-contacto input,
+.input-contacto textarea {
+	width: 100%;
+	outline: none;
+	margin-left: 25px;
+}
+
+.input-contacto textarea {
+	resize: none;
+}
+
+.input-contacto input[type='submit'] {
+	width: auto;
+	padding: 1rem 3rem;
+	transition: background-color 0.3s ease-in-out;
+	margin-bottom: 25px;
+}
+.btnC {
+	background-color: #b26a00;
+}
+.btnC:hover {
+	color: #ffffff;
+}

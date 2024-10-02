@@ -17,6 +17,7 @@
 
 .search-input::placeholder {
 	color: #852e2e;
+	font-family: Futura-texto;
 }
 .search-button {
 	background-color: #f39200;

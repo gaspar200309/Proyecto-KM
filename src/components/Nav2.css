@@ -69,7 +69,6 @@ header {
 .navBar-search {
 	display: flex;
 	justify-content: flex-end;
-	margin-top: 10px;
 	flex: 1;
 }
 
@@ -111,7 +110,6 @@ header {
 .nav-links > ul {
 	display: flex;
 	align-items: center;
-	margin-top: 10px;
 }
 
 .nav-link {
@@ -164,6 +162,7 @@ header {
 	align-items: center;
 	justify-content: space-between;
 	transition: 0.3s;
+	font-family: Futura-Oblique;
 }
 
 .dropdown-link:hover > a {

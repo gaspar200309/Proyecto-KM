@@ -1,127 +1,126 @@
+.contenedorU {
+	max-width: 1200px;
+	margin: 0 auto;
+}
 
-  .contenedorU {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .encabezadoU {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    filter: brightness(50%);
-    padding: 0;
-    margin-bottom: var(--spacing-large);
-  }
-  
-  .imgUniversidades img {
-    max-width: 100%;
-    height: auto;
-    border-radius: var(--border-radius-base);
-  }
-  
-  .universidades {
-    text-align: center;
-    margin-bottom: var(--spacing-medium);
-  }
-  
-  .textoU {
-    color: var(--color-neutral-dark);
-    margin-bottom: var(--spacing-medium);
-  }
-  
-  .container-cardU {
-    display: flex;
-    flex-wrap: wrap;
-    padding: var(--spacing-medium);
-    gap: var(--spacing-medium);
-    justify-content: center;
-  }
-  
-  .cardU {
-    background-color: white;
-    border-radius: var(--border-radius-secundary);
-    box-shadow: var(--box-shadow-base);
-    border-top: 15px solid var(--color-secondary); 
-    border-bottom: 15px solid var(--color-secondary-light); 
-    transition: transform var(--transition-speed) var(--transition-timing), 
-                box-shadow var(--transition-speed) var(--transition-timing);
-    flex: 1 1 calc(33.333% - var(--spacing-medium)); /* Tres columnas por fila */
-    max-width: calc(33.333% - var(--spacing-medium));
-    margin-bottom: var(--spacing-large);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    text-align: center; 
-  }
-  
-  .cardU:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--box-shadow-hover);
-  }
-  
-  .cardU figure {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: var(--spacing-medium);
-    box-shadow: var(--box-shadow-hover);
-  }
-  
-  .contenido-cardU {
-    padding: var(--spacing-medium);
-  }
-  
-  .contenido-cardU h3 {
-    margin-bottom: var(--spacing-small);
-    color: var(--color-primary);
-  }
-  
-  .contenido-cardU p {
-    margin-bottom: var(--spacing-small);
-    color: var(--color-neutral-dark);
-  }
-  
-  .contenido-cardU p span {
-    color: var(--highlight-color);
-    font-weight: bold;
-  }
-  
-  .contenido-cardU a {
-    color: var(--color-secondary);
-    font-weight: bold;
-    border: 1px solid var(--color-secondary-light);
-    margin: 40px;
-    padding: var(--spacing-small);
-    border-radius: var(--border-radius-tertiary);
-  }
+.encabezadoU {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	filter: brightness(50%);
+	padding: 0;
+	margin-bottom: var(--spacing-large);
+}
 
-  .contenido-cardU a:hover{
-    background-color: var(--color-secondary-light);
-    color: #fff;
-  }
+.imgUniversidades img {
+	max-width: 100%;
+	height: auto;
+	border-radius: var(--border-radius-base);
+}
 
-  .academia {
-    text-align: center;
-    font-size: 1.5em;
-    color: var(--color-primary);
-    margin-bottom: var(--spacing-medium);
-    font-weight: bold;
-  }
-  
-  
-  @media (max-width: 768px) {
-    .cardU {
-      flex: 1 1 calc(50% - var(--spacing-medium));
-      max-width: calc(50% - var(--spacing-medium));
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .cardU {
-      flex: 1 1 100%;
-      max-width: 100%;
-    }
-  }
-  
+.universidades {
+	text-align: center;
+	margin-bottom: var(--spacing-medium);
+}
+
+.textoU {
+	color: var(--color-neutral-dark);
+	margin-bottom: var(--spacing-medium);
+}
+
+.container-cardU {
+	display: flex;
+	flex-wrap: wrap;
+	padding: var(--spacing-medium);
+	gap: var(--spacing-medium);
+	justify-content: center;
+}
+
+.cardU {
+	background-color: white;
+	border-radius: var(--border-radius-secundary);
+	box-shadow: var(--box-shadow-base);
+	border-top: 15px solid var(--color-primary);
+	border-bottom: 15px solid var(--color-primary-light);
+	transition:
+		transform var(--transition-speed) var(--transition-timing),
+		box-shadow var(--transition-speed) var(--transition-timing);
+	flex: 1 1 calc(33.333% - var(--spacing-medium)); /* Tres columnas por fila */
+	max-width: calc(33.333% - var(--spacing-medium));
+	margin-bottom: var(--spacing-large);
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.cardU:hover {
+	transform: translateY(-5px);
+	box-shadow: var(--box-shadow-hover);
+}
+
+.cardU figure {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: var(--spacing-medium);
+	box-shadow: var(--box-shadow-hover);
+}
+
+.contenido-cardU {
+	padding: var(--spacing-medium);
+}
+
+.contenido-cardU h3 {
+	margin-bottom: var(--spacing-small);
+	color: var(--color-primary);
+}
+
+.contenido-cardU p {
+	font-family: Futura;
+	margin-bottom: var(--spacing-small);
+	color: var(--color-neutral-dark);
+}
+
+.contenido-cardU p span {
+	color: var(--highlight-color);
+	font-weight: bold;
+}
+
+.contenido-cardU a {
+	color: var(--color-secondary);
+	font-weight: bold;
+	border: 1px solid var(--color-secondary-light);
+	margin: 40px;
+	padding: var(--spacing-small);
+	border-radius: var(--border-radius-tertiary);
+}
+
+.contenido-cardU a:hover {
+	background-color: var(--color-secondary-light);
+	color: #fff;
+}
+
+.academia {
+	text-align: center;
+	font-size: 1.5em;
+	color: var(--color-primary);
+	margin-bottom: var(--spacing-medium);
+	font-weight: bold;
+}
+
+@media (max-width: 768px) {
+	.cardU {
+		flex: 1 1 calc(50% - var(--spacing-medium));
+		max-width: calc(50% - var(--spacing-medium));
+	}
+}
+
+@media (max-width: 480px) {
+	.cardU {
+		flex: 1 1 100%;
+		max-width: 100%;
+	}
+}
