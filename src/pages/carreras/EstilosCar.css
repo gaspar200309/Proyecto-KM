@@ -114,10 +114,16 @@
 		.areas {
 			padding: 5px;
 			border-radius: 5%;
+			text-align: center;
+		}
+
+		h2.tituloCarer {
+			font-family: Futura-texto;
+			text-align: center !important;
 		}
 
 		.areas h2 {
-			font-size: 36px;
+			font-size: 24px;
 			color: #892a19;
 			font-weight: 600;
 			margin-top: 3%;
@@ -131,12 +137,13 @@
 			background-color: white;
 		}
 
-
 		.card {
 			background-color: white;
 			border-radius: var(--border-radius-base);
 			box-shadow: var(--box-shadow-base);
-			transition: transform var(--transition-speed) var(--transition-timing), box-shadow var(--transition-speed) var(--transition-timing);
+			transition:
+				transform var(--transition-speed) var(--transition-timing),
+				box-shadow var(--transition-speed) var(--transition-timing);
 			overflow: hidden;
 			flex: 1 1 calc(25% - var(--spacing-medium));
 			max-width: calc(25% - var(--spacing-medium));
@@ -162,7 +169,7 @@
 
 		.areas h2 {
 			color: var(--color-secondary-dark);
-			margin-bottom: var(--spacing-medium);
+			margin-bottom: 20px;
 			text-align: center;
 		}
 
@@ -200,6 +207,7 @@
 
 			.areas h2 {
 				font-size: var(--font-size-large);
+				text-align: center;
 			}
 		}
 
@@ -216,6 +224,7 @@
 
 			.areas h2 {
 				font-size: var(--font-size-small);
+				text-align: center;
 			}
 
 			@media only screen and (max-width: 480px) {

@@ -1,63 +1,61 @@
-import { useState, useEffect } from "react";
-import "./universidades.css";
-import { getUniversidadesRecomendadas } from "../../service/api";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from 'react'
+import './universidades.css'
+import { getUniversidadesRecomendadas } from '../../service/api'
+import { Link } from 'react-router-dom'
 
 const UniversidadesRec = () => {
-  const [universidadesToShow, setUniversidadesToShow] = useState([]);
+	const [universidadesToShow, setUniversidadesToShow] = useState([])
 
-  useEffect(() => {
-    const fetchUniversidadesRecomendadas = async () => {
-      try {
-        const response = await getUniversidadesRecomendadas();
-        setUniversidadesToShow(response.data);
-      } catch (error) {
-        console.error("Error al obtener universidades recomendadas:", error);
-      }
-    };
+	useEffect(() => {
+		const fetchUniversidadesRecomendadas = async () => {
+			try {
+				const response = await getUniversidadesRecomendadas()
+				setUniversidadesToShow(response.data)
+			} catch (error) {
+				console.error('Error al obtener universidades recomendadas:', error)
+			}
+		}
 
-    fetchUniversidadesRecomendadas();
-  }, []);
+		fetchUniversidadesRecomendadas()
+	}, [])
 
-  return (
-    <div>
+	return (
+		<div>
+			<div className="universidades">
+				<h2 className="universidades">¿Dónde puedo estudiar?</h2>
+			</div>
+			<div className="contenedorU">
+				{universidadesToShow.map((universidad, idU) => (
+					<div className="cardU" key={idU}>
+						<figure>
+							<img src={`http://localhost:3000${universidad.logo}`} height="100px" width="80px" alt={universidad.nombre} />
+						</figure>
+						<div className="contenido-cardU">
+							<h3>{universidad.nombre}</h3>
+							{universidad.direcciones.map((direccion, index) => (
+								<div key={index}>
+									<p>{direccion.direccion}</p>
+									<p>{direccion.telefono}</p>
+									{direccion.fax && <p>{direccion.fax}</p>}
+									{direccion.correo && <p>{direccion.correo}</p>}
+									{direccion.celular && <p>{direccion.celular}</p>}
+									{direccion.whatsapp && <p>{direccion.whatsapp}</p>}
+								</div>
+							))}
+							{universidad.enlace && (
+								<a href={universidad.enlace} target="_blank" rel="noopener noreferrer">
+									Visitar
+								</a>
+							)}
+						</div>
+					</div>
+				))}
+			</div>
+			<Link to="/facultad#arriba" className="carRecomend center-button">
+				Ver más Universidades
+			</Link>
+		</div>
+	)
+}
 
-        <div className="universidades">
-          <h2 className="universidades">¿Dónde puedo estudiar?</h2>
-        </div>
-      <div className="contenedorU">
-
-        {universidadesToShow.map((universidad, idU) => (
-          <div className="cardU" key={idU}>
-            <figure>
-              <img src={`http://localhost:3000${universidad.logo}`} height="100px" width="80px" alt={universidad.nombre} />
-            </figure>
-            <div className="contenido-cardU">
-              <h3>{universidad.nombre}</h3>
-              {universidad.direcciones.map((direccion, index) => (
-                <div key={index}>
-                  <p>{direccion.direccion}</p>
-                  <p>{direccion.telefono}</p>
-                  {direccion.fax && <p>{direccion.fax}</p>}
-                  {direccion.correo && <p>{direccion.correo}</p>}
-                  {direccion.celular && <p>{direccion.celular}</p>}
-                  {direccion.whatsapp && <p>{direccion.whatsapp}</p>}
-                </div>
-              ))}
-              {universidad.enlace && (
-                <a href={universidad.enlace} target="_blank" rel="noopener noreferrer">
-                  Visitar
-                </a>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
-      <Link to="/facultad#arriba" className="carRecomend center-button">
-        Ver más Universidades
-      </Link>
-    </div>
-  );
-};
-
-export default UniversidadesRec;
+export default UniversidadesRec

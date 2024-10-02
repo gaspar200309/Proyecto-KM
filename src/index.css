@@ -29,12 +29,6 @@ body {
 *::after {
 	box-sizing: inherit;
 }
-/*Estilos globales*/
-h1,
-h2,
-h3 {
-	font-family: var(--titulos);
-}
 
 p,
 a {
@@ -113,7 +107,6 @@ a {
 .nosotros {
 	text-align: center;
 	padding: 6px;
-	font-family: 'Montserrat', sans-serif;
 }
 
 .nosotros h2 {
@@ -127,6 +120,7 @@ a {
 }
 
 .texto-nosotros {
+	font-family: Futura-texto;
 	font-size: 1.6rem;
 	display: flex;
 	justify-content: center; /* Centra horizontalmente */
@@ -144,6 +138,7 @@ a {
 	}
 
 	.texto-nosotros {
+		font-family: Futura-texto;
 		font-size: 16px;
 		display: flex;
 		justify-content: center; /* Centra horizontalmente */
@@ -287,3 +282,8 @@ a {
 	}
 }
 
+/* Font family */
+@font-face {
+	font-family: 'FuturaStd-Bold';
+	src: url(/);
+}

@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@font-face {
+	font-family: Futura-Oblique;
+	src: url('../fonts/FuturaStd-HeavyOblique.otf');
+}
 
+@font-face {
+	font-family: Futura;
+	src: url('../fonts/FuturaStd-Bold.otf');
+}
+
+@font-face {
+	font-family: Futura-texto;
+	src: url('../fonts/BASKVILL.TTF');
+}
 * {
 	padding: 0;
 	margin: 0;
@@ -7,7 +20,7 @@
 }
 
 body {
-	font-family: 'Poppins', sans-serif;
+	font-family: Futura;
 }
 
 ul {
@@ -27,7 +40,7 @@ header {
 }
 .container2 {
 	padding: 0 2rem;
-	height: 90px;
+	height: 70px;
 	display: flex;
 	position: relative;
 	justify-content: space-between;
@@ -44,7 +57,7 @@ header {
 .nav-btn {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+
 	width: 100%;
 }
 
@@ -56,6 +69,7 @@ header {
 .navBar-search {
 	display: flex;
 	justify-content: flex-end;
+	margin-top: 10px;
 	flex: 1;
 }
 
@@ -97,6 +111,7 @@ header {
 .nav-links > ul {
 	display: flex;
 	align-items: center;
+	margin-top: 10px;
 }
 
 .nav-link {
@@ -106,8 +121,8 @@ header {
 
 .nav-link > a {
 	line-height: 3rem;
-	color: #000000;
 	padding: 0 0.8rem;
+	color: #683c10;
 	letter-spacing: 1px;
 	font-size: 16px;
 	display: flex;
@@ -312,7 +327,7 @@ header {
 		width: 100%;
 		background-color: #f77f00;
 		flex-direction: column;
-		align-items: center;
+
 		justify-content: space-between;
 		overflow-x: hidden;
 		overflow-y: auto;
