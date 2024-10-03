@@ -67,8 +67,12 @@
 
 @media (max-width: 768px) {
 	.formulario-contacto {
-		height: 100vh;
-	}
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #49251e;
+  }
 }
 
 .input-contacto label {
@@ -86,7 +90,7 @@
 
 .input-contacto input,
 .input-contacto textarea {
-	width: 100%;
+	width: 90%;
 	outline: none;
 	margin-left: 25px;
 }

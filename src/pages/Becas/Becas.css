@@ -46,21 +46,19 @@
 
 .titleB {
   font-size: var(--font-size-large);
-  color: var(--color-tertiary-dark);
-  margin-bottom: var(--spacing-small);
+  color: #683C10;
 }
 
 .sub-titleB {
   font-size: var(--font-size-small);
-  color: var(--color-secondary-dark);
+  color: #936037;;
   margin-bottom: var(--spacing-small);
   font-family: Futura-Oblique;
 }
 
 .descriptionB, .important-noteB, .average-requiredB {
   font-size: var(--font-size-base);
-  color: var(--color-neutral-dark);
-  margin-bottom: var(--spacing-small);
+  color: #683C10;
 }
 
 .important-noteB {
@@ -86,8 +84,7 @@
 
 .addressB {
   font-size: var(--font-size-small);
-  color: var(--color-tertiary-dark);
-  margin-top: var(--spacing-medium);
+  color: #683C10;
   font-weight: bold;
   font-family: Futura-Oblique;
 }

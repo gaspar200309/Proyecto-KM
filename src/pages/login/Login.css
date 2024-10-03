@@ -20,7 +20,7 @@
 
 .login-form h2 {
   text-align: center;
-  color: var(--color-tertiary-dark);
+  color: #683C10;
   margin-bottom: var(--spacing-large);
 }
 
@@ -32,21 +32,25 @@
 }
 
 .login-form input {
-  width: 100%;
+  width: 90%;
   padding: var(--spacing-small);
   margin-bottom: var(--spacing-medium);
   border: 1px solid var(--color-neutral-dark);
   border-radius: var(--border-radius-base);
   font-size: var(--font-size-base);
   box-sizing: border-box;
+  display: block;      /* Asegura que el input sea un bloque completo */
+  margin-left: auto;   /* Margen izquierdo automático */
+  margin-right: auto;  /* Margen derecho automático */
 }
 
 .password-container {
   position: relative;
+  color: #683C10;
 }
 
 .password-container input {
-  width: calc(100% - 40px); /* Adjust for the button */
+  width: 90%; /* Adjust for the button */
   border: 1px solid var(--color-neutral-dark);
   border-radius: var(--border-radius-base);
   padding-right: 40px; /* Ensure padding on the right for the icon */

@@ -29,12 +29,14 @@
   .universidades {
     text-align: center;
     margin-bottom: var(--spacing-medium);
+    color: #683c10
   }
   
   .textoU {
     font-family: Futura-Oblique;
     color: var(--color-neutral-dark);
     margin-bottom: var(--spacing-medium);
+    color: #936037;
   }
   .contenedorU-img{
     max-width: 100px;

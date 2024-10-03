@@ -36,7 +36,7 @@ header {
 	top: 0px;
 	background-color: #ffffff;
 	width: 100%;
-	z-index: 1000;
+	z-index: 1;
 }
 .container2 {
 	padding: 0 2rem;
@@ -57,7 +57,7 @@ header {
 .nav-btn {
 	display: flex;
 	justify-content: space-between;
-
+  z-index: 10;
 	width: 100%;
 }
 
@@ -308,6 +308,12 @@ header {
 }
 
 @media (max-width: 920px) {
+  .nav-btn {
+      transform: translateX(0); /* El menú aparecerá en pantallas menores a 920px */
+  }
+}
+
+@media (max-width: 920px) {
 	.container {
 		margin-left: 0;
 		margin-right: 0;
@@ -322,19 +328,20 @@ header {
 	}
 
 	.nav-btn {
-		position: fixed;
-		height: calc(100vh - 3rem);
-		top: 3rem;
-		left: 0;
-		width: 100%;
-		background-color: #f77f00;
-		flex-direction: column;
-
-		justify-content: space-between;
-		overflow-x: hidden;
-		overflow-y: auto;
-		transform: translateX(100%);
-		transition: 0.65s;
+		display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: fixed; /* Mantiene el menú fijo en la pantalla */
+    top: 0;
+    left: 0;
+    background-color: #f77f00;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transform: translateX(100%); /* Menú inicialmente oculto */
+    transition: transform 0.65s ease; /* Suaviza la transición */
 	}
 
 	#check:checked ~ .nav-btn {

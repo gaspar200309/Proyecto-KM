@@ -1,17 +1,38 @@
 .searchContainer {
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 20px 25%;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto; /* Centramos el contenedor */
+    width: 100%; /* Ajuste al 100% del contenedor padre */
+    max-width: 1200px; /* Limite máximo para pantallas grandes */
+    padding: 0 20px; /* Espacio lateral para pantallas pequeñas */
+}
+
+@media (max-width: 768px) {
+  .searchContainer{
+      margin: 15px auto;
+      width: 50%;
+      padding: 0 10px; /* Ajuste para pantallas medianas */
+  }
+}
+
+@media (max-width: 480px) {
+  .searchContainer{
+      margin: 10px auto;
+      width: 50%;
+      padding: 0 5px; /* Ajuste para pantallas pequeñas */
+  }
 }
 
 .searchInput {
 	padding: 10px;
-	font-size: 16px;
-	border: 2px solid #f39200;
-	border-radius: 5px 0 0 5px;
-	width: 300px;
-	outline: none;
+    font-size: 16px;
+    border: 2px solid #f39200;
+    border-radius: 5px 0 0 5px;
+    width: 100%; /* Hacemos el input flexible */
+    max-width: 300px; /* Limita el ancho máximo */
+    outline: none;
+    box-sizing: border-box;
 }
 
 .searchInput::placeholder {
@@ -21,13 +42,33 @@
 
 .searchButton {
 	background-color: #f39200;
-	color: white;
-	border: none;
-	border-radius: 0 5px 5px 0;
-	padding: 10.5px 20px;
-	cursor: pointer;
-	font-size: 16px;
-	margin: 0;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    padding: 10.5px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0;
+}
+
+@media (max-width: 767px) {
+  .searchContainer{
+      flex-direction: column; /* Cambiamos la disposición a vertical en pantallas pequeñas */
+      align-items: stretch;
+
+  }
+
+  .searchInput, 
+  .searchButton{
+      width: 100%; /* Ambos elementos toman el 100% del ancho disponible */
+      max-width: none; /* Eliminamos la restricción de ancho máximo */
+      border-radius: 5px; /* Ajuste de los bordes para que luzca uniforme en vertical */
+      margin: 5px 0;
+  }
+
+  .searchButton{
+      padding: 10px;
+  }
 }
 
 .searchButton:hover {
