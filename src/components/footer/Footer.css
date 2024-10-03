@@ -68,6 +68,7 @@ input[type='email'] {
 }
 
 input[type='submit'].btnF {
+  font-family: Futura;
 	background-color: var(--color-primary);
 	color: white;
 	border: none;

@@ -97,6 +97,7 @@
 
 .input-contacto input[type='submit'] {
 	width: auto;
+  font-family: Futura;
 	padding: 1rem 3rem;
 	transition: background-color 0.3s ease-in-out;
 	margin-bottom: 25px;

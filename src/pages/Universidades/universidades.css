@@ -74,11 +74,12 @@
   }
   
   .contenido-cardU h3 {
-    margin-bottom: var(--spacing-small);
+    font-family: Futura;
     color: var(--color-primary);
   }
   
   .contenido-cardU p {
+    font-family: Futura-texto;
     margin-bottom: var(--spacing-small);
     color: var(--color-neutral-dark);
   }
@@ -89,16 +90,20 @@
   }
   
   .contenido-cardU a {
-    color: var(--color-secondary);
+    color: #ffffff; /* Mantén el color de texto blanco como en .buttonStyle */
     font-weight: bold;
-    border: 1px solid var(--color-secondary-light);
-    margin: 40px;
-    padding: var(--spacing-small);
-    border-radius: var(--border-radius-tertiary);
+    padding: 2px 15px; /* Ajustado como en .buttonStyle */
+    border-radius: 8px; /* Mantén el borde redondeado del botón */
+    text-decoration: none; /* Elimina subrayado, como en .buttonStyle */
+    background-color: #f39200; /* Color de fondo del botón */
+    font-size: small;
+    transition: all 400ms ease;
+    display: inline-block; /* Para que se comporte como un botón */
   }
+  
 
   .contenido-cardU a:hover{
-    background-color: var(--color-secondary-light);
+    background-color: var(--color-primary-light);
     color: #fff;
   }
 
