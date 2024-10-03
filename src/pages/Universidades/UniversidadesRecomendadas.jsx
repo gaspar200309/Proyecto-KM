@@ -28,7 +28,7 @@ const UniversidadesRec = () => {
 				{universidadesToShow.map((universidad, idU) => (
 					<div className="cardU" key={idU}>
 						<figure>
-							<img src={`http://localhost:3000${universidad.logo}`} height="100px" width="80px" alt={universidad.nombre} />
+							<img className="contenedorU-img" src={`http://localhost:3000${universidad.logo}`} height="100px" width="80px" alt={universidad.nombre} />
 						</figure>
 						<div className="contenido-cardU">
 							<h3>{universidad.nombre}</h3>
@@ -36,7 +36,6 @@ const UniversidadesRec = () => {
 								<div key={index}>
 									<p>{direccion.direccion}</p>
 									<p>{direccion.telefono}</p>
-									{direccion.fax && <p>{direccion.fax}</p>}
 									{direccion.correo && <p>{direccion.correo}</p>}
 									{direccion.celular && <p>{direccion.celular}</p>}
 									{direccion.whatsapp && <p>{direccion.whatsapp}</p>}

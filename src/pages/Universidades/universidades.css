@@ -29,7 +29,14 @@
     color: var(--color-neutral-dark);
     margin-bottom: var(--spacing-medium);
   }
-  
+  .contenedorU-img{
+    max-width: 100px;
+    max-height: 100px;
+    height: auto; /* Ajuste automático del alto para mantener la proporción */
+    width: auto;  /* Ajuste automático del ancho para mantener la proporción */
+    object-fit: contain; /* Preservar la relación de aspecto de la imagen sin recortarla */
+    vertical-align: middle; /* Mantiene la alineación vertical */
+  }
   .container-cardU {
     display: flex;
     flex-wrap: wrap;
@@ -42,18 +49,19 @@
     background-color: white;
     border-radius: var(--border-radius-secundary);
     box-shadow: var(--box-shadow-base);
-    border-top: 15px solid var(--color-secondary); 
-    border-bottom: 15px solid var(--color-secondary-light); 
-    transition: transform var(--transition-speed) var(--transition-timing), 
+    border-top: 15px solid var(--color-primary);
+    border-bottom: 15px solid var(--color-primary-light);
+    transition: transform var(--transition-speed) var(--transition-timing),
                 box-shadow var(--transition-speed) var(--transition-timing);
     flex: 1 1 calc(33.333% - var(--spacing-medium)); /* Tres columnas por fila */
     max-width: calc(33.333% - var(--spacing-medium));
     margin-bottom: var(--spacing-large);
     overflow: hidden;
     display: flex;
-    flex-direction: column;
-    align-items: center; 
-    text-align: center; 
+    flex-direction: column;  /* Permite que los elementos se apilen verticalmente */
+    justify-content: space-between; /* Asegura que el contenido se distribuya con espacio */
+    align-items: center;
+    text-align: center;
   }
   
   .cardU:hover {
@@ -70,15 +78,23 @@
   }
   
   .contenido-cardU {
+  
     padding: var(--spacing-medium);
+    flex-grow: 1;  /* Hace que el contenido del texto ocupe el espacio disponible */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  /* Asegura que el texto y el botón estén distribuidos */
+    width: 100%;
   }
   
   .contenido-cardU h3 {
+    font-size: 16px;
     font-family: Futura;
     color: var(--color-primary);
   }
   
   .contenido-cardU p {
+    font-size: 14px;
     font-family: Futura-texto;
     margin-bottom: var(--spacing-small);
     color: var(--color-neutral-dark);
@@ -99,6 +115,9 @@
     font-size: small;
     transition: all 400ms ease;
     display: inline-block; /* Para que se comporte como un botón */
+    margin-top: auto; /* Empuja el botón al final */
+    margin-left: auto;
+    margin-right: auto; /* Centra el botón horizontalmente */
   }
   
 

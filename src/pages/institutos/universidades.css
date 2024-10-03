@@ -66,10 +66,24 @@
 
 .cardU figure {
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: var(--spacing-medium);
-	box-shadow: var(--box-shadow-hover);
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-medium);
+    box-shadow: var(--box-shadow-hover);
+    max-width: 200px; /* Tamaño máximo para el ancho de la figura */
+    max-height: 200px; /* Tamaño máximo para el alto de la figura */
+    width: 100%;
+    height: auto;
+    overflow: hidden; /* Asegúrate de que las imágenes no se desborden */
+}
+
+.contenedorU-img{
+  max-width: 100px;
+  max-height: 100px;
+  height: auto; /* Ajuste automático del alto para mantener la proporción */
+  width: auto;  /* Ajuste automático del ancho para mantener la proporción */
+  object-fit: contain; /* Preservar la relación de aspecto de la imagen sin recortarla */
+  vertical-align: middle; /* Mantiene la alineación vertical */
 }
 
 .contenido-cardU {
@@ -83,12 +97,14 @@
 }
 
 .contenido-cardU h3 {
+  font-size: 16px;
   font-family: Futura;
 	color: var(--color-primary);
 }
 
 .contenido-cardU p {
 	font-family: Futura-texto;
+  font-size: 14px;
 	margin-bottom: var(--spacing-small);
 	color: var(--color-neutral-dark);
 }

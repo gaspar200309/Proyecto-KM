@@ -79,6 +79,7 @@ const Universidades = () => {
                 <div className="cardU" key={idU}>
                   <figure>
                     <img
+                      className="contenedorU-img"
                       src={`http://localhost:3000${universidad.logo}`} 
                       height="100px"
                       width="80px"
@@ -91,7 +92,6 @@ const Universidades = () => {
                       <div key={idx}>
                         <p><span>Dirección:</span> {direccion.direccion}</p>
                         {direccion.telefono && <p><span>Teléfono:</span> {direccion.telefono}</p>}
-                        {direccion.fax && <p><span>Fax:</span> {direccion.fax}</p>}
                         {direccion.celular && <p><span>Celular:</span> {direccion.celular}</p>}
                         {direccion.whatsapp && <p><span>WhatsApp:</span> {direccion.whatsapp}</p>}
                         {direccion.correo && <p><span>Correo:</span> {direccion.correo}</p>}
