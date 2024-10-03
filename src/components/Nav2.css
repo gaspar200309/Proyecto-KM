@@ -70,6 +70,7 @@ header {
 	display: flex;
 	justify-content: flex-end;
 	flex: 1;
+  margin-block:auto;
 }
 
 .log-sign {
@@ -110,10 +111,12 @@ header {
 .nav-links > ul {
 	display: flex;
 	align-items: center;
+  margin-bottom: 0;
 }
 
 .nav-link {
 	position: relative;
+  margin-block: auto;
 	margin-left: 20px; /* Añadido un margen para separar los enlaces */
 }
 

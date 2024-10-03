@@ -123,7 +123,7 @@ a:hover {
 }
 
 .contenedor {
-	margin: 0 auto;
-	max-width: 120rem;
-	width: 95%;
+  margin: 0 auto; /* Centro horizontal */
+  max-width: 120rem; /* Limita el ancho máximo del contenedor */
+  width: 95%; /* Asegura que el contenedor ocupe casi todo el ancho de la pantalla */
 }

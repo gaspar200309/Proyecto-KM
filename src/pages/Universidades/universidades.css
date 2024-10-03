@@ -1,8 +1,14 @@
 
-  .contenedorU {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+.contenedorU {
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap; /* Permite que las tarjetas se ajusten en filas */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  padding: 20px; /* Espacio interior para evitar choques con los bordes */
+  justify-content: center; /* Asegura que el contenedor esté centrado */
+  gap: 20px; /* Separación uniforme entre las tarjetas */
+}
+
   
   .encabezadoU {
     display: flex;
@@ -26,6 +32,7 @@
   }
   
   .textoU {
+    font-family: Futura-Oblique;
     color: var(--color-neutral-dark);
     margin-bottom: var(--spacing-medium);
   }

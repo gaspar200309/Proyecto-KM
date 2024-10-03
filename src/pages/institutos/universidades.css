@@ -1,10 +1,13 @@
 .contenedorU {
   max-width: 1200px;
-  margin-inline: 40px;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap; /* Esto permitirá que las cards se ajusten en filas */
+  flex-wrap: wrap; /* Permite que las tarjetas se ajusten en filas */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  padding: 20px; /* Espacio interior para evitar choques con los bordes */
+  justify-content: center; /* Asegura que el contenedor esté centrado */
+  gap: 20px; /* Separación uniforme entre las tarjetas */
 }
+
 
 .encabezadoU {
 	display: flex;
@@ -28,17 +31,18 @@
 }
 
 .textoU {
+  font-family: Futura-Oblique;
 	color: var(--color-neutral-dark);
 	margin-bottom: var(--spacing-medium);
 }
 
-.container-cardU {
-	display: flex;
-	flex-wrap: wrap;
-	padding: var(--spacing-medium);
-	gap: var(--spacing-medium);
-	justify-content: center;
+.cardU {
+  flex: 1 1 calc(33.33% - 20px); /* Cada tarjeta ocupa aproximadamente un tercio del contenedor */
+  min-width: 300px; /* Evita que las tarjetas se vuelvan demasiado angostas */
+  max-width: 380px; /* Limita el ancho máximo de cada tarjeta si hay espacio */
+  box-sizing: border-box; /* Incluye padding y border en el ancho total */
 }
+
 
 .cardU {
   background-color: white;

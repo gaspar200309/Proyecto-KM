@@ -236,21 +236,22 @@
 
 		.leerMas {
 			display: flex;
+      text-align: center;
 			align-items: center;
 			margin-block: 3%;
 		}
 
 		.carRecomend {
-			display: inline-block;
-			padding: 10px;
-			margin-top: 10px;
-			text-decoration: none;
-			background-color: #812110;
-			color: #fff;
-			border: 1px solid #812110;
-			border-radius: 4px;
-			transition: all 400ms ease;
-			margin-bottom: 5px;
+      display: inline-block; /* Mantenemos el inline-block para que el centramiento funcione */
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      text-decoration: none;
+      background-color: #812110;
+      color: #fff;
+      border: 1px solid #812110;
+      border-radius: 4px;
+      transition: all 400ms ease;
 		}
 
 		.center-button {
