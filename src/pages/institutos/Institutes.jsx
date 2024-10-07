@@ -3,6 +3,7 @@ import "./universidades.css";
 import { getUniversidades } from "../../service/api";
 import ScrollToTop from "../../components/scrooll/Scrooll";
 import Buscador from "../../components/search/Search";
+import ImagenesApp from "../../assets/ImagenesApp";
 
 const Institutos = () => {
   const [institutos, setInstitutos] = useState([]);
@@ -65,9 +66,16 @@ const Institutos = () => {
           {filteredInstitutos.map((instituto, idU) => (
             <div className="cardU" key={idU}>
               <figure>
-                <img
+                {/* <img
                   className="contenedorU-img"
                   src={`http://localhost:3000${instituto.logo}`} 
+                  height="100px"
+                  width="80px"
+                  alt={instituto.nombre}
+                /> */}
+                <img
+                  className="contenedorU-img"
+                  src={ImagenesApp.imgItmac} 
                   height="100px"
                   width="80px"
                   alt={instituto.nombre}

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import './universidades.css'
 import { getUniversidadesRecomendadas } from '../../service/api'
 import { Link } from 'react-router-dom'
+import ImagenesApp from '../../assets/ImagenesApp'
 
 const UniversidadesRec = () => {
 	const [universidadesToShow, setUniversidadesToShow] = useState([])
@@ -28,7 +29,8 @@ const UniversidadesRec = () => {
 				{universidadesToShow.map((universidad, idU) => (
 					<div className="cardU" key={idU}>
 						<figure>
-							<img className="contenedorU-img" src={`http://localhost:3000${universidad.logo}`} height="100px" width="80px" alt={universidad.nombre} />
+							{/* <img className="contenedorU-img" src={`http://localhost:3000${universidad.logo}`} height="100px" width="80px" alt={universidad.nombre} /> */}
+							<img className="contenedorU-img" src={ImagenesApp.imgUnivalle} height="100px" width="80px" alt={universidad.nombre} />
 						</figure>
 						<div className="contenido-cardU">
 							<h3>{universidad.nombre}</h3>

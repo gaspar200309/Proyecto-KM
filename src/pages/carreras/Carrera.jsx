@@ -3,10 +3,16 @@ import { Link } from 'react-router-dom';
 import { getCareers } from '../../service/api';
 import SearchBar from '../../components/search/Search';
 import ScrollToTop from '../../components/scrooll/Scrooll';
+import ImagenesApp from '../../assets/ImagenesApp';
 //import './EstilosCar.css';
 import './Carrera.css';
 
 const Carrera = () => {
+
+  const baseURL = process.env.NODE_ENV === 'production'
+  ? "https://backend-km-git-main-gaspar200309s-projects.vercel.app"
+  : "https://backend-km-git-main-gaspar200309s-projects.vercel.app";
+
   const [carreras, setCarreras] = useState([]);
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(true);
@@ -93,11 +99,17 @@ const Carrera = () => {
                     {carrerasEnNivel.map((carrera) => (
                       <div className="card" key={carrera._id}>
                         <figure>
-                          <img
+                          {/* <img
                             className="mejorarImg"
                             src={`http://localhost:3000${carrera.imgSrc}`}
                             alt={carrera.descripcion}
+                          /> */}
+                          <img
+                            className="mejorarImg"
+                            src={ImagenesApp.imgArquitectura}
+                            alt={carrera.descripcion}
                           />
+                          
                         </figure>
                         <div className="contenido-card">
                           <h3>{carrera.titulo}</h3>

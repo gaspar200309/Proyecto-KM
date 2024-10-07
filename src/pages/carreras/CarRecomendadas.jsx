@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getCareerRecomended } from '../../service/api'
 import './EstilosCar.css'
+import ImagenesApp from '../../assets/ImagenesApp'
 
 const CarreraRecomendada = () => {
 	const [carreras, setCarreras] = useState([])
@@ -34,7 +35,8 @@ const CarreraRecomendada = () => {
 					{carreras.map((carrera) => (
 						<div className="card" key={carrera.idCar}>
 							<figure>
-								<img src={`http://localhost:3000${carrera.imgSrc}`} alt={carrera.descripcion} />
+								{/* <img src={`http://localhost:3000${carrera.imgSrc}`} alt={carrera.descripcion} /> */}
+								<img src={ImagenesApp.imgInformatica} alt={carrera.descripcion} />
 							</figure>
 							<div className="contenido-card">
 								<h3>{carrera.titulo}</h3>

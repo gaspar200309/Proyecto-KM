@@ -78,9 +78,16 @@ const Universidades = () => {
               {filteredUniversidades.filter(universidad => universidad.tipoEscuela === academia).map((universidad, idU) => (
                 <div className="cardU" key={idU}>
                   <figure>
-                    <img
+                    {/* <img
                       className="contenedorU-img"
                       src={`http://localhost:3000${universidad.logo}`} 
+                      height="100px"
+                      width="80px"
+                      alt={universidad.nombre}
+                    /> */}
+                    <img
+                      className="contenedorU-img"
+                      src={ImagenesApp.imgCatolica} 
                       height="100px"
                       width="80px"
                       alt={universidad.nombre}
