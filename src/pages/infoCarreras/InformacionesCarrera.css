@@ -149,6 +149,12 @@
   font-size: var(--font-size-base);
   color: var(--color-primary-dark);
 }
+
+.subtitle{
+  font-family: Futura-Oblique;
+  color: #683C10;
+  text-align: start;
+}
  
 /* Estilos para pantallas más pequeñas (dispositivos móviles) */
 @media screen and (max-width: 600px) {

@@ -107,6 +107,18 @@ a:hover {
 	color: var(--color-primary-dark);
 }
 
+.h2, h2 {
+    font-size: calc(1.325rem + .9vw);
+    text-align: center;
+}
+
+/* @media (min-width: 1200px) {
+    .h2, h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+} */
+
 .card {
 	background-color: white;
 	border-radius: var(--border-radius-base);
