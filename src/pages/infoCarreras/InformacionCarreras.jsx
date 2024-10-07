@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getCareerById } from "../../service/api";
 import ScrollToTop from "../../components/scrooll/Scrooll";
@@ -59,12 +59,12 @@ const InformacionCarreras = () => {
           <div className="contentC-contenido">
           <h1>Información de la Carrera: {carreraSelect.titulo}</h1>
           <section className="contenidoC">
-            <h2>¿Qué es la Carrera?</h2>
+            <h2 className="subtitle">¿Qué es la Carrera?</h2>
             <p>{carreraSelect.descripcion}</p>
           </section>
 
           <section className="contenidoC">
-            <h2>Áreas de trabajo de la carrera: {carreraSelect.titulo}</h2>
+            <h2 className="subtitle">Áreas de trabajo de la carrera: {carreraSelect.titulo}</h2>
             <ul>
               {carreraSelect.lugaresDeTrabajo.map((area, index) => (
                 <li key={index}>{area}</li>
@@ -73,7 +73,7 @@ const InformacionCarreras = () => {
           </section>
 
           <section className="contenidoC">
-            <h2>Materias que te sirven de base</h2>
+            <h2 className="subtitle">Materias que te sirven de base</h2>
             <ul>
               {carreraSelect.materias.map((materia, index) => (
                 <li key={index}>{materia}</li>
@@ -82,7 +82,7 @@ const InformacionCarreras = () => {
           </section>
 
           <section className="contenidoC">
-            <h2>Universidades para Estudiar {carreraSelect.titulo}</h2>
+            <h2 className="subtitle">Universidades para Estudiar {carreraSelect.titulo}</h2>
             <ul className="universidades-list">
               {carreraSelect.universidades.map((universidad, index) => (
                 <li key={index} className="universidad-item">
