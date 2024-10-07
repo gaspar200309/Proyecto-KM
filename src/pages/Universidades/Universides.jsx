@@ -1,4 +1,4 @@
-import{ useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./universidades.css";
 import ImagenesApp from "../../../src/assets/ImagenesApp";
 import { getUniversidades } from "../../service/api";
@@ -20,14 +20,17 @@ const Universidades = () => {
         const academiasOrganizadas = {};
         universidadesData.forEach((universidad) => {
           const academia = universidad.tipoEscuela;
-          if (!academiasOrganizadas[academia]) {
-            academiasOrganizadas[academia] = [];
+          // Excluimos "institutos" de la organización
+          if (academia !== "Instituto") {
+            if (!academiasOrganizadas[academia]) {
+              academiasOrganizadas[academia] = [];
+            }
+            academiasOrganizadas[academia].push(universidad);
           }
-          academiasOrganizadas[academia].push(universidad);
         });
 
         setUniversidades(universidadesData);
-        setFilteredUniversidades(universidadesData); // Inicializar el estado filtrado
+        setFilteredUniversidades(universidadesData.filter(universidad => universidad.tipoEscuela !== "institutos")); // Inicializar el estado filtrado
         setAcademias(academiasOrganizadas);
       } catch (error) {
         console.error("Error al obtener las universidades", error);
@@ -43,11 +46,11 @@ const Universidades = () => {
 
     if (value) {
       const filtered = universidades.filter((universidad) =>
-        universidad.nombre.toLowerCase().includes(value.toLowerCase())
+        universidad.nombre.toLowerCase().includes(value.toLowerCase()) && universidad.tipoEscuela !== "institutos" // Filtrar también aquí
       );
       setFilteredUniversidades(filtered);
     } else {
-      setFilteredUniversidades(universidades);
+      setFilteredUniversidades(universidades.filter(universidad => universidad.tipoEscuela !== "institutos")); // Asegúrate de que solo se muestre universidades
     }
   };
 
@@ -56,13 +59,12 @@ const Universidades = () => {
       <ScrollToTop />
       <div className="contenedorU">
         <div className="encabezadoU">
-          
+          {/* Aquí puedes añadir contenido adicional para el encabezado */}
         </div>
         <div className="universidades">
           <h2 className="universidades">¿Dónde puedo estudiar?</h2>
           <p className="textoU">
-            A continuación te presentamos información de universidades e
-            institutos (públicos y privados) de la región metropolitana de la ciudad de
+            A continuación te presentamos información de universidades (públicas y privadas) de la región metropolitana de la ciudad de
             Cochabamba:
           </p>
         </div>
@@ -78,13 +80,6 @@ const Universidades = () => {
               {filteredUniversidades.filter(universidad => universidad.tipoEscuela === academia).map((universidad, idU) => (
                 <div className="cardU" key={idU}>
                   <figure>
-                    {/* <img
-                      className="contenedorU-img"
-                      src={`http://localhost:3000${universidad.logo}`} 
-                      height="100px"
-                      width="80px"
-                      alt={universidad.nombre}
-                    /> */}
                     <img
                       className="contenedorU-img"
                       src={ImagenesApp.imgCatolica} 

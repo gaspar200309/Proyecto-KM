@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import servicios from '../pages/carreras/CarreraApp';
+import { FaSearch } from "react-icons/fa";
 import './EstilosBuscador.css' // Importar SVG como componente
 
 const Buscador = ({ updateFilteredCarreras }) => {
@@ -40,7 +41,8 @@ const Buscador = ({ updateFilteredCarreras }) => {
         className="search-input"
       ></input>
       <button onClick={handleSearch} className="search-button">
-      <img src="/src/assets/icons/search.svg" alt="Buscar" /> 
+        <FaSearch className="search-icon" />
+{/*       <img src="/src/assets/icons/search.svg" alt="Buscar" />  */}
       </button>
     </div>
   );
