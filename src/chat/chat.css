@@ -5,7 +5,7 @@
   background-color: var(--color-neutral-light);
   border-radius: 50%;
   box-shadow: var(--box-shadow-base);
-  display: flex;
+  display: none;
   flex-direction: column;
   position: fixed;
   bottom: 20px;
@@ -13,7 +13,7 @@
   z-index: 99999999;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
-
+}
 .container {
   position: fixed; 
   width: 500px;
@@ -146,5 +146,4 @@ button {
 button:disabled {
   background-color: var(--color-tertiary);
   cursor: not-allowed;
-}
 }

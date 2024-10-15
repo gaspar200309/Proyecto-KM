@@ -53,12 +53,12 @@ const InformacionCarreras = () => {
                   /> */}
 
                   <img
-                    src={ImagenesApp.imgAmbiental}
+                    src={ImagenesApp.imgMedicina}
                     alt={carreraSelect.titulo}
                   />
             <div className="image-textC">
               <h1>
-                {carreraSelect.titulo} <span>{carreraSelect.duracion}</span>
+                {carreraSelect.titulo} <span>{carreraSelect.duracion}</span><span>años</span>
               </h1>
             </div>
           </div>

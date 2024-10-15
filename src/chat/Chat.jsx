@@ -5,7 +5,7 @@ import { CgClose } from "react-icons/cg";
 import { IoMdSend } from "react-icons/io";
 import { FaRegUserCircle } from "react-icons/fa";
 import { FaRobot } from "react-icons/fa";
-import Draggable from "react-draggable"; 
+import Draggable from "react-draggable";
 import "./chat.css";
 
 function Chat() {
@@ -28,14 +28,14 @@ function Chat() {
       const response = await axios.post(urlInput, { message: input });
       const responseData = response.data;
       const newChatHistory = [...chatHistory, { role: "user", content: input, time: currentTime }];
-      
+
       if (responseData && responseData.response) {
         newChatHistory.push({ role: "system", content: responseData.response, time: currentTime });
       }
 
       setChatHistory(newChatHistory);
       setInput("");
-      setCharCount(0); 
+      setCharCount(0);
     } catch (error) {
       console.error(error);
       alert("Hubo un problema al enviar el mensaje. Por favor, inténtalo nuevamente.");
@@ -57,7 +57,6 @@ function Chat() {
   };
 
   return (
-    <Draggable bounds="body" grid={[1, 1]} scale={1}>
       <div className={`chat-container ${expanded ? 'show' : ''}`}>
         <div className="chat-bubble" onClick={toggleChat}>
           {expanded ? (
@@ -72,6 +71,7 @@ function Chat() {
         <div className="chat-history">
           {chatHistory.map((message, index) => (
             <div key={index} className={`message ${message.role}`}>
+
               {message.role === "user" ? (
                 <>
                   <div className="message-content user-content">
@@ -106,7 +106,6 @@ function Chat() {
           </button>
         </div>
       </div>
-    </Draggable>
   );
 }
 

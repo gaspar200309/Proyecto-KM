@@ -82,7 +82,7 @@ const Universidades = () => {
                   <figure>
                     <img
                       className="contenedorU-img"
-                      src={ImagenesApp.imgCatolica} 
+                      src={universidad.logo} 
                       height="100px"
                       width="80px"
                       alt={universidad.nombre}

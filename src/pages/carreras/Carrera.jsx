@@ -99,17 +99,12 @@ const Carrera = () => {
                     {carrerasEnNivel.map((carrera) => (
                       <div className="card" key={carrera._id}>
                         <figure>
-                          {/* <img
-                            className="mejorarImg"
-                            src={`http://localhost:3000${carrera.imgSrc}`}
-                            alt={carrera.descripcion}
-                          /> */}
                           <img
                             className="mejorarImg"
-                            src={ImagenesApp.imgArquitectura}
+                            src={carrera.imgSrc}
                             alt={carrera.descripcion}
-                          />
-                          
+                          /> 
+                         
                         </figure>
                         <div className="contenido-card">
                           <h3>{carrera.titulo}</h3>

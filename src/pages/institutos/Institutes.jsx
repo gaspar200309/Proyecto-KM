@@ -66,16 +66,9 @@ const Institutos = () => {
           {filteredInstitutos.map((instituto, idU) => (
             <div className="cardU" key={idU}>
               <figure>
-                {/* <img
-                  className="contenedorU-img"
-                  src={`http://localhost:3000${instituto.logo}`} 
-                  height="100px"
-                  width="80px"
-                  alt={instituto.nombre}
-                /> */}
                 <img
                   className="contenedorU-img"
-                  src={ImagenesApp.imgItmac} 
+                  src={instituto.logo} 
                   height="100px"
                   width="80px"
                   alt={instituto.nombre}

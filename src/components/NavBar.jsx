@@ -83,11 +83,12 @@ const NavBarReact = () => {
                 </div>
               </li>
               <li className="nav-link" style={{ '--i': '1.35s' }}>
-                <NavLink to="/becas" onClick={closeMenu}>Becas</NavLink>
-              </li>
-              <li className="nav-link" style={{ '--i': '1.35s' }}>
                 <Link to="/instituto" onClick={closeMenu}>Institutos</Link>
               </li>
+              <li className="nav-link" style={{ '--i': '1.35s' }}>
+                <NavLink to="/becas" onClick={closeMenu}>Becas</NavLink>
+              </li>
+             
             </ul>
           </div>
           <div>
