@@ -21,12 +21,12 @@ const Becas = () => {
             <div className="contentB">
               <h3 className="titleB">{beca.nombre || 'Universidad mayor de san simon(UMSS)'}</h3>
               <p className="sub-titleB">
-                {beca.institucion || 'Institución no disponible'} - {beca.tipo || 'Publica'}
+                {beca.institucion || 'Universidad'} - {beca.tipo || 'Publica'}
               </p>
               <p className="descriptionB">{beca.descripcionUniversidad || 'Beca PBI (Programa de Becas individuales) La convocatoria sale los últimos meses del año. Los requisitos primordiales son; buen rendimiento los ultimos tres años de colegio (4to, 5to, 6to), situación socioeconómica escasa y una carta de recomendación de un sindicato u organización social.'}</p>
               {/* {beca.importante && ( */}
                 <p className="important-note">
-                  <strong>Importante: </strong>{beca.importante || 'Se realizará orientación vocacional y nivelación académica de manera previa.'}
+                  <strong>Importante: </strong><p>{beca.importante || 'Se realizará orientación vocacional y nivelación académica de manera previa.'}</p>
                 </p>
               {/* )} */}
               {beca.promedioRequerido && (
