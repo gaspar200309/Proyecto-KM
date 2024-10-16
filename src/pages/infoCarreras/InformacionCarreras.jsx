@@ -7,11 +7,6 @@ import ImagenesApp from "../../assets/ImagenesApp";
 
 const InformacionCarreras = () => {
 
-  const baseURL = process.env.NODE_ENV === 'production'
-  ? "https://backend-km-git-main-gaspar200309s-projects.vercel.app"
-  : "https://backend-km-git-main-gaspar200309s-projects.vercel.app";
-
-
   const { idCar } = useParams();
   const [carreraSelect, setCarreraSelect] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -43,19 +38,12 @@ const InformacionCarreras = () => {
         <div className="Header1">
         <header className="headerC">
           <div className="image-containerC">
-            {/* <img
-              src={`http://localhost:3000${carreraSelect.imgSrc}`}
+            <img
+              src={carreraSelect.imgSrc}
               alt={carreraSelect.titulo}
             />
-            <img
-                    src={`${baseURL}${carreraSelect.imgSrc}`}
-                    alt={carreraSelect.titulo}
-                  /> */}
 
-                  <img
-                    src={ImagenesApp.imgMedicina}
-                    alt={carreraSelect.titulo}
-                  />
+        
             <div className="image-textC">
               <h1>
                 {carreraSelect.titulo} <span>{carreraSelect.duracion}</span><span>años</span>
@@ -96,6 +84,18 @@ const InformacionCarreras = () => {
               ))}
             </ul>
           </section>
+          <section className="contenidoC">
+              <h2 className="subtitle">Video sobre {carreraSelect.titulo}</h2>
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/XXXXXXX"
+                title="Video sobre la carrera"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </section>
 
           <section className="contenidoC">
             <h2 className="subtitle">Universidades para Estudiar {carreraSelect.titulo}</h2>

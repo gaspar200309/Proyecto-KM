@@ -51,7 +51,7 @@ const UniversidadesRec = () => {
 					</div>
 				))}
 			</div>
-			<Link to="/facultad#arriba" className="carRecomend center-button">
+			<Link to="/facultad#arriba" className="carRecomend">
 				Ver más Universidades
 			</Link>
 		</div>

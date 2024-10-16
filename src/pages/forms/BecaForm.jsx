@@ -39,13 +39,14 @@ const BecaForm = () => {
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 		if (name === 'imgSrc') {
-			setBeca({ ...beca, imgSrc: e.target.files[0], });
+			setBeca({ ...beca, imgSrc: e.target.files[0] });
 		} else if (name.startsWith('becas')) {
 			const [, tipoBeca, key] = name.split('-');
 			setBeca((prevBeca) => ({
 				...prevBeca,
 				becas: {
-					...prevBeca.becas, [tipoBeca]: {
+					...prevBeca.becas,
+					[tipoBeca]: {
 						...prevBeca.becas[tipoBeca],
 						[key]: value,
 					},
@@ -147,14 +148,24 @@ const BecaForm = () => {
 					placeholder="Promedio Requerido (opcional)"
 				/>
 
-				{/* Input de tipo archivo */}
-				<InputText
+				<input
 					type="file"
 					name="imgSrc"
 					onChange={handleChange}
-					placeholder="Imagen"
-					required
+					accept="image/*"
 				/>
+
+				{/* Vista previa de la imagen seleccionada */}
+				{beca.imgSrc && (
+					<div className="image-preview">
+						<h4>Vista previa de la imagen:</h4>
+						<img
+							src={URL.createObjectURL(beca.imgSrc)}
+							alt="Vista previa"
+							className="preview-img"
+						/>
+					</div>
+				)}
 
 				<h3>Beca Social</h3>
 				<InputText

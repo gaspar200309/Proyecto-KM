@@ -12,7 +12,7 @@ export const Inicio = () => {
       <CarreraRecomendada></CarreraRecomendada>
       <hr></hr>
       <UniversidadesRec></UniversidadesRec>
-      <InfTest/>
+      {/* <InfTest/> */}
       <Contacto/>
     </>
   )

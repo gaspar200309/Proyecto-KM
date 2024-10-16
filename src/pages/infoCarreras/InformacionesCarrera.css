@@ -155,6 +155,15 @@
   color: #683C10;
   text-align: start;
 }
+
+.contenidoC iframe {
+  width: 100%; /* Hace que el iframe ocupe el 100% del ancho del contenedor */
+  height: 315px; /* Ajusta la altura */
+  max-width: 560px; /* Tamaño máximo */
+  margin: 20px 0; /* Margen superior e inferior */
+  border: none; /* Sin borde */
+}
+
  
 /* Estilos para pantallas más pequeñas (dispositivos móviles) */
 @media screen and (max-width: 600px) {

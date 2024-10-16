@@ -143,6 +143,13 @@
     font-weight: bold;
   }
   
+  .carRecomend {
+    display: flex;
+    flex-wrap: wrap;
+    padding: var(--spacing-medium);
+    gap: var(--spacing-medium);
+    justify-content: center;
+  }
   
   @media (max-width: 768px) {
     .cardU {
