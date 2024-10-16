@@ -102,14 +102,9 @@ const InformacionCarreras = () => {
             <ul className="universidades-list">
               {carreraSelect.universidades.map((universidad, index) => (
                 <li key={index} className="universidad-item">
-                  {/* <img
-                    className="universidad-logo"
-                    src={`http://localhost:3000${universidad.logo}`}
-                    alt={universidad.nombre}
-                  /> */}
                   <img
                     className="universidad-logo"
-                    src={ImagenesApp.imgUPB}
+                    src={universidad.logo}
                     alt={universidad.nombre}
                   />
 

@@ -33,14 +33,13 @@ const CarreraRecomendada = () => {
 				<h2 className="tituloCarer">CARRERAS</h2>
 				<div className="container-card">
 					{carreras.map((carrera) => (
-						<div className="card" key={carrera.idCar}>
+						<div className="card" key={carrera._id}>
 							<figure>
-								{/* <img src={`http://localhost:3000${carrera.imgSrc}`} alt={carrera.descripcion} /> */}
-								<img src={ImagenesApp.imgInformatica} alt={carrera.descripcion} />
+								<img src={carrera.imgSrc} alt={carrera.descripcion} />
 							</figure>
 							<div className="contenido-card">
 								<h3>{carrera.titulo}</h3>
-								<Link to={`/carrera/${carrera.idCar}`}>Leer Más</Link>
+								<Link to={`/carrera/${carrera._id}`}>Leer Más</Link>
 							</div>
 						</div>
 					))}
