@@ -4,34 +4,23 @@ import { getCareers } from '../../service/api';
 import SearchBar from '../../components/search/Search';
 import ScrollToTop from '../../components/scrooll/Scrooll';
 import ImagenesApp from '../../assets/ImagenesApp';
-//import './EstilosCar.css';
+import Card from '../../components/card/Card'; 
 import './Carrera.css';
 
 const Carrera = () => {
-
-  const baseURL = process.env.NODE_ENV === 'production'
-  ? "https://backend-km-git-main-gaspar200309s-projects.vercel.app"
-  : "https://backend-km-git-main-gaspar200309s-projects.vercel.app";
-
   const [carreras, setCarreras] = useState([]);
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
-/*   const refs = {
-    salud: useRef(null),
-    ingenierias: useRef(null),
-    empresariales: useRef(null),
-    tecnologicas: useRef(null),
-    sociales: useRef(null),
-    urbanismo: useRef(null)
-  }; */
+  const [areaFilter, setAreaFilter] = useState('');
+  const [nivelFilter, setNivelFilter] = useState(''); 
 
   useEffect(() => {
     const fetchCareers = async () => {
       try {
         const response = await getCareers();
         setCarreras(response.data);
+        console.log(response.data);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -42,39 +31,21 @@ const Carrera = () => {
     fetchCareers();
   }, []);
 
-  const handleSearchChange = (event) => {
-    setSearch(event.target.value);
-  };
+  const handleSearchChange = (event) => setSearch(event.target.value);
 
-  const filteredCarreras = carreras.filter((carrera) =>
-    carrera.titulo.toLowerCase().includes(search.toLowerCase())
-  );
+  const handleAreaChange = (event) => setAreaFilter(event.target.value);
 
-  const areas = {};
+  const handleNivelChange = (event) => setNivelFilter(event.target.value);
 
-  filteredCarreras.forEach((carrera) => {
-    if (!areas[carrera.area]) {
-      areas[carrera.area] = {
-        licenciatura: [],
-        tecnicoSuperior: [],
-        tecnicoMedio: []
-      };
-    }
-
-    switch (carrera.nivel) {
-      case 'licenciatura':
-        areas[carrera.area].licenciatura.push(carrera);
-        break;
-      case 'tecnico-superior':
-        areas[carrera.area].tecnicoSuperior.push(carrera);
-        break;
-      case 'tecnico-medio':
-        areas[carrera.area].tecnicoMedio.push(carrera);
-        break;
-      default:
-        break;
-    }
+  const filteredCarreras = carreras.filter((carrera) => {
+    const matchesSearch = carrera.titulo.toLowerCase().includes(search.toLowerCase());
+    const matchesArea = areaFilter ? carrera.area === areaFilter : true;
+    const matchesNivel = nivelFilter ? carrera.nivel === nivelFilter : true;
+    return matchesSearch && matchesArea && matchesNivel;
   });
+
+  const uniqueAreas = [...new Set(carreras.map((carrera) => carrera.area))];
+  const uniqueNiveles = [...new Set(carreras.map((carrera) => carrera.nivel))];
 
   if (loading) return <p>Cargando carreras...</p>;
   if (error) return <p>Error al cargar carreras: {error}</p>;
@@ -87,37 +58,57 @@ const Carrera = () => {
         onSearchChange={handleSearchChange}
         placeholder="Buscar Carreras"
       />
-      <div>
-        {Object.entries(areas).map(([area, niveles]) => (
-          <div key={area} className={`areas ${area.toLowerCase().replace(/\s+/g, '-')}`}>
-            <h2 className="titulo-area">{area}</h2>
-            {Object.entries(niveles).map(([nivel, carrerasEnNivel]) => (
-              carrerasEnNivel.length > 0 && (
-                <div key={nivel}>
-                  <h3 className="titulo-nivel">{nivel.replace('-', ' ').toUpperCase()}</h3>
-                  <div className="container-card">
-                    {carrerasEnNivel.map((carrera) => (
-                      <div className="card" key={carrera._id}>
-                        <figure>
-                          <img
-                            className="mejorarImg"
-                            src={carrera.imgSrc}
-                            alt={carrera.descripcion}
-                          /> 
-                         
-                        </figure>
-                        <div className="contenido-card">
-                          <h3>{carrera.titulo}</h3>
-                          <Link to={`/carrera/${carrera._id}`}>Leer Más</Link>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )
+      <div className="filters">
+        <label>
+          Área:
+          <select value={areaFilter} onChange={handleAreaChange}>
+            <option value="">Todas</option>
+            {uniqueAreas.map((area) => (
+              <option key={area} value={area}>
+                {area}
+              </option>
             ))}
-          </div>
-        ))}
+          </select>
+        </label>
+        <label>
+          Nivel:
+          <select value={nivelFilter} onChange={handleNivelChange}>
+            <option value="">Todos</option>
+            {uniqueNiveles.map((nivel) => (
+              <option key={nivel} value={nivel}>
+                {nivel.replace('-', ' ').toUpperCase()}
+              </option>
+            ))}
+          </select>
+        </label>
+      </div>
+      <div>
+        {filteredCarreras.length === 0 ? (
+          <p>No se encontraron carreras.</p>
+        ) : (
+          Object.entries(
+            filteredCarreras.reduce((acc, carrera) => {
+              if (!acc[carrera.area]) acc[carrera.area] = [];
+              acc[carrera.area].push(carrera);
+              return acc;
+            }, {})
+          ).map(([area, carrerasEnArea]) => (
+            <div key={area} className={`areas ${area.toLowerCase().replace(/\s+/g, '-')}`}>
+              <h2 className="titulo-area">{area}</h2>
+              <div className="container-card">
+                {carrerasEnArea.map((carrera) => (
+                  <Card
+                    key={carrera._id}
+                    imgSrc={carrera.imgSrc}
+                    titulo={carrera.titulo}
+                    descripcion={carrera.descripcion}
+                    id={carrera._id}
+                  />
+                ))}
+              </div>
+            </div>
+          ))
+        )}
       </div>
     </>
   );

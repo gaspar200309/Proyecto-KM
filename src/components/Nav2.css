@@ -466,3 +466,43 @@ header {
 		object-fit: cover;
 	}
 }
+
+/* Estilos generales para el buscador */
+.search-bar {
+	flex: 1;
+	display: flex;
+	justify-content: flex-end; /* Por defecto a la derecha */
+	align-items: center;
+	padding: 0 1rem;
+  }
+  
+  .search-bar input {
+	width: 100%;
+	max-width: 400px;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 14px;
+  }
+  
+  /* Ajustes responsivos */
+  @media (max-width: 920px) {
+	.search-bar {
+	  order: -1; /* Asegura que el buscador esté en la parte superior */
+	  justify-content: flex-start; /* Mueve el buscador a la izquierda */
+	  width: 100%; /* Ocupa todo el ancho */
+	  padding: 0.5rem;
+	}
+  
+	.search-bar input {
+	  width: 90%; /* Reduce el tamaño en dispositivos pequeños */
+	  font-size: 16px;
+	}
+  
+	.nav-btn {
+	  flex-direction: column;
+	  height: 100vh;
+	  overflow-y: auto;
+	}
+  }
+  

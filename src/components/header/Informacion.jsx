@@ -16,7 +16,7 @@ export const Informacion = () => {
         </div>
       </section>
       <section className="contenido-nosotros contenedor" id="nosotros">
-        <h2 className="titulo-nosotros">PÁGINA PROFESIOGRÁFICA</h2>
+        <h2 className="titulo-nosotros">Guía Profesiográfica</h2>
         <div className="texto-nosotros">
           <p>
             Bienvenid@ a la página Profesiográfica Semillas. Aquí podrás descubrir información esencial sobre diversos centros de educación superior y las carreras que ofrecen. Este sitio está diseñado para ayudarte a tomar decisiones informadas sobre tu futuro académico y profesional. 

@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-/* const baseURL =  "http://localhost:3000"; */
-const baseURL = process.env.NODE_ENV === 'production'
+const baseURL =  "http://localhost:3000";
+/* const baseURL = process.env.NODE_ENV === 'production'
   ? "https://backend-km-git-main-gaspar200309s-projects.vercel.app"
   : "https://backend-km-git-main-gaspar200309s-projects.vercel.app";
-
+ */
 
 const api = axios.create({
   baseURL: baseURL,
@@ -23,6 +23,9 @@ export const updateCareer = (id, data) => api.put(`/api/carreras/carreras/${id}`
 export const getCareerById = (id) => api.get(`/api/carreras/carreras/${id}`);
 export const deleteCareer = (id) => api.delete(`/api/carreras/carreras/${id}`);
 export const getCareerRecomended = () => api.get('/api/carreras/recomendadas');
+export const getRecommendedCareers = (id) => api.get(`/api/carreras/${id}/recomendaciones`);
+export const searchCar = (query) => api.get('/api/carreras/search', { params: { query } });
+
 
 export const createUniversidad = (data) => api.post('/api/universidades', data);
 export const updateUniversidad = (id, data) => api.put(`/api/universidades/${id}`, data);

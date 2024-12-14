@@ -19,21 +19,22 @@ export const PieDePagina = () => {
 					<div className="info">
 						<h3>Menu</h3>
 						<Link to="/">Inicio</Link>
-						<Link to="/carreras">Carrera</Link>
-						<Link to="/">Universidades</Link>
-						<Link to="/">Becas</Link>
-						<Link to="/">Contacto</Link>
+						<Link to="/carrera">Carrera</Link>
+						<Link to="/facultad">Universidades</Link>
+						<Link to="/becas">Becas</Link>
+						{/* <Link to="/">Contacto</Link> */}
 					</div>
 					<div className="info">
-						<h3>Horarios de atención</h3>
+						<h3>Para otras informaciones</h3>
 						<p>Lunes: 08:30am - 18:30pm</p>
 						<p>Martes: 08:30am - 18:30pm</p>
 						<p>Miercoles: 08:30am - 18:30pm</p>
 						<p>Jueves: 08:30am - 18:30pm</p>
 						<div className="redes-sociales redes-pie">
-							<FaFacebook className="redes-icons" />
-							<FaInstagramSquare className="redes-icons" />
-							<FaTiktok className="redes-icons" />
+							<a href="https://www.facebook.com/KawsayMuju"><FaFacebook className="redes-icons" /></a>
+							<a href='https://www.facebook.com/KawsayMuju'><FaInstagramSquare className="redes-icons" /></a>
+							<a href='https://www.facebook.com/KawsayMuju'><FaTiktok
+className="redes-icons" /></a>
 						</div>
 					</div>
 					<div className="info">

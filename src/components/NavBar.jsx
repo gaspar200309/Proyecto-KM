@@ -34,7 +34,7 @@ const NavBarReact = () => {
 							</li>
 							<li className="nav-link" style={{ '--i': '.85s' }}>
 								<NavLink to="/carrera" onClick={closeMenu}>
-									Carreras <IoIosArrowDown className="arrow-down" /> <i className="fas fa-caret-down"></i>
+									Carreras <IoIosArrowDown className='arrow-down'/> <i className="fas fa-caret-down"></i>
 								</NavLink>
 								<div className="dropdown">
 									<ul>
@@ -75,7 +75,7 @@ const NavBarReact = () => {
 							</li>
 							<li className="nav-link" style={{ '--i': '1.1s' }}>
 								<NavLink to="/facultad" onClick={closeMenu}>
-									Universidades <IoIosArrowDown className="arrow-down" />
+									Universidades <IoIosArrowDown className='arrow-down'/>
 									<i className="fas fa-caret-down"></i>
 								</NavLink>
 								<div className="dropdown">
