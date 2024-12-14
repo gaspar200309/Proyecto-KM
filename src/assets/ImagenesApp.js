@@ -44,7 +44,7 @@ import itpm from './img/Itpm.png'
 import Itait from './img/Itait.png'
 import Etsalud from './img/Etsalud.png'
 import Itsi from './img/Itsi.png'
-import kawsay from './logos/logo-05.png'
+import kawsay from './logos/LogoKM.png'
 
 
 // carreras

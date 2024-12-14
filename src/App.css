@@ -1,7 +1,3 @@
-@font-face {
-	font-family: Futura;
-	src: url('/fonts/FuturaStd-Bold.otf');
-}
 
 :root {
 	/* Color Palette */
@@ -12,7 +8,6 @@
 	--color-secondary: #169f39;
 	--color-secondary-light: #3fbf63;
 	--color-secondary-dark: #0c7827;
-
 	--color-tertiary: #615442;
 	--color-tertiary-light: #8a7e6d;
 	--color-tertiary-dark: #423630;
@@ -50,6 +45,16 @@
 	/* Box Shadow */
 	--box-shadow-base: 0 2px 5px rgba(0, 0, 0, 0.1);
 	--box-shadow-hover: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+
+	--oscuro: #07070a;
+	--azulOscuro: #0a1128;
+	--azulClaro: #006fe6;
+	--plomoOscuro: #4b4b4b;
+	--blanco: #fefcfb;
+	--rojo: #ee0707;
+	--fonfo: #2f2f47;
+	--titulos: 'Montserrat' sans-serif --parrafos: 'open sans', sans-serif;
 }
 
 html {
@@ -119,23 +124,55 @@ a:hover {
     }
 } */
 
-.card {
-	background-color: white;
-	border-radius: var(--border-radius-base);
-	box-shadow: var(--box-shadow-base);
-	transition:
-		transform var(--transition-speed) var(--transition-timing),
-		box-shadow var(--transition-speed) var(--transition-timing);
-	overflow: hidden;
+
+
+@keyframes desplazamiento {
+	0% {
+		transform: translateX(-100%);
+	}
+
+	100% {
+		transform: translateX(0);
+	}
 }
 
-.card:hover {
-	transform: translateY(-5px);
-	box-shadow: var(--box-shadow-hover);
+
+@media only screen and (max-width: 768px) {
+	.fondo {
+		height: 30vh;
+		width: 100%;
+		background-size: contain;
+	}
+}
+@media (min-width: 768px) {
+	.nosotros h2 {
+		font-size: 40px;
+		margin-bottom: 2%;
+		margin-top: 5%;
+	}
+
+	.contenido-nosotros {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.texto-nosotros {
+		font-family: Futura-texto;
+		font-size: 16px;
+		display: flex;
+		justify-content: center; /* Centra horizontalmente */
+		align-items: center; /* Centra verticalmente */
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
+	}
 }
 
-.contenedor {
-  margin: 0 auto; /* Centro horizontal */
-  max-width: 120rem; /* Limita el ancho máximo del contenedor */
-  width: 95%; /* Asegura que el contenedor ocupe casi todo el ancho de la pantalla */
+.pie-pagina {
+	margin-top: 15%;
+	background-color: rgb(20, 20, 20);
+	padding: 5rem;
+}
+@media (min-width: 768px) {
+	.contenedor-piepagina {
+		display: flex;
+		justify-content: space-between;
+	}
 }

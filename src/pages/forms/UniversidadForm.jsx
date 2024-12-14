@@ -22,11 +22,19 @@ const UniversidadForm = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-      if (id) {
-        setIsEdit(true);
-        getUniversidadById(id).then(response => setUniversidad(response.data));
-      }
-    }, [id]);
+        if (id) {
+          setIsEdit(true);
+          getUniversidadById(id)
+            .then(response => {
+              if (response?.data) {
+                setUniversidad(response.data); // Asegúrate de que response.data sea el objeto esperado.
+              }
+            })
+            .catch(error => console.error("Error fetching universidad:", error));
+        }
+      }, [id]);
+      
+    
 
     const handleChange = (e) => {
         const { name, value, files } = e.target;
@@ -85,6 +93,8 @@ const UniversidadForm = () => {
         }
         navigate('/listForm');
     };
+
+    
 
     return (
         <div className="form-container1">
@@ -163,7 +173,8 @@ const UniversidadForm = () => {
                     options={[
                         { label: 'Universidad', value: 'Universidad' },
                         { label: 'Instituto', value: 'Instituto' },
-                        { label: 'Normal', value: 'Normal' }
+                        { label: 'Normal', value: 'Normal' },
+                        { label: 'Policía y Militar', value: 'Policía y Militar' }
                     ]}
                     placeholder="Seleccione el tipo de escuela"
                     required

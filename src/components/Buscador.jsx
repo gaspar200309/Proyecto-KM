@@ -1,34 +1,28 @@
 import { useState } from 'react';
-import servicios from '../pages/carreras/CarreraApp';
+import { searchCar } from '../service/api';
 import { FaSearch } from "react-icons/fa";
-import './EstilosBuscador.css' // Importar SVG como componente
+import './EstilosBuscador.css';
 
 const Buscador = ({ updateFilteredCarreras }) => {
   const [search, setSearch] = useState('');
 
-  const normalizeString = (str) => {
-    return str
-      .normalize("NFD") 
-      .replace(/[\u0300-\u036f]/g, "") 
-      .toLowerCase() 
-      .trim();
-  };
+  const handleSearch1 = async () => {
+    try {
+      const { data } = await searchCar(search); // Pasar el término de búsqueda
 
-  const showData = () => {
-    const normalizedSearch = normalizeString(search);
-    const filteredCarreras = servicios.filter((carrera) =>
-      normalizeString(carrera.titulo).includes(normalizedSearch)
-    );
+      const resultadosCombinados = [
+        ...data.carreras.map((carrera) => ({ tipo: 'Carrera', ...carrera })),
+        ...data.universidades.map((universidad) => ({ tipo: 'Universidad', ...universidad }))
+      ];
 
-    updateFilteredCarreras(filteredCarreras);
+      updateFilteredCarreras(resultadosCombinados); // Llamar la función pasada como prop
+    } catch (error) {
+      console.error('Error al buscar:', error);
+    }
   };
 
   const searcher = (e) => {
     setSearch(e.target.value);
-  };
-
-  const handleSearch = () => {
-    showData();
   };
 
   return (
@@ -39,13 +33,13 @@ const Buscador = ({ updateFilteredCarreras }) => {
         type="text"
         placeholder="Buscar Carreras"
         className="search-input"
-      ></input>
-      <button onClick={handleSearch} className="search-button">
+      />
+      <button onClick={handleSearch1} className="search-button">
         <FaSearch className="search-icon" />
-{/*       <img src="/src/assets/icons/search.svg" alt="Buscar" />  */}
       </button>
     </div>
   );
 };
+
 
 export default Buscador;
