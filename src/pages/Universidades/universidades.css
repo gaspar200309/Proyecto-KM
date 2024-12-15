@@ -1,171 +1,171 @@
-
 .contenedorU {
-  max-width: 1200px;
-  display: flex;
-  flex-wrap: wrap; /* Permite que las tarjetas se ajusten en filas */
-  margin: 0 auto; /* Centra el contenedor horizontalmente */
-  padding: 20px; /* Espacio interior para evitar choques con los bordes */
-  justify-content: center; /* Asegura que el contenedor esté centrado */
-  gap: 20px; /* Separación uniforme entre las tarjetas */
+	max-width: 1200px;
+	display: flex;
+	flex-wrap: wrap; /* Permite que las tarjetas se ajusten en filas */
+	margin: 0 auto; /* Centra el contenedor horizontalmente */
+	padding: 20px; /* Espacio interior para evitar choques con los bordes */
+	justify-content: center; /* Asegura que el contenedor esté centrado */
+	gap: 20px; /* Separación uniforme entre las tarjetas */
 }
 
-  
-  .encabezadoU {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    filter: brightness(50%);
-    padding: 0;
-    margin-bottom: var(--spacing-large);
-  }
-  
-  .imgUniversidades img {
-    max-width: 100%;
-    height: auto;
-    border-radius: var(--border-radius-base);
-  }
-  
-  .universidades {
-    text-align: center;
-    margin-bottom: var(--spacing-medium);
-    color: #683c10
-  }
-  
-  .textoU {
-    font-family: Futura-Oblique;
-    color: var(--color-neutral-dark);
-    margin-bottom: var(--spacing-medium);
-    color: #936037;
-  }
-  .contenedorU-img{
-    max-width: 100px;
-    max-height: 100px;
-    height: auto; /* Ajuste automático del alto para mantener la proporción */
-    width: auto;  /* Ajuste automático del ancho para mantener la proporción */
-    object-fit: contain; /* Preservar la relación de aspecto de la imagen sin recortarla */
-    vertical-align: middle; /* Mantiene la alineación vertical */
-  }
-  .container-cardU {
-    display: flex;
-    flex-wrap: wrap;
-    padding: var(--spacing-medium);
-    gap: var(--spacing-medium);
-    justify-content: center;
-  }
-  
-  .cardU {
-    background-color: white;
-    border-radius: var(--border-radius-secundary);
-    box-shadow: var(--box-shadow-base);
-    border-top: 15px solid var(--color-primary);
-    border-bottom: 15px solid var(--color-primary-light);
-    transition: transform var(--transition-speed) var(--transition-timing),
-                box-shadow var(--transition-speed) var(--transition-timing);
-    flex: 1 1 calc(33.333% - var(--spacing-medium)); /* Tres columnas por fila */
-    max-width: calc(33.333% - var(--spacing-medium));
-    margin-bottom: var(--spacing-large);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column; 
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    max-width: 600px;
-  }
-  
-  .cardU:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--box-shadow-hover);
-  }
-  
-  .cardU figure {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: var(--spacing-medium);
-    box-shadow: var(--box-shadow-hover);
-  }
-  
-  .contenido-cardU {
-  
-    padding: var(--spacing-medium);
-    flex-grow: 1;  /* Hace que el contenido del texto ocupe el espacio disponible */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;  /* Asegura que el texto y el botón estén distribuidos */
-    width: 100%;
-  }
-  
-  .contenido-cardU h3 {
-    font-size: 16px;
-    font-family: Futura;
-    color: var(--color-primary);
-  }
-  
-  .contenido-cardU p {
-    font-size: 14px;
-    font-family: Futura-texto;
-    text-align: center;
-    margin-bottom: var(--spacing-small);
-    color: var(--color-neutral-dark);
-  }
-  
-  .contenido-cardU p span {
-    color: var(--highlight-color);
-    font-weight: bold;
-  }
-  
-  .contenido-cardU a {
-    color: #ffffff; /* Mantén el color de texto blanco como en .buttonStyle */
-    font-weight: bold;
-    padding: 2px 15px; /* Ajustado como en .buttonStyle */
-    border-radius: 8px; /* Mantén el borde redondeado del botón */
-    text-decoration: none; /* Elimina subrayado, como en .buttonStyle */
-    background-color: #f39200; /* Color de fondo del botón */
-    font-size: small;
-    transition: all 400ms ease;
-    display: inline-block; /* Para que se comporte como un botón */
-    margin-top: auto; /* Empuja el botón al final */
-    margin-left: auto;
-    margin-right: auto; /* Centra el botón horizontalmente */
-  }
-  
+.encabezadoU {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	filter: brightness(50%);
+	padding: 0;
+	margin-bottom: var(--spacing-large);
+}
 
-  .contenido-cardU a:hover{
-    background-color: var(--color-primary-light);
-    color: #fff;
-  }
+.imgUniversidades img {
+	max-width: 100%;
+	height: auto;
+	border-radius: var(--border-radius-base);
+}
 
-  .academia {
-    text-align: center;
-    font-size: 1.5em;
-    color: var(--color-primary);
-    margin-bottom: var(--spacing-medium);
-    font-weight: bold;
-  }
-  
-  .carRecomend {
-    display: flex;
-    flex-wrap: wrap;
-    padding: var(--spacing-medium);
-    gap: var(--spacing-medium);
-    justify-content: center;
-  }
-  
-  @media (max-width: 768px) {
-    .cardU {
-      flex: 1 1 calc(50% - var(--spacing-medium));
-      max-width: calc(50% - var(--spacing-medium));
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .cardU {
-      flex: 1 1 100%;
-      max-width: 100%;
-    }
-  }
-  
-  
+.universidades {
+	text-align: center;
+	margin-bottom: var(--spacing-medium);
+	color: #683c10;
+}
+
+.textoU {
+	font-family: Futura-Oblique;
+	color: var(--color-neutral-dark);
+	margin-bottom: var(--spacing-medium);
+	color: #936037;
+}
+.contenedorU-img {
+	max-width: 100px;
+	max-height: 100px;
+	height: auto; /* Ajuste automático del alto para mantener la proporción */
+	width: auto; /* Ajuste automático del ancho para mantener la proporción */
+	object-fit: contain; /* Preservar la relación de aspecto de la imagen sin recortarla */
+	vertical-align: middle; /* Mantiene la alineación vertical */
+}
+.container-cardU {
+	display: flex;
+	flex-wrap: wrap;
+	padding: var(--spacing-medium);
+	gap: var(--spacing-medium);
+	justify-content: center;
+}
+
+.cardU {
+	background-color: white;
+	border-radius: var(--border-radius-secundary);
+	box-shadow: var(--box-shadow-base);
+	border-top: 15px solid var(--color-primary);
+	border-bottom: 15px solid var(--color-primary-light);
+	transition:
+		transform var(--transition-speed) var(--transition-timing),
+		box-shadow var(--transition-speed) var(--transition-timing);
+	flex: 1 1 calc(33.333% - var(--spacing-medium)); /* Tres columnas por fila */
+	max-width: calc(33.333% - var(--spacing-medium));
+	margin-bottom: var(--spacing-large);
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+	width: 100%;
+	max-width: 600px;
+}
+
+.cardU:hover {
+	transform: translateY(-5px);
+	box-shadow: var(--box-shadow-hover);
+}
+
+.cardU figure {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: var(--spacing-medium);
+	box-shadow: var(--box-shadow-hover);
+}
+
+.contenido-cardU {
+	padding: var(--spacing-medium);
+	flex-grow: 1; /* Hace que el contenido del texto ocupe el espacio disponible */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between; /* Asegura que el texto y el botón estén distribuidos */
+	width: 100%;
+}
+
+.contenido-cardU h3 {
+	font-size: 16px;
+	font-family: Futura;
+	color: var(--color-primary);
+}
+
+.contenido-cardU p {
+	font-size: 14px;
+	font-family: Futura-texto;
+	text-align: center;
+	margin-bottom: var(--spacing-small);
+	color: var(--color-neutral-dark);
+}
+
+.contenido-cardU p span {
+	color: var(--highlight-color);
+	font-weight: bold;
+}
+
+.contenido-cardU a {
+	color: #ffffff; /* Mantén el color de texto blanco como en .buttonStyle */
+	font-weight: bold;
+	padding: 2px 15px; /* Ajustado como en .buttonStyle */
+	border-radius: 8px; /* Mantén el borde redondeado del botón */
+	text-decoration: none; /* Elimina subrayado, como en .buttonStyle */
+	background-color: #f39200; /* Color de fondo del botón */
+	font-size: small;
+	transition: all 400ms ease;
+	display: inline-block; /* Para que se comporte como un botón */
+	margin-top: auto; /* Empuja el botón al final */
+	margin-left: auto;
+	margin-right: auto; /* Centra el botón horizontalmente */
+}
+
+.contenido-cardU a:hover {
+	background-color: var(--color-primary-light);
+	color: #fff;
+}
+
+.academia {
+	text-align: center;
+	font-size: 1.5em;
+	color: var(--color-primary);
+	margin-bottom: var(--spacing-medium);
+	font-weight: bold;
+}
+
+.carRecomend {
+	display: flex;
+	flex-wrap: wrap;
+	padding: var(--spacing-medium);
+	gap: var(--spacing-medium);
+	justify-content: center;
+}
+
+.mas-universidades {
+	margin: 10px;
+	font-size: var(--pLL-size);
+}
+
+@media (max-width: 768px) {
+	.cardU {
+		flex: 1 1 calc(50% - var(--spacing-medium));
+		max-width: calc(50% - var(--spacing-medium));
+	}
+}
+
+@media (max-width: 480px) {
+	.cardU {
+		flex: 1 1 100%;
+		max-width: 100%;
+	}
+}

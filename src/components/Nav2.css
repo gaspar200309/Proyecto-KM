@@ -194,12 +194,6 @@ header {
 	z-index: -1;
 }
 
-.arrow-down {
-	position: relative;
-	top: 10px;
-	right: -5px;
-}
-
 .dropdown-link:first-child:hover ~ .arrow {
 	background-color: #e48200;
 }
@@ -300,6 +294,12 @@ header {
 	height: 70px;
 
 	object-fit: cover;
+}
+
+.arrowDown {
+	position: absolute;
+	right: -5px;
+	top: 32%;
 }
 
 @keyframes animation {
@@ -474,35 +474,34 @@ header {
 	justify-content: flex-end; /* Por defecto a la derecha */
 	align-items: center;
 	padding: 0 1rem;
-  }
-  
-  .search-bar input {
+}
+
+.search-bar input {
 	width: 100%;
 	max-width: 400px;
 	padding: 8px;
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	font-size: 14px;
-  }
-  
-  /* Ajustes responsivos */
-  @media (max-width: 920px) {
+}
+
+/* Ajustes responsivos */
+@media (max-width: 920px) {
 	.search-bar {
-	  order: -1; /* Asegura que el buscador esté en la parte superior */
-	  justify-content: flex-start; /* Mueve el buscador a la izquierda */
-	  width: 100%; /* Ocupa todo el ancho */
-	  padding: 0.5rem;
+		order: -1; /* Asegura que el buscador esté en la parte superior */
+		justify-content: flex-start; /* Mueve el buscador a la izquierda */
+		width: 100%; /* Ocupa todo el ancho */
+		padding: 0.5rem;
 	}
-  
+
 	.search-bar input {
-	  width: 90%; /* Reduce el tamaño en dispositivos pequeños */
-	  font-size: 16px;
+		width: 90%; /* Reduce el tamaño en dispositivos pequeños */
+		font-size: 16px;
 	}
-  
+
 	.nav-btn {
-	  flex-direction: column;
-	  height: 100vh;
-	  overflow-y: auto;
+		flex-direction: column;
+		height: 100vh;
+		overflow-y: auto;
 	}
-  }
-  
+}
