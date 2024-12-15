@@ -100,24 +100,3 @@
     }
   }
   
-
-  .card {
-	background-color: white;
-	border-radius: var(--border-radius-base);
-	box-shadow: var(--box-shadow-base);
-	transition:
-		transform var(--transition-speed) var(--transition-timing),
-		box-shadow var(--transition-speed) var(--transition-timing);
-	overflow: hidden;
-}
-
-.card:hover {
-	transform: translateY(-5px);
-	box-shadow: var(--box-shadow-hover);
-}
-
-.contenedor {
-  margin: 0 auto; /* Centro horizontal */
-  max-width: 120rem; /* Limita el ancho máximo del contenedor */
-  width: 95%; /* Asegura que el contenedor ocupe casi todo el ancho de la pantalla */
-}

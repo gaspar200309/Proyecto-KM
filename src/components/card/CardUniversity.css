@@ -1,0 +1,78 @@
+.cardU-details-btn {
+    background-color: #f39200;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cardU-details-btn:hover {
+    background-color: #ffa733;
+  }
+  
+
+  .cardU {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-top: 15px solid #f39200;
+    border-bottom: 15px solid #f3b461;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px;
+  }
+  
+  .cardU:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .cardU-img {
+    max-width: 100px;
+    max-height: 100px;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+    margin: auto;
+  }
+  
+  .cardU-content {
+    padding: 20px;
+  }
+  
+  .cardU-content h3 {
+    font-size: 16px;
+    color: #f39200;
+    margin-bottom: 10px;
+  }
+  
+  .cardU-content p {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .cardU-content p span {
+    font-weight: bold;
+    color: #0a1128;
+  }
+  
+  .cardU-content a {
+    color: white;
+    background-color: #f39200;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .cardU-content a:hover {
+    background-color: #f3b461;
+  }
+  

@@ -26,7 +26,7 @@ const NavBarReact = React.memo(() => {
         { label: 'Urbanismo y territorio', to: '#territorio' },
       ],
     },
-    /* {
+    {
       label: 'Universidades',
       to: '/facultad',
       subMenu: [
@@ -42,7 +42,7 @@ const NavBarReact = React.memo(() => {
         { label: 'Institutos públicos', to: '#' },
         { label: 'Institutos privados', to: '#' },
         ],
-    }, */
+    },
     {
       label: 'Donde estudiar',
       to: '/instituto',
