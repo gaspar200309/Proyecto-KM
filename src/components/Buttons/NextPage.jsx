@@ -1,5 +1,4 @@
 import "./primaryButton.css";
-import "./nextPage.css";
 
 //components
 import { PrimaryButton } from "./PrimaryButton";
