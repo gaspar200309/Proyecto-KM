@@ -20,7 +20,7 @@ const Card = ({ imgSrc, titulo, descripcion, id }) => {
 			<div className="contenido-card">
 				<h4>{titulo}</h4>
 				<p>{convertir(descripcion)}</p>
-				<div className='leer-mas'>
+				<div className="leer-mas">
 					<NextPage to={`/carrera/${id}`} value="Leer mas" />
 				</div>
 			</div>

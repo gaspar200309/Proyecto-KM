@@ -1,3 +1,13 @@
+hr {
+	margin: 0;
+}
+
+.container-main-universidades {
+	background: #f5f5f5;
+	padding: 50px 0px;
+	box-sizing: border-box;
+}
+
 .contenedorU {
 	max-width: 1200px;
 	display: flex;
@@ -28,6 +38,15 @@
 	text-align: center;
 	margin-bottom: var(--spacing-medium);
 	color: #683c10;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.universidades p {
+	width: 60%;
+	font-size: var(--pL-size);
+	margin-top: 20px;
 }
 
 .textoU {
@@ -71,7 +90,9 @@
 	align-items: center;
 	text-align: center;
 	width: 100%;
-	max-width: 600px;
+	max-width: 400px;
+	height: 500px;
+	padding: 20px 0px;
 }
 
 .cardU:hover {
@@ -85,21 +106,23 @@
 	align-items: center;
 	padding: var(--spacing-medium);
 	box-shadow: var(--box-shadow-hover);
+	height: 120px;
 }
 
 .contenido-cardU {
-	padding: var(--spacing-medium);
-	flex-grow: 1; /* Hace que el contenido del texto ocupe el espacio disponible */
+	padding: 5px var(--spacing-medium);
+	/* flex-grow: 1; */
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between; /* Asegura que el texto y el botón estén distribuidos */
 	width: 100%;
+	height: 200px;
+	overflow: auto;
 }
 
 .contenido-cardU h3 {
 	font-size: 16px;
 	font-family: Futura;
-	color: var(--color-primary);
+	color: var(--color-secondary);
 }
 
 .contenido-cardU p {
@@ -113,26 +136,6 @@
 .contenido-cardU p span {
 	color: var(--highlight-color);
 	font-weight: bold;
-}
-
-.contenido-cardU a {
-	color: #ffffff; /* Mantén el color de texto blanco como en .buttonStyle */
-	font-weight: bold;
-	padding: 2px 15px; /* Ajustado como en .buttonStyle */
-	border-radius: 8px; /* Mantén el borde redondeado del botón */
-	text-decoration: none; /* Elimina subrayado, como en .buttonStyle */
-	background-color: #f39200; /* Color de fondo del botón */
-	font-size: small;
-	transition: all 400ms ease;
-	display: inline-block; /* Para que se comporte como un botón */
-	margin-top: auto; /* Empuja el botón al final */
-	margin-left: auto;
-	margin-right: auto; /* Centra el botón horizontalmente */
-}
-
-.contenido-cardU a:hover {
-	background-color: var(--color-primary-light);
-	color: #fff;
 }
 
 .academia {
@@ -154,6 +157,10 @@
 .mas-universidades {
 	margin: 10px;
 	font-size: var(--pLL-size);
+}
+
+.visitar-universidad {
+	background: var(--color-primary);
 }
 
 @media (max-width: 768px) {

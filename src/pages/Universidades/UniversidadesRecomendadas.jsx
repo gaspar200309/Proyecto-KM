@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react'
 import './universidades.css'
 import { getUniversidadesRecomendadas } from '../../service/api'
 import { Link } from 'react-router-dom'
-import ImagenesApp from '../../assets/ImagenesApp'
+
+//Components
+import { NextPage } from '../../components/Buttons/NextPage'
 
 const UniversidadesRec = () => {
 	const [universidadesToShow, setUniversidadesToShow] = useState([])
@@ -21,7 +23,7 @@ const UniversidadesRec = () => {
 	}, [])
 
 	return (
-		<div>
+		<div className="container-main-universidades">
 			<div className="universidades">
 				<h2 className="universidades">¿Dónde puedo estudiar?</h2>
 			</div>
@@ -31,8 +33,8 @@ const UniversidadesRec = () => {
 						<figure>
 							<img className="contenedorU-img" src={universidad.logo} height="100px" width="80px" alt={universidad.nombre} />
 						</figure>
+						<h3>{universidad.nombre}</h3>
 						<div className="contenido-cardU">
-							<h3>{universidad.nombre}</h3>
 							{universidad.direcciones.map((direccion, index) => (
 								<div key={index}>
 									<p>{direccion.direccion}</p>
@@ -42,16 +44,12 @@ const UniversidadesRec = () => {
 									{direccion.whatsapp && <p>{direccion.whatsapp}</p>}
 								</div>
 							))}
-							{universidad.enlace && (
-								<a href={universidad.enlace} target="_blank" rel="noopener noreferrer">
-									Visitar
-								</a>
-							)}
 						</div>
+						{universidad.enlace && <NextPage to={universidad.enlace} value="Visitar" className="visitar-universidad" />}
 					</div>
 				))}
 			</div>
-			<div className='mas-universidades'>
+			<div className="mas-universidades">
 				<Link to="/facultad#arriba" className="carRecomend">
 					Ver más Universidades
 				</Link>

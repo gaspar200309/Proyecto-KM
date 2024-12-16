@@ -50,7 +50,7 @@ s .card h4 {
 	font-family: Futura-texto;
 	color: #936037;
 	height: 30%;
-  margin: 5px;
+	margin: 5px;
 }
 
 .card a {
@@ -76,12 +76,21 @@ s .card h4 {
 		width: 250px; /* Ajustar ancho en dispositivos medianos */
 		height: 350px; /* Ajustar altura */
 	}
+
+	.card .contenido-card {
+		height: 35%;
+		overflow: hidden;
+	}
 }
 
 @media (max-width: 768px) {
 	.card {
 		width: 200px; /* Ajustar en dispositivos pequeños */
 		height: 300px;
+	}
+
+	.card .contenido-card {
+		height: 35%;
 	}
 }
 

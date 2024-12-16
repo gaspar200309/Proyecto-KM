@@ -1,10 +1,10 @@
 :root {
 	/* Color Palette */
-	--color-primary: #f39200;
+	--color-primary: #fba834;
 	--color-primary-light: #f3b461;
 	--color-primary-dark: #b26a00;
 
-	--color-secondary: #169f39;
+	--color-secondary: #683c10;
 	--color-secondary-light: #3fbf63;
 	--color-secondary-dark: #0c7827;
 	--color-tertiary: #615442;
@@ -126,6 +126,7 @@ a:hover {
 h2 {
 	font-size: calc(1.325rem + 0.9vw);
 	text-align: center;
+	color: var(--color-secondary);
 }
 
 /* @media (min-width: 1200px) {

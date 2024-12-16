@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import { getCareerRecomended } from '../../service/api'
 import Card from '../../components/card/Card'
 
+//css
+import './Carrera.css'
+
 const CarreraRecomendada = () => {
 	const [carreras, setCarreras] = useState([])
 	const [loading, setLoading] = useState(true)
@@ -29,7 +32,7 @@ const CarreraRecomendada = () => {
 	return (
 		<>
 			<div className="areas">
-				<h2 className="tituloCarer">CARRERAS</h2>
+				<h2 className="tituloCarrera">CARRERAS</h2>
 				<div className="container-card">
 					{carreras.map((carrera) => (
 						<Card
