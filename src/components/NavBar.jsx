@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import { NavLink, Link, useLocation } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import './Nav2.css'
-import { Button } from './Buttons/button.jsx'
 import Buscador from './Buscador.jsx'
 import { IoIosArrowDown } from 'react-icons/io'
 

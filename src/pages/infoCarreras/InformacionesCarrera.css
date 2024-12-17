@@ -9,10 +9,19 @@
 
 .contentC-contenido {
 	margin: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 .contentC-contenido h1 {
 	color: #f39224;
+	margin-bottom: 50px;
+}
+
+.container-information-carrera {
+	width: 800px;
 }
 
 .containerC h1 {
@@ -58,6 +67,7 @@
 .contenidoC p {
 	font-family: Futura-texto;
 	color: #936037;
+	font-size: 15px;
 }
 .navigation-barC a {
 	font-size: 20px;
@@ -117,13 +127,18 @@
 	display: flex;
 	background-color: #936037;
 	color: #fff;
-	padding: 10px;
+	padding: 10px 50px;
 }
 
 .navigation-barC a {
 	color: #fff;
 	text-decoration: none;
 	margin-right: 10px;
+	font-size: var(--pL-size);
+}
+
+.navigation-barC a:hover {
+	color: #0e0e0e;
 }
 
 .imgCarL {
@@ -163,7 +178,6 @@
 .recomendaciones-wrapper {
 	position: relative;
 	width: 100%;
-	overflow: hidden;
 }
 
 .recomendaciones-container {
@@ -210,11 +224,13 @@
 }
 
 .scroll-button.left {
-	left: 10px;
+	left: -5%;
+	z-index: 0;
 }
 
 .scroll-button.right {
-	right: 10px;
+	right: -4%;
+	z-index: 0;
 }
 
 .container-center {
