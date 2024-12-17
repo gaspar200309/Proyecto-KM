@@ -70,6 +70,10 @@ s .card h4 {
 	bottom: 0;
 }
 
+.btn-leer-mas:hover {
+	background: var(--color-primary);
+}
+
 /* Responsivo */
 @media (max-width: 1024px) {
 	.card {

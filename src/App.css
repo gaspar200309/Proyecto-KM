@@ -100,9 +100,9 @@ button {
 	font-size: var(--font-size-base);
 	border-radius: var(--border-radius-base);
 	cursor: pointer;
-	transition:
+	/* transition:
 		background-color var(--transition-speed) var(--transition-timing),
-		color var(--transition-speed) var(--transition-timing);
+		color var(--transition-speed) var(--transition-timing); */
 	padding: var(--spacing-small) var(--spacing-medium);
 	border: none;
 }

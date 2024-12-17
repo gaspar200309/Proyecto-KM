@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './Card.css' // Asegúrate de que los estilos para la tarjeta estén bien definidos
+// Asegúrate de que los estilos para la tarjeta estén bien definidos
 import { NextPage } from '../Buttons/NextPage'
+import './Card.css'
 
 const Card = ({ imgSrc, titulo, descripcion, id }) => {
 	function convertir(descripcion) {
@@ -21,7 +22,7 @@ const Card = ({ imgSrc, titulo, descripcion, id }) => {
 				<h4>{titulo}</h4>
 				<p>{convertir(descripcion)}</p>
 				<div className="leer-mas">
-					<NextPage to={`/carrera/${id}`} value="Leer mas" />
+					<NextPage to={`/carrera/${id}`} value="Leer mas" className='btn-leer-mas'/>
 				</div>
 			</div>
 		</div>

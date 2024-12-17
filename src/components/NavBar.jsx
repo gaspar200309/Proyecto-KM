@@ -25,12 +25,12 @@ const NavBarReact = React.memo(() => {
 			label: 'Carreras',
 			to: '/carrera',
 			subMenu: [
-				{ label: 'Área salud', to: '#' },
-				{ label: 'Ingenierías', to: '#' },
-				{ label: 'Carreras empresariales', to: '#' },
-				{ label: 'Carreras Tecnológicas', to: '#' },
-				{ label: 'Carreras sociales', to: '#' },
-				{ label: 'Urbanismo y territorio', to: '#territorio' },
+				{ label: 'Área salud', to: '/carrera#salud' },
+				// { label: 'Ingenierías', to: '#tecnologia' },
+				// { label: 'Carreras empresariales', to: '#' },
+				{ label: 'Carreras Tecnológicas', to: '/carrera#tecnologia' },
+				{ label: 'Area economica', to: '/carrera#economia' },
+				{ label: 'Urbanismo y territorio', to: '/carrera#territorio' },
 			],
 		},
 		/* {
@@ -83,9 +83,9 @@ const NavBarReact = React.memo(() => {
 						<ul>
 							{item.subMenu.map((subItem) => (
 								<li className="dropdown-link" key={subItem.label}>
-									<NavLink to={subItem.to} onClick={closeMenu}>
+									<a href={subItem.to} onClick={closeMenu}>
 										{subItem.label}
-									</NavLink>
+									</a>
 								</li>
 							))}
 							<div className="arrow"></div>

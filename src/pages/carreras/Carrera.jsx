@@ -13,6 +13,7 @@ const Carrera = () => {
 	const [error, setError] = useState(null)
 	const [areaFilter, setAreaFilter] = useState('')
 	const [nivelFilter, setNivelFilter] = useState('')
+	const [alertId, setAlertId] = useState(true)
 
 	useEffect(() => {
 		const fetchCareers = async () => {
@@ -30,6 +31,16 @@ const Carrera = () => {
 		fetchCareers()
 	}, [])
 
+	useEffect(() => {
+		const hash = window.location.hash
+		if (hash) {
+			const element = document.querySelector(hash)
+			if (element) {
+				element.scrollIntoView({ behavior: 'smooth' })
+			}
+		}
+	}, [])
+
 	const handleSearchChange = (event) => setSearch(event.target.value)
 
 	const handleAreaChange = (event) => setAreaFilter(event.target.value)
@@ -45,6 +56,19 @@ const Carrera = () => {
 
 	const uniqueAreas = [...new Set(carreras.map((carrera) => carrera.area))]
 	const uniqueNiveles = [...new Set(carreras.map((carrera) => carrera.nivel))]
+
+	const transformToId = (area) => {
+		switch (area) {
+			case 'ÁREA DE SALUD':
+				return 'salud'
+			case 'ÁREA TECNOLÓGICA':
+				return 'tecnologia'
+			case 'ÁREA ECONÓMICA':
+				return 'economia'
+			case 'ÁREA URBANISMO Y TERRITORIO':
+				return 'territorio'
+		}
+	}
 
 	if (loading) return <p>Cargando carreras...</p>
 	if (error) return <p>Error al cargar carreras: {error}</p>
@@ -89,7 +113,9 @@ const Carrera = () => {
 						}, {})
 					).map(([area, carrerasEnArea]) => (
 						<div key={area} className={`areas ${area.toLowerCase().replace(/\s+/g, '-')}`}>
-							<h2 className="titulo-area">{area}</h2>
+							<h2 className="titulo-area" id={transformToId(area)}>
+								{area}
+							</h2>
 							<div className="container-card">
 								{carrerasEnArea.map((carrera) => (
 									<Card
