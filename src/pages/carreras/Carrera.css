@@ -1,62 +1,75 @@
 /* Títulos centrados */
 .titulo-area {
 	text-align: center;
-	font-size: 2em;
-	color: #F07D00;
+	font-size: var(--h2-size);
+	color: #f07d00;
 	margin: 20px 0;
-  }
-  
-  .titulo-nivel {
+}
+
+.titulo-nivel {
 	text-align: center;
 	font-size: 24px;
 	color: #936037;
 	margin: 10px 0;
 	text-transform: capitalize;
-  }
-  
-  /* Contenedor de tarjetas */
-  .container-card {
+}
+
+/* Contenedor de tarjetas */
+/* .container-card {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 	gap: 1.5rem;
 	padding: 2rem;
-  }
+  } */
 
-  
-  /* Filtros */
-  .filters {
+.container-card {
+	display: flex;
+	gap: 1.5rem;
+	padding: 2rem;
+}
+
+/* Filtros */
+.filters {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	gap: 20px;
 	margin: 20px 0;
-  }
-  
-  .filters label {
+}
+
+.filters label {
 	display: flex;
 	flex-direction: column;
 	font-size: 1em;
 	font-weight: bold;
 	color: #555;
-  }
-  
-  .filters select {
+}
+
+.filters select {
 	padding: 10px;
 	font-size: 1em;
 	border: 1px solid #ccc;
 	border-radius: 5px;
-  }
-  
-  /* Responsivo para el conte	nedor */
-  @media (max-width: 768px) {
+}
+
+.areas {
+	margin: 90px 0px;
+}
+
+.mas-carreras a {
+	margin: 10px;
+	font-size: var(--pLL-size);
+}
+
+/* Responsivo para el conte	nedor */
+@media (max-width: 768px) {
 	.container-card {
-	  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 	}
-  }
-  
-  @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
 	.container-card {
-	  grid-template-columns: 1fr;
+		grid-template-columns: 1fr;
 	}
-  }
-  
+}

@@ -1,102 +1,132 @@
 .card {
-    width: 300px; /* Ancho estático */
-    height: 400px; /* Altura aumentada */
-    background: #7e6767;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: auto; /* Centrado en el contenedor */
-  }
-  
-  .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  .card figure {
-    margin: 0;
-    height: 200px; /* Ajustar para imagen */
-    overflow: hidden;
-  }
-  
-  .card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
-  
-  .card:hover img {
-    transform: scale(1.1);
-  }
-  
-  .card .contenido-card {
-    padding: 1rem;
-    text-align: center;
-  }
-  
-  .card h3 {
-    font-size: 1.5rem; /* Mayor tamaño */
-    font-weight: bold;
-    margin: 0.5rem 0;
-  }
-  
-  .card p {
-    font-size: var(--font-size-small);
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  .card a {
-    color: #FFFF;
-    font-weight: bold;
-    text-decoration: none;
-    background-color: rgb(29, 36, 36);
-    border-radius: 4px;
-    padding: 3px;
-  }
-  
-  .card a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Responsivo */
-  @media (max-width: 1024px) {
-    .card {
-      width: 250px; /* Ajustar ancho en dispositivos medianos */
-      height: 350px; /* Ajustar altura */
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .card {
-      width: 200px; /* Ajustar en dispositivos pequeños */
-      height: 300px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .card {
-      width: 100%; /* Ocupa todo el ancho */
-      height: auto; /* Ajustar altura automáticamente */
-    }
-  }
-  
-  /* Animación */
-  .card {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 0.6s ease forwards;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
+	width: 300px; /* Ancho estático */
+	height: 400px; /* Altura aumentada */
+	background: #7e6767;
+	border-radius: 20px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
+	margin: auto; /* Centrado en el contenedor */
+}
+
+.card:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card figure {
+	margin: 0;
+	height: 45%; /* Ajustar para imagen */
+	overflow: hidden;
+}
+
+.card img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.5s ease;
+}
+
+.card:hover img {
+	transform: scale(1.1);
+}
+
+.card .contenido-card {
+	height: 55%;
+	padding: 1rem;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+s .card h4 {
+	font-size: var(--h4-size); /* Mayor tamaño */
+}
+
+.card p {
+	font-size: var(--pL-size);
+	font-family: Futura-texto;
+	color: #936037;
+	height: 30%;
+  margin: 5px;
+}
+
+.card a {
+	color: #ffff;
+	font-weight: bold;
+	text-decoration: none;
+	border-radius: 4px;
+	margin: 5px;
+}
+
+.card a:hover {
+	text-decoration: underline;
+}
+
+.leer-mas {
+	position: absolute;
+	bottom: 0;
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+	.card {
+		width: 250px; /* Ajustar ancho en dispositivos medianos */
+		height: 350px; /* Ajustar altura */
+	}
+}
+
+@media (max-width: 768px) {
+	.card {
+		width: 200px; /* Ajustar en dispositivos pequeños */
+		height: 300px;
+	}
+}
+
+@media (max-width: 480px) {
+	.card {
+		width: 100%; /* Ocupa todo el ancho */
+		height: auto; /* Ajustar altura automáticamente */
+	}
+}
+
+/* Animación */
+.card {
+	opacity: 0;
+	transform: translateY(20px);
+	animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.card {
+	background-color: white;
+	border-radius: var(--border-radius-base);
+	box-shadow: var(--box-shadow-base);
+	transition:
+		transform var(--transition-speed) var(--transition-timing),
+		box-shadow var(--transition-speed) var(--transition-timing);
+	overflow: hidden;
+}
+
+.card:hover {
+	transform: translateY(-5px);
+	box-shadow: var(--box-shadow-hover);
+}
+
+.contenedor {
+	margin: 0 auto; /* Centro horizontal */
+	max-width: 120rem; /* Limita el ancho máximo del contenedor */
+	width: 95%; /* Asegura que el contenedor ocupe casi todo el ancho de la pantalla */
+}

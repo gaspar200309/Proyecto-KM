@@ -1,0 +1,29 @@
+.btn-primary {
+	height: 40px;
+	width: 150px;
+}
+
+.btn-primary,
+.btn-tag {
+	border-radius: 5px;
+	font-size: var(--btn-font-primary);
+	background: linear-gradient(45deg, #ff9900, #683c10);
+	color: #fff;
+	cursor: pointer;
+	padding: 5px;
+}
+
+.config-btn-primary > label {
+	font-size: var(--label);
+	padding: 10px;
+}
+
+.btn-primary:hover {
+	background-color: #387adf;
+}
+
+/*TAGS*/
+.btn-tag {
+	background: #fba834;
+	border-radius: 10px;
+}

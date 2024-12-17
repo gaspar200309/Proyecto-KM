@@ -57,7 +57,7 @@ header {
 .nav-btn {
 	display: flex;
 	justify-content: space-between;
-  z-index: 10;
+	z-index: 10;
 	width: 100%;
 }
 
@@ -70,7 +70,7 @@ header {
 	display: flex;
 	justify-content: flex-end;
 	flex: 1;
-  margin-block:auto;
+	margin-block: auto;
 }
 
 .log-sign {
@@ -111,12 +111,12 @@ header {
 .nav-links > ul {
 	display: flex;
 	align-items: center;
-  margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 .nav-link {
 	position: relative;
-  margin-block: auto;
+	margin-block: auto;
 	margin-left: 20px; /* Añadido un margen para separar los enlaces */
 }
 
@@ -296,6 +296,12 @@ header {
 	object-fit: cover;
 }
 
+.arrowDown {
+	position: absolute;
+	right: -5px;
+	top: 32%;
+}
+
 @keyframes animation {
 	from {
 		opacity: 0;
@@ -308,9 +314,9 @@ header {
 }
 
 @media (max-width: 920px) {
-  .nav-btn {
-      transform: translateX(0); /* El menú aparecerá en pantallas menores a 920px */
-  }
+	.nav-btn {
+		transform: translateX(0); /* El menú aparecerá en pantallas menores a 920px */
+	}
 }
 
 @media (max-width: 920px) {
@@ -329,19 +335,19 @@ header {
 
 	.nav-btn {
 		display: flex;
-    justify-content: space-between;
-    width: 100%;
-    position: fixed; /* Mantiene el menú fijo en la pantalla */
-    top: 0;
-    left: 0;
-    background-color: #f77f00;
-    height: 100vh;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow-x: hidden;
-    overflow-y: auto;
-    transform: translateX(100%); /* Menú inicialmente oculto */
-    transition: transform 0.65s ease; /* Suaviza la transición */
+		justify-content: space-between;
+		width: 100%;
+		position: fixed; /* Mantiene el menú fijo en la pantalla */
+		top: 0;
+		left: 0;
+		background-color: #f77f00;
+		height: 100vh;
+		flex-direction: column;
+		justify-content: space-between;
+		overflow-x: hidden;
+		overflow-y: auto;
+		transform: translateX(100%); /* Menú inicialmente oculto */
+		transition: transform 0.65s ease; /* Suaviza la transición */
 	}
 
 	#check:checked ~ .nav-btn {
@@ -468,35 +474,34 @@ header {
 	justify-content: flex-end; /* Por defecto a la derecha */
 	align-items: center;
 	padding: 0 1rem;
-  }
-  
-  .search-bar input {
+}
+
+.search-bar input {
 	width: 100%;
 	max-width: 400px;
 	padding: 8px;
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	font-size: 14px;
-  }
-  
-  /* Ajustes responsivos */
-  @media (max-width: 920px) {
+}
+
+/* Ajustes responsivos */
+@media (max-width: 920px) {
 	.search-bar {
-	  order: -1; /* Asegura que el buscador esté en la parte superior */
-	  justify-content: flex-start; /* Mueve el buscador a la izquierda */
-	  width: 100%; /* Ocupa todo el ancho */
-	  padding: 0.5rem;
+		order: -1; /* Asegura que el buscador esté en la parte superior */
+		justify-content: flex-start; /* Mueve el buscador a la izquierda */
+		width: 100%; /* Ocupa todo el ancho */
+		padding: 0.5rem;
 	}
-  
+
 	.search-bar input {
-	  width: 90%; /* Reduce el tamaño en dispositivos pequeños */
-	  font-size: 16px;
+		width: 90%; /* Reduce el tamaño en dispositivos pequeños */
+		font-size: 16px;
 	}
-  
+
 	.nav-btn {
-	  flex-direction: column;
-	  height: 100vh;
-	  overflow-y: auto;
+		flex-direction: column;
+		height: 100vh;
+		overflow-y: auto;
 	}
-  }
-  
+}
