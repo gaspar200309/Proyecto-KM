@@ -1,13 +1,19 @@
 import React, { useState } from 'react'
-import { NavLink, Link, useLocation } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate  } from 'react-router-dom'
 import './Nav2.css'
-import { Button } from './Buttons/button.jsx'
 import Buscador from './Buscador.jsx'
 import { IoIosArrowDown } from 'react-icons/io'
+
+//Components
+import { NextPage } from './Buttons/NextPage.jsx'
+
+//Assets
+import LogoKM from '../assets/logos/LogoKM.png'
 
 const NavBarReact = React.memo(() => {
 	const location = useLocation()
 	const [isMenuOpen, setMenuOpen] = useState(false)
+	const navigate = useNavigate()
 	const shouldShowBuscador = location.pathname === '/'
 
 	const menuItems = [
@@ -19,31 +25,31 @@ const NavBarReact = React.memo(() => {
 			label: 'Carreras',
 			to: '/carrera',
 			subMenu: [
-				{ label: 'Área salud', to: '#' },
-				{ label: 'Ingenierías', to: '#' },
-				{ label: 'Carreras empresariales', to: '#' },
-				{ label: 'Carreras Tecnológicas', to: '#' },
-				{ label: 'Carreras sociales', to: '#' },
-				{ label: 'Urbanismo y territorio', to: '#territorio' },
+				{ label: 'Área salud', to: '/carrera#salud' },
+				// { label: 'Ingenierías', to: '#tecnologia' },
+				// { label: 'Carreras empresariales', to: '#' },
+				{ label: 'Carreras Tecnológicas', to: '/carrera#tecnologia' },
+				{ label: 'Area economica', to: '/carrera#economia' },
+				{ label: 'Urbanismo y territorio', to: '/carrera#territorio' },
 			],
 		},
-		/* {
-      label: 'Universidades',
-      to: '/facultad',
-      subMenu: [
-        { label: 'Universidades públicas', to: '#' },
-        { label: 'Universidades privadas', to: '#' },
-        { label: 'Normales', to: '#' },
-      ],
-    },
-    {
-      label: 'Institutos',
-      to: '/instituto',
-      subMenu: [
-        { label: 'Institutos públicos', to: '#' },
-        { label: 'Institutos privados', to: '#' },
-        ],
-    }, */
+		{
+	  label: 'Universidades',
+	  to: '/facultad',
+	  subMenu: [
+		{ label: 'Universidades públicas', to: '#' },
+		{ label: 'Universidades privadas', to: '#' },
+		{ label: 'Normales', to: '#' },
+	  ],
+	},
+	{
+	  label: 'Institutos',
+	  to: '/instituto',
+	  subMenu: [
+		{ label: 'Institutos públicos', to: '#' },
+		{ label: 'Institutos privados', to: '#' },
+		],
+	},
 		{
 			label: 'Donde estudiar',
 			to: '/instituto',
@@ -66,18 +72,20 @@ const NavBarReact = React.memo(() => {
 	const renderMenu = (items) =>
 		items.map((item, index) => (
 			<li className="nav-link" style={{ '--i': `${0.6 + index * 0.25}s` }} key={item.label}>
-				<NavLink to={item.to} onClick={closeMenu}>
-					{item.label} {(item.label == 'Carreras' || item.label == 'Donde estudiar') && <IoIosArrowDown className='arrowDown' />}
-					{item.subMenu && <i className="fas fa-caret-down"></i>}
-				</NavLink>
+				<div className="navbar-sections">
+					<NavLink to={item.to} onClick={closeMenu}>
+						{item.label} {(item.label == 'Carreras' || item.label == 'Donde estudiar') && <IoIosArrowDown className="arrowDown" />}
+						{item.subMenu && <i className="fas fa-caret-down"></i>}
+					</NavLink>
+				</div>
 				{item.subMenu && (
 					<div className="dropdown">
 						<ul>
 							{item.subMenu.map((subItem) => (
 								<li className="dropdown-link" key={subItem.label}>
-									<NavLink to={subItem.to} onClick={closeMenu}>
+									<a href={subItem.to} onClick={closeMenu}>
 										{subItem.label}
-									</NavLink>
+									</a>
 								</li>
 							))}
 							<div className="arrow"></div>
@@ -86,34 +94,26 @@ const NavBarReact = React.memo(() => {
 				)}
 			</li>
 		))
+		
 
 	return (
 		<header>
 			<div className="container2">
-				<div className="search-bar">{shouldShowBuscador && <Buscador />}</div>
+				{/* <div className="search-bar">{shouldShowBuscador && <Buscador />}</div> */}
+				<div className="logo-KM-navbar">
+					<img src={LogoKM} alt="Logo KM" />
+				</div>
 				<input type="checkbox" id="check" checked={isMenuOpen} onChange={toggleMenu} aria-label="Toggle menu" />
 				<div className="nav-btn">
 					<div className="nav-links">
 						<ul>{renderMenu(menuItems)}</ul>
 					</div>
 					<div className="search-bar">
-						{shouldShowBuscador && (
-							<Buscador
-								updateFilteredCarreras={(data) => {
-									console.log('Resultados recibidos:', data)
-									updateFilteredCarreras(data)
-								}}
-							/>
-						)}
+					{shouldShowBuscador && <Buscador />}
 					</div>
-					<ul className="navBar-login">
-						{/* Botón de Ingresar */}
-						<li className="nav-link">
-							<NavLink to="/login" onClick={closeMenu}>
-								<Button texto="Ingresar" />
-							</NavLink>
-						</li>
-					</ul>
+					<div className="btn-ingresar">
+						<NextPage to="/login" value="Ingresar" className="btn-ingresar" />
+					</div>
 				</div>
 				<div className="hamburger-menu-container">
 					<button className="hamburger-menu" onClick={toggleMenu} aria-expanded={isMenuOpen} aria-label="Toggle menu">

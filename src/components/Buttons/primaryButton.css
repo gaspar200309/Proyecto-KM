@@ -7,7 +7,7 @@
 .btn-tag {
 	border-radius: 5px;
 	font-size: var(--btn-font-primary);
-	background: linear-gradient(45deg, #ff9900, #683c10);
+	background: linear-gradient(45deg, #875100, #683c10);
 	color: #fff;
 	cursor: pointer;
 	padding: 5px;
@@ -18,9 +18,9 @@
 	padding: 10px;
 }
 
-.btn-primary:hover {
-	background-color: #387adf;
-}
+/* .btn-primary:hover {
+	background-color: var(--color-secondary);
+} */
 
 /*TAGS*/
 .btn-tag {

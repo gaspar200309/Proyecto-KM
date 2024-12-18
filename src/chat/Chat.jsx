@@ -5,7 +5,6 @@ import { CgClose } from "react-icons/cg";
 import { IoMdSend } from "react-icons/io";
 import { FaRegUserCircle } from "react-icons/fa";
 import { FaRobot } from "react-icons/fa";
-import Draggable from "react-draggable";
 import "./chat.css";
 
 function Chat() {

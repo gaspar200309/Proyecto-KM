@@ -120,7 +120,7 @@ header {
 	margin-left: 20px; /* Añadido un margen para separar los enlaces */
 }
 
-.nav-link > a {
+.navbar-sections > a {
 	line-height: 3rem;
 	padding: 0 0.8rem;
 	color: #683c10;
@@ -130,11 +130,11 @@ header {
 	transition: 0.5s;
 }
 
-.nav-link > a > i {
+.navbar-sections > a > i {
 	margin-left: 0.2rem;
 }
 
-.nav-link:hover > a {
+.navbar-sections:hover > a {
 	transform: scale(1.1);
 }
 
@@ -230,12 +230,15 @@ header {
 }
 
 .hamburger-menu {
-	width: 2.5rem;
-	height: 2.5rem;
+	width: 2rem;
+	height: 2rem;
 	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-}
+	flex-direction: column;
+	justify-content: space-between; /* Asegura que las líneas estén separadas */
+	position: relative;
+	cursor: pointer;
+	z-index: 1001;
+  }
 
 .hamburger-menu div {
 	width: 1.6rem;
@@ -290,6 +293,8 @@ header {
 #check:checked ~ .hamburger-menu-container .hamburger-menu div:after {
 	transform: translateY(0) rotate(45deg);
 }
+
+
 .logo-container2 img {
 	height: 70px;
 
@@ -298,8 +303,38 @@ header {
 
 .arrowDown {
 	position: absolute;
-	right: -5px;
+	right: -10px;
 	top: 32%;
+}
+
+.navbar-sections a.active {
+	/* background: linear-gradient(45deg, #333a73, #387adf); */
+	text-decoration: underline;
+	border-radius: 5px;
+}
+
+.btn-ingresar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.btn-ingresar button {
+	background: #f39200;
+	width: 100px;
+}
+
+.btn-ingresar button:hover {
+	background: #683c10;
+}
+
+.logo-KM-navbar > img {
+	max-width: 95px;
+}
+
+.logo-KM-navbar {
+	max-width: 100px;
+	margin-left: 20px;
 }
 
 @keyframes animation {

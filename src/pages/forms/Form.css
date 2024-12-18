@@ -1,5 +1,5 @@
-/* Form.css */
-
+/* /* /* /* Form.css */
+/* 
 .form-container1 {
   width: 100%;
   max-width: 1200px;
@@ -121,7 +121,8 @@ select {
   background-color: #0056b3;
 }
 
-/* Responsividad */
+
+
 @media (min-width: 768px) {
   .direccion-group {
     display: grid;
@@ -148,3 +149,4 @@ select {
     margin-top: 10px;
   }
 }
+ */ 

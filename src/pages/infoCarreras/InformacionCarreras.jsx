@@ -72,28 +72,30 @@ const InformacionCarreras = () => {
 				<div className="contentC">
 					<div className="contentC-contenido">
 						<h1>Información de la Carrera: {carreraSelect.titulo}</h1>
-						<section className="contenidoC">
-							<h2 className="subtitle">¿Qué es la Carrera?</h2>
-							<p>{carreraSelect.descripcion}</p>
-						</section>
+						<div className='container-information-carrera'>
+							<section className="contenidoC">
+								<h2 className="subtitle">¿Qué es la Carrera?</h2>
+								<p>{carreraSelect.descripcion}</p>
+							</section>
 
-						<section className="contenidoC">
-							<h2 className="subtitle">Áreas de trabajo de la carrera: {carreraSelect.titulo}</h2>
-							<ul>
-								{carreraSelect.lugaresDeTrabajo.map((area, index) => (
-									<li key={index}>{area}</li>
-								))}
-							</ul>
-						</section>
+							<section className="contenidoC">
+								<h2 className="subtitle">Áreas de trabajo de la carrera: {carreraSelect.titulo}</h2>
+								<ul>
+									{carreraSelect.lugaresDeTrabajo.map((area, index) => (
+										<li key={index}>{area}</li>
+									))}
+								</ul>
+							</section>
 
-						<section className="contenidoC">
-							<h2 className="subtitle">Materias que te sirven de base</h2>
-							<ul>
-								{carreraSelect.materias.map((materia, index) => (
-									<li key={index}>{materia}</li>
-								))}
-							</ul>
-						</section>
+							<section className="contenidoC">
+								<h2 className="subtitle">Materias que te sirven de base</h2>
+								<ul>
+									{carreraSelect.materias.map((materia, index) => (
+										<li key={index}>{materia}</li>
+									))}
+								</ul>
+							</section>
+						</div>
 
 						<section className="conteinerC container-center">
 							<h2 className="subtitle">Carreras similares: {carreraSelect.area}</h2>

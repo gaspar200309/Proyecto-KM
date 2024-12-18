@@ -6,8 +6,8 @@ import { getUniversidades } from "../../service/api";
 import CardUniversity from "../../components/card/CardUniversity";
 
 const Universidades = () => {
-  const [universidades, setUniversidades] = useState([]);
-  const [searchValue, setSearchValue] = useState("");
+	const [universidades, setUniversidades] = useState([])
+	const [searchValue, setSearchValue] = useState('')
 
   useEffect(() => {
     const fetchUniversidades = async () => {
@@ -58,9 +58,10 @@ const Universidades = () => {
         <p>Información de universidades públicas y privadas:</p>
       </div>
 
-      <Suspense fallback={<div>Loading...</div>}>
-        <Buscador searchValue={searchValue} onSearchChange={handleSearchChange} />
-      </Suspense>
+				{/* Suspense para la carga diferida del componente Buscador */}
+				<Suspense fallback={<div>Loading...</div>}>
+					<Buscador searchValue={searchValue} onSearchChange={handleSearchChange} placeholder="Buscar universidades..." />
+				</Suspense>
 
       {Object.entries(academias).map(([academia, universidades]) => (
         <div key={academia}>
@@ -84,4 +85,4 @@ const Universidades = () => {
   );
 };
 
-export default Universidades;
+export default Universidades
