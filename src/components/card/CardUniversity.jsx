@@ -18,6 +18,7 @@ const CardUniversity = ({ logo, nombre, direcciones, enlace }) => {
         </figure>
         <div className="cardU-content">
           <h3>{nombre}</h3>
+          <p className="cardU-text">La universidad mayor de san simon se fundo el 11 de noviembre y tiene 11 facultades y en cada una tiene susa carreras correspondedietnes </p>
           <button onClick={handleModalToggle} className="cardU-details-btn">
             Detalles
           </button>
@@ -27,7 +28,7 @@ const CardUniversity = ({ logo, nombre, direcciones, enlace }) => {
       {/* Modal para mostrar los detalles */}
       {isModalOpen && (
         <Modal onClose={handleModalToggle}>
-          <div className="modal-content">
+          <div className="contenido-cardU">
             <h2>{nombre}</h2>
             {direcciones.map((direccion, idx) => (
               <div key={idx}>

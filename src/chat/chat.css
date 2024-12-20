@@ -134,17 +134,17 @@
 	color: var(--color-neutral-dark);
 }
 
-button {
+.send {
 	margin-left: var(--spacing-small);
 	padding: var(--spacing-small) var(--spacing-medium);
-	background-color: var(--color-secondary);
+	background-color: #0bc45ecc;
 	color: white;
 	border-radius: var(--border-radius-base);
 	border: none;
 	cursor: pointer;
 }
 
-button:disabled {
+.send:disabled {
 	background-color: var(--color-tertiary);
 	cursor: not-allowed;
 }

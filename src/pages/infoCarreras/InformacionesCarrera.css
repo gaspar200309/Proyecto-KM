@@ -215,6 +215,7 @@
 
     .recomendaciones-container .card {
         min-width: calc(50% - 15px);
+        height: 30rem;
     }
     .recomendaciones-wrapper{
         margin: auto;

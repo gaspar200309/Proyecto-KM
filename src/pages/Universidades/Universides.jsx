@@ -24,7 +24,7 @@ const Universidades = () => {
   const academias = useMemo(() => {
     const academiasOrganizadas = {};
     universidades.forEach((universidad) => {
-      const academia = universidad.tipoEscuela;
+      const academia = universidad.tipoEscuela; 
       if (academia !== "Instituto") {
         if (!academiasOrganizadas[academia]) {
           academiasOrganizadas[academia] = [];

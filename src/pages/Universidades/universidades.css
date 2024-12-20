@@ -15,7 +15,6 @@ hr {
 	margin: 0 auto; 
 	padding: 20px; 
 	justify-content: center; 
-	gap: 20px; 
 }
 
 .encabezadoU {
@@ -29,8 +28,6 @@ hr {
 }
 
 .imgUniversidades img {
-	max-width: 100%;
-	height: auto;
 	border-radius: var(--border-radius-base);
 }
 
@@ -49,20 +46,6 @@ hr {
 	margin-top: 20px;
 }
 
-.textoU {
-	font-family: Futura-Oblique;
-	color: var(--color-neutral-dark);
-	margin-bottom: var(--spacing-medium);
-	color: #936037;
-}
-.contenedorU-img {
-	max-width: 100px;
-	max-height: 100px;
-	height: auto;
-	width: auto; 
-	object-fit: contain; 
-	vertical-align: middle;
-}
 
 .container-cardU {
 	display: flex;
@@ -72,67 +55,15 @@ hr {
 	justify-content: center;
 }
 
-.cardU {
-	background-color: white;
-	border-radius: var(--border-radius-secundary);
-	box-shadow: var(--box-shadow-base);
-	border-top: 15px solid var(--color-primary);
-	border-bottom: 15px solid var(--color-primary-light);
-	transition:
-		transform var(--transition-speed) var(--transition-timing),
-		box-shadow var(--transition-speed) var(--transition-timing);
-	flex: 1 1 calc(33.333% - var(--spacing-medium)); /* Tres columnas por fila */
-	max-width: calc(33.333% - var(--spacing-medium));
-	margin-bottom: var(--spacing-large);
-	overflow: hidden;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	text-align: center;
-	width: 100%;
-	max-width: 400px;
-	height: 500px;
-	padding: 20px 0px;
-}
 
 .cardU:hover {
 	transform: translateY(-5px);
 	box-shadow: var(--box-shadow-hover);
 }
 
-.cardU figure {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: var(--spacing-medium);
-	box-shadow: var(--box-shadow-hover);
-	height: 120px;
-}
 
-.contenido-cardU {
-	padding: 5px var(--spacing-medium);
-	/* flex-grow: 1; */
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	height: 200px;
-	overflow: auto;
-}
 
-.contenido-cardU h3 {
-	font-size: 16px;
-	font-family: Futura;
-	color: var(--color-secondary);
-}
 
-.contenido-cardU p {
-	font-size: 14px;
-	font-family: Futura-texto;
-	text-align: center;
-	margin-bottom: var(--spacing-small);
-	color: var(--color-neutral-dark);
-}
 
 .contenido-cardU p span {
 	color: var(--highlight-color);
