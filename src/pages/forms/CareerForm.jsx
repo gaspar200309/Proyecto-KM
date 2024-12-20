@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import { createCareer, updateCareer, getCareerById, getUniversidades } from '../../service/api';
-import InputText from '../../components/inputs/InputText';  // Import InputText component
-import Select from '../../components/selected/Selected';  // Import Select component
+import InputText from '../../components/inputs/InputText';  
+import Select from '../../components/selected/Selected';  
 import './CareerForm.css';
 import UniversitySelectorModal from '../../components/modal/UniversitySelectorModal';
 import ScrollToTop from '../../components/scrooll/Scrooll';
 import { IoArrowBackCircleSharp } from "react-icons/io5";
+import UniversitySelector from '../../components/selected/selectUniversity';
 
 const CareerForm = () => {
     const [career, setCareer] = useState({
@@ -86,7 +87,7 @@ const CareerForm = () => {
                 <h1>{id ? 'Editar Carrera ' : 'Crear carrera'}</h1>
             </div>
             <form className="form-container2" onSubmit={handleSubmit}>
-            
+
                 <InputText
                     name="titulo"
                     label="Título de la carrera"
@@ -130,18 +131,21 @@ const CareerForm = () => {
                 ))}
                 <button type="button" onClick={() => addArrayField('materias')}>Agregar Materia</button>
 
-                <button type="button" onClick={() => setShowModal(true)}>
+                <button type="button" onClick={() => {
+                    console.log('Abrir modal');
+                    setShowModal(true);
+                }}>
                     Seleccionar Universidades
                 </button>
 
-                <div>
-                    <p>Universidades seleccionadas:</p>
-                    {career.universidades.map((uniId) => (
-                        <span key={uniId}>
-                            {universidades.find((uni) => uni._id === uniId)?.nombre}
-                        </span>
-                    ))}
-                </div>
+                {showModal && (
+                    <UniversitySelector
+                        universidades={universidades}
+                        selectedUniversities={career.universidades}
+                        setSelectedUniversities={(selected) => setCareer({ ...career, universidades: selected })}
+                        onClose={() => setShowModal(false)}
+                    />
+                )}
 
                 <Select
                     name="area"
@@ -155,12 +159,11 @@ const CareerForm = () => {
                         { label: 'ÁREA SOCIAL Y HUMANA', value: 'ÁREA SOCIAL Y HUMANA' },
                         { label: 'ÁREA URBANISMO Y TERRITORIO', value: 'ÁREA URBANISMO Y TERRITORIO' },
                         { label: 'ÁREA MEDIO AMBIENTE Y AGROPECUARIO', value: 'ÁREA MEDIO AMBIENTE Y AGROPECUARIO' },
-                        { label: 'ÁREA AGRÍCOLA', value: 'ÁREA AGRÍCOLA'}
+                        { label: 'ÁREA AGRÍCOLA', value: 'ÁREA AGRÍCOLA' }
                     ]}
                     placeholder="Seleccione el área"
                     required
                 />
-
                 <Select
                     name="nivel"
                     label="Nivel de la carrera"
@@ -174,7 +177,6 @@ const CareerForm = () => {
                     placeholder="Seleccione el nivel"
                     required
                 />
-
                 <InputText
                     name="duracion"
                     label="Duración de la carrera"

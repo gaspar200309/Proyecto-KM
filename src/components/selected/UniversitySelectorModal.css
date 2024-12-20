@@ -1,0 +1,115 @@
+:root {
+    --color-primary: #fba834;
+    --color-primary-light: #f3b461;
+    --color-primary-dark: #b26a00;
+    --color-neutral-light: #f9f9f9;
+    --color-neutral-dark: #333;
+    --color-text: #4b4b4b;
+    --color-hover: #3d5e83;
+  
+    --font-primary: 'Futura', 'Roboto', sans-serif;
+    --font-secondary: 'Lora', serif;
+    --font-size-base: 14px;
+  
+    --border-radius: 10px;
+  
+    --transition-speed: 0.3s;
+  }
+  
+  body {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-neutral-light);
+  }
+  
+  h3 {
+    font-family: var(--font-secondary);
+    color: var(--color-neutral-dark);
+    margin-bottom: 10px;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--color-neutral-dark);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-base);
+  }
+  
+  .scrollable-list {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid var(--color-neutral-dark);
+    border-radius: var(--border-radius);
+    padding: 10px;
+    background-color: var(--color-neutral-light);
+  }
+  
+  .scrollable-list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .scrollable-list li {
+    margin-bottom: 10px;
+  }
+  
+  .custom-checkbox {
+    position: relative;
+    display: block;
+  }
+  
+  .custom-checkbox input[type="checkbox"] {
+    display: none;
+  }
+  
+  .custom-checkbox label {
+    display: block;
+    padding: 10px 20px;
+    background-color: var(--color-neutral-dark);
+    color: var(--color-text);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+  }
+  
+  .custom-checkbox input[type="checkbox"]:checked + label {
+    background-color: var(--color-primary);
+    color: white;
+  }
+  
+  .custom-checkbox label:hover {
+    background-color: var(--color-hover);
+  }
+  
+  .scrollable-list::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .scrollable-list::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary);
+    border-radius: var(--border-radius);
+  }
+  
+  .scrollable-list::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-hover);
+  }
+  
+  @media (max-width: 768px) {
+    .search-input {
+      font-size: 12px;
+    }
+  
+    .custom-checkbox label {
+      font-size: 12px;
+    }
+  
+    h3 {
+      font-size: 16px;
+    }
+  }
+  

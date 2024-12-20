@@ -68,15 +68,6 @@ const Universidades = () => {
         </p>
       </div>
 
-      <Suspense fallback={<div>Loading...</div>}>
-        <Buscador
-          searchValue={searchValue}
-          onSearchChange={handleSearchChange}
-          placeholder="Buscar universidades..."
-        />
-      </Suspense>
-
-      {/* Barra de paginación por tipo de escuela */}
       <div className="paginacion-tipo-escuela">
         <button
           className={`tipo-escuela ${tipoEscuela === "Todos" ? "active" : ""}`}
@@ -94,6 +85,13 @@ const Universidades = () => {
           </button>
         ))}
       </div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Buscador
+          searchValue={searchValue}
+          onSearchChange={handleSearchChange}
+          placeholder="Buscar universidades..."
+        />
+      </Suspense>
 
       {Object.entries(academias).map(([academia, universidades]) => {
         const filteredByAcademia = filteredUniversidades.filter(
