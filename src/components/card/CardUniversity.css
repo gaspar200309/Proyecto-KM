@@ -24,8 +24,8 @@
     flex-direction: column;
     text-align: center;
     max-width: 400px;
-    margin: 20px auto; /* Centra el card horizontalmente */
-    width: 90%; /* Para que se adapte mejor a pantallas pequeñas */
+    margin: 20px auto;
+    width: 90%; 
   }
   
   .cardU figure {
@@ -56,7 +56,7 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Espaciado entre elementos */
+    gap: 10px; 
   }
   
   .cardU-content h3 {
@@ -85,8 +85,8 @@
   
   
   .cardU-content button {
-    align-self: center; /* Centra el botón */
-    margin-top: auto; /* Empuja el botón hacia la parte inferior */
+    align-self: center;
+    margin-top: auto; 
   }
   
   .cardU-details-btn {
@@ -106,12 +106,12 @@
   
   @media (max-width: 768px) {
     .cardU {
-      max-width: 100%; /* Ocupa todo el ancho en móviles */
+      max-width: 100%;
       padding: 10px;
     }
   
     .cardU-content h3 {
-      font-size: 14px; /* Tamaño más pequeño para móviles */
+      font-size: 14px; 
     }
   
     .cardU-text {
@@ -148,12 +148,12 @@
   }
   .container-cardU {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 20px;
     padding: 20px;
     justify-items: center !important; 
-    justify-content: start !important; /* Alinea las tarjetas al principio */
-    align-items: start !important; /* Alinea las tarjetas en la parte superior */
+    justify-content: start !important; 
+    align-items: start !important; 
   }
   
   .container-cardU.single,

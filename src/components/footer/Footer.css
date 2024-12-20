@@ -99,3 +99,8 @@ input[type='submit'].btnF:hover {
 	color: var(--color-neutral-light);
 	font-size: var(--font-size-small);
 }
+
+.redes-sociales  {
+	display: flex;
+	justify-content: start;
+}
