@@ -16,6 +16,7 @@
 	max-width: 100px;
 	min-height: 150px;
 	object-fit: cover;
+	border-radius: 5px;
 }
 
 .information-article {
