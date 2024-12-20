@@ -84,10 +84,6 @@ body {
 	padding: 0;
 }
 
-p {
-	margin-bottom: var(--spacing-medium);
-	color: var(--color-neutral-dark);
-}
 
 .container {
 	max-width: 1200px;

@@ -26,9 +26,9 @@
     max-width: 400px;
     margin: 20px auto; /* Centra el card horizontalmente */
     width: 90%; /* Para que se adapte mejor a pantallas pequeñas */
-}
-
-.cardU figure {
+  }
+  
+  .cardU figure {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,52 +37,59 @@
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
     height: 120px;
     width: 100%;
-}
-
-.cardU-img {
+  }
+  
+  .cardU-img {
     max-width: 100px; 
     max-height: 100px;
     height: auto;
     width: auto;
     object-fit: contain;
-}
-
-.cardU:hover {
+  }
+  
+  .cardU:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.cardU-content {
+  }
+  
+  .cardU-content {
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 10px; /* Espaciado entre elementos */
-}
-
-.cardU-content h3 {
+  }
+  
+  .cardU-content h3 {
     font-size: 16px;
     color: #f39200;
     margin: 0;
-}
-
-.cardU-content p {
+  }
+  
+  .cardU-content p {
     font-size: 14px;
     margin: 0 0 10px 0;
-}
-
-.cardU-text{
-  font-size: var(--pL-size);
-  font-family: Futura-texto;
-  height: 30%;
-  margin: 5px;
-}
-
-.cardU-content button {
+  }
+  
+  .cardU-text {
+    font-size: var(--pL-size);
+    font-family: Futura-texto;
+    height: 30%;
+    margin: 5px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-clamp: 3; 
+  }
+  
+  
+  .cardU-content button {
     align-self: center; /* Centra el botón */
     margin-top: auto; /* Empuja el botón hacia la parte inferior */
-}
-
-.cardU-details-btn {
+  }
+  
+  .cardU-details-btn {
     background-color: #f39200;
     color: #ffffff;
     font-weight: bold;
@@ -91,45 +98,43 @@
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
-
-.cardU-details-btn:hover {
+  }
+  
+  .cardU-details-btn:hover {
     background-color: #ffa733;
-}
-
-@media (max-width: 768px) {
+  }
+  
+  @media (max-width: 768px) {
     .cardU {
-        max-width: 100%; /* Ocupa todo el ancho en móviles */
-        padding: 10px;
+      max-width: 100%; /* Ocupa todo el ancho en móviles */
+      padding: 10px;
     }
-
+  
     .cardU-content h3 {
-        font-size: 14px; /* Tamaño más pequeño para móviles */
+      font-size: 14px; /* Tamaño más pequeño para móviles */
     }
-
+  
     .cardU-text {
-        font-size: 12px;
+      font-size: 12px;
     }
-
+  
     .cardU-details-btn {
-        padding: 8px 15px;
-        font-size: 14px;
+      padding: 8px 15px;
+      font-size: 14px;
     }
-}
-
-
-
-
-.contenido-cardU {
-  padding: 5px var(--spacing-medium);
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  overflow: auto;
-}
-
-.contenido-cardU p {
+  }
+  
+  .contenido-cardU {
+    padding: 5px var(--spacing-medium);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: auto;
+    text-align: center;
+  }
+  
+  .contenido-cardU p {
     font-size: 14px;
     font-family: Futura-texto;
     text-align: center;
@@ -140,4 +145,32 @@
   .contenido-cardU p span {
     color: var(--highlight-color);
     font-weight: bold;
+  }
+  .container-cardU {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    gap: 20px;
+    padding: 20px;
+    justify-items: center !important; 
+    justify-content: start !important; /* Alinea las tarjetas al principio */
+    align-items: start !important; /* Alinea las tarjetas en la parte superior */
+  }
+  
+  .container-cardU.single,
+  .container-cardU.double {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @media (max-width: 1024px) {
+    .container-cardU {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container-cardU {
+      grid-template-columns: 1fr; 
+    }
   }

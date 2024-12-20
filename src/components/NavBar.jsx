@@ -24,46 +24,28 @@ const NavBarReact = React.memo(() => {
 		{
 			label: 'Carreras',
 			to: '/carrera',
-			subMenu: [
+			/* subMenu: [
 				{ label: 'Área salud', to: '/carrera#salud' },
 				// { label: 'Ingenierías', to: '#tecnologia' },
 				// { label: 'Carreras empresariales', to: '#' },
 				{ label: 'Carreras Tecnológicas', to: '/carrera#tecnologia' },
 				{ label: 'Area economica', to: '/carrera#economia' },
 				{ label: 'Urbanismo y territorio', to: '/carrera#territorio' },
-			],
+			], */
 		},
 		{
-	  label: 'Universidades',
+	  label: 'Donde estudiar',
 	  to: '/facultad',
-	  subMenu: [
+	  /* subMenu: [
 		{ label: 'Universidades públicas', to: '#' },
 		{ label: 'Universidades privadas', to: '#' },
 		{ label: 'Normales', to: '#' },
-	  ],
+	  ], */
 	},
 	{
-	  label: 'Institutos',
-	  to: '/instituto',
-	  subMenu: [
-		{ label: 'Institutos públicos', to: '#' },
-		{ label: 'Institutos privados', to: '#' },
-		],
+		label: 'Becas',
+		to: '/becas',
 	},
-		{
-			label: 'Donde estudiar',
-			to: '/instituto',
-			subMenu: [
-				{ label: 'Universidades', to: '#' },
-				{ label: 'Institutos', to: '#' },
-				{ label: 'Institutos policiales', to: '#' },
-				{ label: 'Normales', to: '#' },
-			],
-		},
-		{
-			label: 'Becas',
-			to: '/becas',
-		},
 	]
 
 	const toggleMenu = () => setMenuOpen((prev) => !prev)
@@ -75,10 +57,10 @@ const NavBarReact = React.memo(() => {
 				<div className="navbar-sections">
 					<NavLink to={item.to} onClick={closeMenu}>
 						{item.label} {(item.label == 'Carreras' || item.label == 'Donde estudiar') && <IoIosArrowDown className="arrowDown" />}
-						{item.subMenu && <i className="fas fa-caret-down"></i>}
+						{/* {item.subMenu && <i className="fas fa-caret-down"></i>} */}
 					</NavLink>
 				</div>
-				{item.subMenu && (
+				{/* {item.subMenu && (
 					<div className="dropdown">
 						<ul>
 							{item.subMenu.map((subItem) => (
@@ -91,7 +73,7 @@ const NavBarReact = React.memo(() => {
 							<div className="arrow"></div>
 						</ul>
 					</div>
-				)}
+				)} */}
 			</li>
 		))
 		
