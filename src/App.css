@@ -4,7 +4,7 @@
 	--color-primary-light: #f3b461;
 	--color-primary-dark: #b26a00;
 
-	--color-secondary: #683c10;
+	--color-secondary: #f5f2ee;
 	--color-secondary-light: #3fbf63;
 	--color-secondary-dark: #0c7827;
 	--color-tertiary: #615442;
@@ -19,7 +19,7 @@
 	--font-secondary: 'Lora', serif;
 
 	--h1-size: 37.78px;
-	--h2-size: 29.81px;
+	--h2-size: 22.81px;
 	--h3-size: 23.18px;
 	--h4-size: 17.65px;
 	--h5-size: 13.04px;
@@ -95,46 +95,6 @@ p {
 	padding: var(--spacing-medium);
 }
 
-button {
-	font-family: var(--font-primary);
-	font-size: var(--font-size-base);
-	border-radius: var(--border-radius-base);
-	cursor: pointer;
-	/* transition:
-		background-color var(--transition-speed) var(--transition-timing),
-		color var(--transition-speed) var(--transition-timing); */
-	padding: var(--spacing-small) var(--spacing-medium);
-	border: none;
-}
-
-button:hover {
-	background-color: var(--color-primary-dark);
-	color: white;
-}
-
-a {
-	text-decoration: none;
-	color: var(--color-primary);
-	transition: color var(--transition-speed) var(--transition-timing);
-}
-
-a:hover {
-	color: var(--color-primary-dark);
-}
-
-.h2,
-h2 {
-	font-size: calc(1.325rem + 0.9vw);
-	text-align: center;
-	color: var(--color-secondary);
-}
-
-/* @media (min-width: 1200px) {
-    .h2, h2 {
-        font-size: 2rem;
-        text-align: center;
-    }
-} */
 
 @keyframes desplazamiento {
 	0% {
@@ -174,11 +134,7 @@ h2 {
 	}
 }
 
-.pie-pagina {
-	margin-top: 15%;
-	background-color: rgb(20, 20, 20);
-	padding: 5rem;
-}
+
 @media (min-width: 768px) {
 	.contenedor-piepagina {
 		display: flex;

@@ -230,12 +230,15 @@ header {
 }
 
 .hamburger-menu {
-	width: 2.5rem;
-	height: 2.5rem;
+	width: 2rem;
+	height: 2rem;
 	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-}
+	flex-direction: column;
+	justify-content: space-between; /* Asegura que las líneas estén separadas */
+	position: relative;
+	cursor: pointer;
+	z-index: 1001;
+  }
 
 .hamburger-menu div {
 	width: 1.6rem;
@@ -290,6 +293,8 @@ header {
 #check:checked ~ .hamburger-menu-container .hamburger-menu div:after {
 	transform: translateY(0) rotate(45deg);
 }
+
+
 .logo-container2 img {
 	height: 70px;
 

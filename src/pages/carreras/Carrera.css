@@ -6,6 +6,13 @@
 	margin: 20px 0;
 }
 
+.tituloCarrera{
+	text-align: center;
+	font-size: var(--h2-size);
+	color: #f07d00;
+	margin: 20px 0;
+}
+
 .titulo-nivel {
 	text-align: center;
 	font-size: 24px;
@@ -14,13 +21,12 @@
 	text-transform: capitalize;
 }
 
-/* Contenedor de tarjetas */
-/* .container-card {
+.container-card {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 	gap: 1.5rem;
 	padding: 2rem;
-  } */
+  } 
 
 .container-card {
 	display: flex;
@@ -67,10 +73,38 @@
 	.container-card {
 		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 	}
+
+	.filters {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .filters label {
+        width: 100%;
+    }
+    .filters select {
+        width: 100%;
+    }
+    .container-card {
+        gap: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
 	.container-card {
 		grid-template-columns: 1fr;
 	}
+	.filters {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .filters select {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+    .container-card {
+        flex-direction: column;
+        padding: 1rem;
+    }
 }

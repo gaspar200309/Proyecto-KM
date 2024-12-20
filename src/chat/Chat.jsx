@@ -100,7 +100,7 @@ function Chat() {
             className="chat-input"
           />
           <div className="char-counter">{charCount}/{maxChars}</div>
-          <button onClick={handleUserInput} disabled={input.trim() === ""}>
+          <button className="send" onClick={handleUserInput} disabled={input.trim() === ""}>
             <IoMdSend />
           </button>
         </div>

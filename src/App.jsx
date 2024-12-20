@@ -19,7 +19,6 @@ const ListUniversidades = lazy(() => import('./pages/list/ListUniversity'));
 const ListCareer = lazy(() => import('./pages/list/ListCareer'));
 const ListBecas = lazy(() => import('./pages/list/ListBecas'));
 const Institutos = lazy(() => import('./pages/institutos/Institutes'));
-const TestVocacional = lazy(() => import('./pages/testVocacional/TestVocacional'));
 
 export const App2 = () => {
   return (
@@ -47,7 +46,6 @@ export const App2 = () => {
           <Route path="/listCareers" element={<ListCareer />} />
           <Route path="/listBecas" element={<ListBecas />} />
           <Route path="/instituto" element={<Institutos />} />
-          <Route path="/testVocacional" element={<TestVocacional />} />
           <Route path="/*" element={<Navigate to="/" />} />
         </Routes>
       </Suspense>

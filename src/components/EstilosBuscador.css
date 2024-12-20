@@ -1,37 +1,118 @@
 .search-container {
-	font-family: Futura-Oblique;
+	font-family: 'Futura-Oblique';
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin: 10px;
+	margin: 20px auto;
 	width: 60%;
-}
-
-.search-input {
-	padding-block: 5px;
+	position: relative; /* Para posicionar la lista de resultados */
+  }
+  
+  .search-input-wrapper {
+	display: flex;
+	width: 100%; /* Para que el input y el botón ocupen el mismo espacio */
+	justify-content: center;
+  }
+  
+  .search-input {
+	padding-block: 10px;
 	font-size: 16px;
 	border: 2px solid #f39200;
+	border-right: none; /* Quitar borde derecho para que se una al botón */
 	border-radius: 10px 0 0 10px;
-	width: 300px;
+	width: 100%;
 	outline: none;
-}
-
-.search-input::placeholder {
+	transition: border-color 0.3s ease;
+  }
+  
+  .search-input:focus {
+	border-color: #ff7518; /* Color más vibrante al hacer foco */
+  }
+  
+  .search-input::placeholder {
 	color: #852e2e;
-	font-family: Futura-texto;
-}
-.search-button {
+	font-family: 'Futura-texto';
+  }
+  
+  .search-button {
 	background-color: #f39200;
 	color: white;
 	border: none;
 	border-radius: 0 10px 10px 0;
-	padding: 6.5px 20px;
+	padding: 10px 20px;
+	margin: 0;
 	cursor: pointer;
 	font-size: 16px;
-	margin-block: auto;
-	margin: 0;
-}
-
-.search-button:hover {
+	transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .search-button:hover {
+	background-color: #ff7518; /* Un naranja más vibrante para hover */
+	transform: scale(1.05); /* Efecto leve de ampliación */
+  }
+  
+  .search-results {
+	margin-top: 10px;
+	border: 1px solid #f39200;
+	border-radius: 5px;
+	background-color: #ffffff;
+	max-height: 200px;
+	overflow-y: auto;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar la lista */
+	position: absolute; /* Se coloca justo debajo del buscador */
+	top: 100%; /* Justo debajo del input-wrapper */
+	width: 100%;
+	z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  }
+  
+  .search-result-item {
+	padding: 10px 15px;
+	border-bottom: 1px solid #f39200;
+	color: #852e2e;
+	text-decoration: none;
+	display: block;
+	font-family: 'Futura-texto';
+	transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .search-result-item:hover {
 	background-color: #f39200;
-}
+	color: white;
+  }
+  
+  .search-result-item:last-child {
+	border-bottom: none; /* Quitar borde al último elemento */
+  }
+  
+
+  /* Estilo general del scroll */
+.search-results::-webkit-scrollbar {
+	width: 8px; /* Ancho del scroll */
+	height: 8px; /* Para barras horizontales si las usas */
+  }
+  
+  /* Fondo del scroll */
+  .search-results::-webkit-scrollbar-track {
+	background: #f4f4f4; /* Color del fondo del track */
+	border-radius: 10px; /* Redondeo opcional */
+  }
+  
+  /* Barra del scroll */
+  .search-results::-webkit-scrollbar-thumb {
+	background-color: #f39200; /* Color de la barra */
+	border-radius: 10px; /* Redondeo */
+	border: 2px solid #ffffff; /* Espacio adicional entre el track y el thumb */
+  }
+  
+  /* Barra del scroll al hacer hover */
+  .search-results::-webkit-scrollbar-thumb:hover {
+	background-color: #ff7518; /* Cambiar color al hacer hover */
+  }
+  
+  /* Soporte para Firefox */
+  .search-results {
+	scrollbar-color: #f39200 #f4f4f4; /* Barra (foreground) y track (background) */
+	scrollbar-width: thin; /* Grosor del scroll */
+  }
+  

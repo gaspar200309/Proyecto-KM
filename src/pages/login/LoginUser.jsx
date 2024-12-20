@@ -73,9 +73,9 @@ export default function LoginUser() {
               required
             />
             {error && <p className="error-message">{error}</p>}
-            <button type="button" onClick={toggleShowPassword} className="toggle-password">
+            {/* <button type="button" onClick={toggleShowPassword} className="toggle-password">
               {showPassword ? <IoEyeOutline /> : <FaRegEyeSlash />}
-            </button>
+            </button> */}
           </div>
           <Link to="/reset">¿Olvidaste la contraseña?</Link>
           <button className="button-primary" type="submit">Ingresar</button>

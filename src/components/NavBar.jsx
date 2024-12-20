@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate  } from 'react-router-dom'
 import './Nav2.css'
 import Buscador from './Buscador.jsx'
 import { IoIosArrowDown } from 'react-icons/io'
@@ -13,6 +13,7 @@ import LogoKM from '../assets/logos/LogoKM.png'
 const NavBarReact = React.memo(() => {
 	const location = useLocation()
 	const [isMenuOpen, setMenuOpen] = useState(false)
+	const navigate = useNavigate()
 	const shouldShowBuscador = location.pathname === '/'
 
 	const menuItems = [
@@ -32,23 +33,23 @@ const NavBarReact = React.memo(() => {
 				{ label: 'Urbanismo y territorio', to: '/carrera#territorio' },
 			],
 		},
-		/* {
-      label: 'Universidades',
-      to: '/facultad',
-      subMenu: [
-        { label: 'Universidades públicas', to: '#' },
-        { label: 'Universidades privadas', to: '#' },
-        { label: 'Normales', to: '#' },
-      ],
-    },
-    {
-      label: 'Institutos',
-      to: '/instituto',
-      subMenu: [
-        { label: 'Institutos públicos', to: '#' },
-        { label: 'Institutos privados', to: '#' },
-        ],
-    }, */
+		{
+	  label: 'Universidades',
+	  to: '/facultad',
+	  subMenu: [
+		{ label: 'Universidades públicas', to: '#' },
+		{ label: 'Universidades privadas', to: '#' },
+		{ label: 'Normales', to: '#' },
+	  ],
+	},
+	{
+	  label: 'Institutos',
+	  to: '/instituto',
+	  subMenu: [
+		{ label: 'Institutos públicos', to: '#' },
+		{ label: 'Institutos privados', to: '#' },
+		],
+	},
 		{
 			label: 'Donde estudiar',
 			to: '/instituto',
@@ -93,6 +94,7 @@ const NavBarReact = React.memo(() => {
 				)}
 			</li>
 		))
+		
 
 	return (
 		<header>
@@ -107,14 +109,7 @@ const NavBarReact = React.memo(() => {
 						<ul>{renderMenu(menuItems)}</ul>
 					</div>
 					<div className="search-bar">
-						{shouldShowBuscador && (
-							<Buscador
-								updateFilteredCarreras={(data) => {
-									console.log('Resultados recibidos:', data)
-									updateFilteredCarreras(data)
-								}}
-							/>
-						)}
+					{shouldShowBuscador && <Buscador />}
 					</div>
 					<div className="btn-ingresar">
 						<NextPage to="/login" value="Ingresar" className="btn-ingresar" />
