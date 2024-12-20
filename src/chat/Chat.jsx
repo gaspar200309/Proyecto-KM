@@ -14,7 +14,7 @@ function Chat() {
   const [charCount, setCharCount] = useState(0);
   const maxChars = 500;
 
-  const urlInput = 'http://localhost:3000/api/chats/chat';
+  const urlInput = 'https://backend-km-git-main-gaspar200309s-projects.vercel.app/api/chats/chat';
 
   const handleUserInput = async () => {
     if (input.trim() === "" || charCount > maxChars) {
