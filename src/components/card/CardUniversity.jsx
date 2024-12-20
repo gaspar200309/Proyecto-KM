@@ -17,7 +17,7 @@ const CardUniversity = ({ logo, nombre, direcciones, enlace }) => {
           <img className="cardU-img" src={logo} alt={nombre} loading="lazy" />
         </figure>
         <div className="cardU-content">
-          <h3>{nombre}</h3>
+          <h3>{nombre}</h3> 
           <p className="cardU-text">La universidad mayor de san simon se fundo el 11 de noviembre y tiene 11 facultades y en cada una tiene susa carreras correspondedietnes </p>
           <button onClick={handleModalToggle} className="cardU-details-btn">
             Detalles
