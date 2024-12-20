@@ -13,7 +13,6 @@ const Carrera = () => {
 	const [error, setError] = useState(null)
 	const [areaFilter, setAreaFilter] = useState('')
 	const [nivelFilter, setNivelFilter] = useState('')
-	const [alertId, setAlertId] = useState(true)
 
 	useEffect(() => {
 		const fetchCareers = async () => {

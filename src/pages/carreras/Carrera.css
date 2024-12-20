@@ -61,6 +61,15 @@
 
 .areas {
 	margin: 90px 0px;
+	/* display: flex;
+	flex-direction: column;
+	align-items: center; */
+}
+
+.mas-carreras{
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .mas-carreras a {

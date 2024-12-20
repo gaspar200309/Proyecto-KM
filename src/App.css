@@ -4,11 +4,13 @@
 	--color-primary-light: #f3b461;
 	--color-primary-dark: #b26a00;
 
-	--color-secondary: #f5f2ee;
+	--color-secondary: #683c10;
+	--color-secondary-chill: #4f2c0d;
 	--color-secondary-light: #3fbf63;
 	--color-secondary-dark: #0c7827;
 	--color-tertiary: #615442;
 	--color-tertiary-light: #8a7e6d;
+	--color-tertiary-medium: #574b44;
 	--color-tertiary-dark: #423630;
 
 	--color-neutral-light: #ededed;
@@ -84,13 +86,11 @@ body {
 	padding: 0;
 }
 
-
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: var(--spacing-medium);
 }
-
 
 @keyframes desplazamiento {
 	0% {
@@ -129,7 +129,6 @@ body {
 		font-family: Verdana, Geneva, Tahoma, sans-serif;
 	}
 }
-
 
 @media (min-width: 768px) {
 	.contenedor-piepagina {

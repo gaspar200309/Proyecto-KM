@@ -22,7 +22,7 @@
 	font-family: Futura-texto;
 	font-weight: normal;
 	margin-top: 20px;
-  }
+}
 
 .container-cardU {
 	display: flex;
@@ -51,9 +51,9 @@
 	margin: 20px 0;
 	justify-content: center;
 	flex-wrap: wrap; /* Asegura que los botones se ajusten en pantallas pequeñas */
-  }
-  
-  .tipo-escuela {
+}
+
+.tipo-escuela {
 	background-color: #f1f1f1;
 	border: 1px solid #ccc;
 	padding: 10px 15px;
@@ -61,28 +61,38 @@
 	cursor: pointer;
 	transition: background-color 0.3s ease;
 	font-size: 1rem; /* Tamaño de fuente por defecto */
-  }
-  
-  .tipo-escuela:hover {
+}
+
+.tipo-escuela:hover {
 	background-color: #ddd;
-  }
-  
-  .tipo-escuela.active {
+}
+
+.tipo-escuela.active {
 	background-color: #ee8c0d;
 	color: white;
 	border-color: #caa21e;
-  }
-  
-  
+}
+
+.mas-universidades {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.mas-universidades a {
+	margin: 10px;
+	font-size: var(--pLL-size);
+}
+
 @media (max-width: 768px) {
 	.cardU {
 		flex: 1 1 calc(50% - 20px);
 		max-width: calc(50% - 20px);
 	}
 	.tipo-escuela {
-		padding: 8px 12px; 
+		padding: 8px 12px;
 		font-size: 0.9rem;
-	  }
+	}
 }
 
 @media (max-width: 480px) {
@@ -91,7 +101,7 @@
 		max-width: 100%;
 	}
 	.tipo-escuela {
-		padding: 6px 10px; 
+		padding: 6px 10px;
 		font-size: 0.8rem;
-	  }
+	}
 }

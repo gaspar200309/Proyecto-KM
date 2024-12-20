@@ -45,7 +45,7 @@ header {
 	position: relative;
 	justify-content: space-between;
 	align-items: center;
-	background-color: #ffffff;
+	background-color: var(--color-tertiary-dark);
 }
 
 .logo-container2 {
@@ -115,15 +115,19 @@ header {
 }
 
 .nav-link {
-	position: relative;
-	margin-block: auto;
-	margin-left: 20px; /* Añadido un margen para separar los enlaces */
+	display: block; /* Añadido un margen para separar los enlaces */
+	padding: 18px 10px;
+}
+
+.nav-link:hover {
+	background: var(--color-tertiary-medium);
 }
 
 .navbar-sections > a {
 	line-height: 3rem;
 	padding: 0 0.8rem;
-	color: #683c10;
+	/* color: #683c10; */
+	color: #fff;
 	letter-spacing: 1px;
 	font-size: 16px;
 	display: flex;
@@ -238,7 +242,7 @@ header {
 	position: relative;
 	cursor: pointer;
 	z-index: 1001;
-  }
+}
 
 .hamburger-menu div {
 	width: 1.6rem;
@@ -294,10 +298,8 @@ header {
 	transform: translateY(0) rotate(45deg);
 }
 
-
 .logo-container2 img {
 	height: 70px;
-
 	object-fit: cover;
 }
 
@@ -329,7 +331,7 @@ header {
 }
 
 .logo-KM-navbar > img {
-	max-width: 95px;
+	max-width: 70px;
 }
 
 .logo-KM-navbar {

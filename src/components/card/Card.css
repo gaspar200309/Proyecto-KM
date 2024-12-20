@@ -1,6 +1,6 @@
 .card {
-	width: 300px; /* Ancho estático */
-	height: 400px; /* Altura aumentada */
+	width: 350px; /* Ancho estático */
+	height: 430px; /* Altura aumentada */
 	background: #7e6767;
 	border-radius: 20px;
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);

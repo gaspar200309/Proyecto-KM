@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { NavLink, useLocation, useNavigate  } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import './Nav2.css'
 import Buscador from './Buscador.jsx'
 import { IoIosArrowDown } from 'react-icons/io'
@@ -8,7 +8,7 @@ import { IoIosArrowDown } from 'react-icons/io'
 import { NextPage } from './Buttons/NextPage.jsx'
 
 //Assets
-import LogoKM from '../assets/logos/LogoKM.png'
+import LogoKM from '../assets/logos/Logo-06.png'
 
 const NavBarReact = React.memo(() => {
 	const location = useLocation()
@@ -34,18 +34,18 @@ const NavBarReact = React.memo(() => {
 			], */
 		},
 		{
-	  label: 'Donde estudiar',
-	  to: '/facultad',
-	  /* subMenu: [
+			label: 'Donde estudiar',
+			to: '/facultad',
+			/* subMenu: [
 		{ label: 'Universidades públicas', to: '#' },
 		{ label: 'Universidades privadas', to: '#' },
 		{ label: 'Normales', to: '#' },
 	  ], */
-	},
-	{
-		label: 'Becas',
-		to: '/becas',
-	},
+		},
+		{
+			label: 'Becas',
+			to: '/becas',
+		},
 	]
 
 	const toggleMenu = () => setMenuOpen((prev) => !prev)
@@ -56,7 +56,8 @@ const NavBarReact = React.memo(() => {
 			<li className="nav-link" style={{ '--i': `${0.6 + index * 0.25}s` }} key={item.label}>
 				<div className="navbar-sections">
 					<NavLink to={item.to} onClick={closeMenu}>
-						{item.label} {(item.label == 'Carreras' || item.label == 'Donde estudiar') && <IoIosArrowDown className="arrowDown" />}
+						{item.label}
+						{/* {(item.label == 'Carreras' || item.label == 'Donde estudiar') && <IoIosArrowDown className="arrowDown" />} */}
 						{/* {item.subMenu && <i className="fas fa-caret-down"></i>} */}
 					</NavLink>
 				</div>
@@ -76,7 +77,6 @@ const NavBarReact = React.memo(() => {
 				)} */}
 			</li>
 		))
-		
 
 	return (
 		<header>
@@ -90,9 +90,7 @@ const NavBarReact = React.memo(() => {
 					<div className="nav-links">
 						<ul>{renderMenu(menuItems)}</ul>
 					</div>
-					<div className="search-bar">
-					{shouldShowBuscador && <Buscador />}
-					</div>
+					<div className="search-bar">{shouldShowBuscador && <Buscador />}</div>
 					<div className="btn-ingresar">
 						<NextPage to="/login" value="Ingresar" className="btn-ingresar" />
 					</div>
