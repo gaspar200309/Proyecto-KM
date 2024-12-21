@@ -33,10 +33,14 @@ a {
 
 header {
 	position: sticky;
+	/* position: fixed; */
+	background-color: var(--color-tertiary-dark);
+	/* background-color: transparent; */
 	top: 0px;
-	background-color: #ffffff;
 	width: 100%;
-	z-index: 1;
+	z-index: 1000;
+	transition: background-color 600ms ease-out;
+	box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
 }
 .container2 {
 	padding: 0 2rem;
@@ -45,8 +49,12 @@ header {
 	position: relative;
 	justify-content: space-between;
 	align-items: center;
-	background-color: var(--color-tertiary-dark);
+	background-color: transparent;
 }
+
+/* .scrolled {
+	background-color: var(--color-tertiary-dark);
+} */
 
 .logo-container2 {
 	flex: 1;

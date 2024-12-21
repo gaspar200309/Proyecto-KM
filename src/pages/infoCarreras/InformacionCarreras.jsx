@@ -89,7 +89,6 @@ const InformacionCarreras = () => {
 			<ScrollToTop />
 			<div className="informacion-carrera-container">
 				<div className="Header1">
-					<header className="headerC">
 						<div className="image-containerC">
 							<img src={carreraSelect.imgSrc} alt={carreraSelect.titulo} />
 							<div className="image-textC">
@@ -99,7 +98,6 @@ const InformacionCarreras = () => {
 								</h1>
 							</div>
 						</div>
-					</header>
 
 					<nav className="navigation-barC">
 						<Link to="/">Inicio /</Link>

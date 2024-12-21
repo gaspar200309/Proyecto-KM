@@ -45,13 +45,13 @@
 }
 
 .image-textC span {
-	color: var(--primary-color);
+	color: var(--color-primary);
 	font-size: 2rem;
 	margin-left: 10px;
 }
 
 .navigation-barC {
-	background-color: var(--secondary-color);
+	background-color: var(--color-tertiary-medium);
 	padding: 10px 20px;
 	position: relative;
 	z-index: 10;

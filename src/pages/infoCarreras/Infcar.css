@@ -244,6 +244,7 @@
 	width: 10%;
 }
 
+
 /* Estilos para pantallas más pequeñas (dispositivos móviles) */
 @media screen and (max-width: 600px) {
 	.containerC {

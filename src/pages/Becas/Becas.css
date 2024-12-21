@@ -1,90 +1,93 @@
 /* Becas.css */
 .becas-title {
-  text-align: center;
-  font-size: 32px;
-  color: var(--color-primary-dark);
-  margin-block: var(--spacing-large);
+	text-align: center;
+	font-size: 32px;
+	color: var(--color-primary-dark);
+	margin-block: var(--spacing-large);
 }
 
 .becas-grid {
-  display: grid;
-  grid-template-columns: 1fr; /* Una sola columna que ocupe todo el ancho */
-  gap: var(--spacing-large);
-  padding: var(--spacing-medium);
+	display: grid;
+	grid-template-columns: 1fr; /* Una sola columna que ocupe todo el ancho */
+	gap: var(--spacing-large);
+	padding: var(--spacing-medium);
 }
 
-
 .beca-card {
-  width: 100%; /* Ocupar todo el ancho del contenedor */
-  max-width: none; /* Remover la limitación del ancho máximo */
-  background-color: var(--color-neutral-light);
-  border-radius: var(--border-radius-secundary);
-  box-shadow: var(--box-shadow-base);
-  overflow: hidden;
-  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+	width: 100%; /* Ocupar todo el ancho del contenedor */
+	max-width: none; /* Remover la limitación del ancho máximo */
+	background-color: var(--color-neutral-light);
+	border-radius: var(--border-radius-secundary);
+	box-shadow: var(--box-shadow-base);
+	overflow: hidden;
+	transition:
+		transform var(--transition-speed),
+		box-shadow var(--transition-speed);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .beca-card:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--box-shadow-hover);
+	transform: translateY(-10px);
+	box-shadow: var(--box-shadow-hover);
 }
 
 .img-cardB img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  margin-top: 0;
-  border-bottom: 5px solid var(--color-primary);
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	margin-top: 0;
+	border-bottom: 5px solid var(--color-primary);
 }
 
 .contentB {
-  padding: var(--spacing-medium);
+	padding: var(--spacing-medium);
 }
 
 .titleB {
-  font-size: var(--font-size-large);
-  color: #683C10;
+	font-size: var(--font-size-large);
+	color: #683c10;
 }
 
 .sub-titleB {
-  font-size: var(--font-size-small);
-  color: #936037;;
-  margin-bottom: var(--spacing-small);
-  font-family: Futura-Oblique;
+	font-size: var(--font-size-small);
+	color: #936037;
+	margin-bottom: var(--spacing-small);
+	font-family: Futura-Oblique;
 }
 
-.descriptionB, .important-noteB, .average-requiredB {
-  font-size: var(--font-size-base);
-  color: #683C10;
+.descriptionB,
+.important-noteB,
+.average-requiredB {
+	font-size: var(--font-size-base);
+	color: #683c10;
 }
 
 .important-noteB {
-  background-color: var(--color-secondary-light);
-  padding: var(--spacing-small);
-  border-radius: var(--border-radius-base);
-  font-weight: bold;
+	background-color: var(--color-secondary-light);
+	padding: var(--spacing-small);
+	border-radius: var(--border-radius-base);
+	font-weight: bold;
 }
 
 .scholarshipsB {
-  margin-top: var(--spacing-medium);
+	margin-top: var(--spacing-medium);
 }
 
 .scholarship-typeB h4 {
-  color: var(--color-primary);
-  margin-bottom: var(--spacing-small);
+	color: var(--color-primary);
+	margin-bottom: var(--spacing-small);
 }
 
 .scholarship-typeB p {
-  font-size: var(--font-size-small);
-  color: var(--color-neutral-dark);
+	font-size: var(--font-size-small);
+	color: var(--color-neutral-dark);
 }
 
 .addressB {
-  font-size: var(--font-size-small);
-  color: #683C10;
-  font-weight: bold;
-  font-family: Futura-Oblique;
+	font-size: var(--font-size-small);
+	color: #683c10;
+	font-weight: bold;
+	font-family: Futura-Oblique;
 }

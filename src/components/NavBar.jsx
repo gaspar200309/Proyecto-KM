@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import './Nav2.css'
 import Buscador from './Buscador.jsx'
@@ -15,6 +15,7 @@ const NavBarReact = React.memo(() => {
 	const [isMenuOpen, setMenuOpen] = useState(false)
 	const navigate = useNavigate()
 	const shouldShowBuscador = location.pathname === '/'
+	const [isScrolled, setIsScrolled] = useState(false)
 
 	const menuItems = [
 		{
@@ -48,13 +49,33 @@ const NavBarReact = React.memo(() => {
 		},
 	]
 
+	//Para Efecto scroll en el navBar cuando te desplazas
+	// useEffect(() => {
+	// 	const handleScroll = () => {
+	// 		const scrollPosition = window.scrollY
+	// 		if (scrollPosition > 200) {
+	// 			// Cambia a 50px para hacer el efecto visible rápidamente
+	// 			setIsScrolled(true)
+	// 		} else {
+	// 			setIsScrolled(false)
+	// 		}
+	// 	}
+
+	// 	window.addEventListener('scroll', handleScroll)
+
+	// 	// Cleanup del evento para evitar fugas de memoria
+	// 	return () => {
+	// 		window.removeEventListener('scroll', handleScroll)
+	// 	}
+	// }, [])
+
 	const toggleMenu = () => setMenuOpen((prev) => !prev)
 	const closeMenu = () => setMenuOpen(false)
 
 	const renderMenu = (items) =>
 		items.map((item, index) => (
 			<li className="nav-link" style={{ '--i': `${0.6 + index * 0.25}s` }} key={item.label}>
-				<div className="navbar-sections">
+				<div className={`navbar-sections`}>
 					<NavLink to={item.to} onClick={closeMenu}>
 						{item.label}
 						{/* {(item.label == 'Carreras' || item.label == 'Donde estudiar') && <IoIosArrowDown className="arrowDown" />} */}
@@ -79,7 +100,7 @@ const NavBarReact = React.memo(() => {
 		))
 
 	return (
-		<header>
+		<header className={`${isScrolled ? 'scrolled' : ''}`}>
 			<div className="container2">
 				{/* <div className="search-bar">{shouldShowBuscador && <Buscador />}</div> */}
 				<div className="logo-KM-navbar">
