@@ -120,5 +120,66 @@ span {
       width: 100%;
       margin-top: 10px;
   }
+} */
+
+.container-register-form-1 {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	max-width: 900px;
+	margin: 50px auto;
+	border: 1px solid #000;
+	border-radius: 10px;
+	padding: 30px;
+	column-gap: 20px;
+	background-color: rgba(207, 204, 204, 0.443);
 }
- */
+
+.btn-choose-likes,
+.btn-next-page {
+	grid-row: 999;
+}
+
+.btn-choose-likes button {
+	border-radius: 20px;
+}
+
+.input-1c {
+	grid-column: span 1;
+}
+
+.input-2c {
+	grid-column: span 2;
+}
+
+.input-3c {
+	grid-column: span 3;
+}
+
+.input-4c {
+	grid-column: span 4;
+}
+
+.container-selected-likes {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.container-btn-next-page {
+	grid-row: 999;
+	grid-column: -2;
+	display: flex;
+	align-items: end;
+	justify-content: flex-end;
+}
+
+.btn-next-page > div {
+	width: 90%;
+}
+
+.btn-back {
+	font-size: 50px;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}

@@ -378,7 +378,9 @@ header {
 	.nav-link {
 		padding: 24px 10px;
 	}
+}
 
+@media (max-width: 1196px) {
 	.navlink-dondeEstudiar {
 		padding-bottom: 6px;
 	}
