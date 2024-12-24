@@ -21,7 +21,7 @@ export const Informacion = () => {
           <p>
             Bienvenid@ a la página Profesiográfica Semillas. Aquí podrás descubrir información esencial sobre diversos centros de educación superior y las carreras que ofrecen. Este sitio está diseñado para ayudarte a tomar decisiones informadas sobre tu futuro académico y profesional. 
             Explora las oportunidades que te esperan y encuentra la carrera que mejor se alinee con tus intereses y aspiraciones.
-          </p>
+          </p> {/* este es un  */}
         </div>
       </section>
     </>
