@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react'
 import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import './Nav2.css'
 import Buscador from './Buscador.jsx'
+import ImagenesApp from '../assets/ImagenesApp.js'
 import { IoIosArrowDown } from 'react-icons/io'
 
 //Components
 import { NextPage } from './Buttons/NextPage.jsx'
 
 //Assets
-import LogoKM from '../assets/logos/Logo-06.png'
+
 
 const NavBarReact = React.memo(() => {
 	const location = useLocation()
@@ -108,7 +109,7 @@ const NavBarReact = React.memo(() => {
 			<div className="container2">
 				{/* <div className="search-bar">{shouldShowBuscador && <Buscador />}</div> */}
 				<div className="logo-KM-navbar">
-					<img src={LogoKM} alt="Logo KM" />
+					<img src={ImagenesApp.logo} alt="Logo KM" />
 				</div>
 				<input type="checkbox" id="check" checked={isMenuOpen} onChange={toggleMenu} aria-label="Toggle menu" />
 				<div className="nav-btn">

@@ -26,10 +26,10 @@ export const PieDePagina = () => {
 					</div>
 					<div className="info">
 						<h3>Para otras informaciones</h3>
-						<p>Lunes: 08:30am - 18:30pm</p>
+						{/* <p>Lunes: 08:30am - 18:30pm</p>
 						<p>Martes: 08:30am - 18:30pm</p>
 						<p>Miercoles: 08:30am - 18:30pm</p>
-						<p>Jueves: 08:30am - 18:30pm</p>
+						<p>Jueves: 08:30am - 18:30pm</p> */}
 						<div className="redes-sociales redes-pie">
 							<a href="https://www.facebook.com/KawsayMuju"><FaFacebook className="redes-icons" /></a>
 							<a href='https://www.facebook.com/KawsayMuju'><FaInstagramSquare className="redes-icons" /></a>
@@ -38,8 +38,8 @@ className="redes-icons" /></a>
 						</div>
 					</div>
 					<div className="info">
-						<h3>Noticias</h3>
-						<p>Envíanos tus novedades</p>
+						<h3>Comentarios</h3>
+						<p>Esta página esta en constante actualización, si tienes alguna sugerencia puedes dejar tu comentario</p>
 						<input type="email" placeholder="Envía un comentario" />
 						<input type="submit" className="btnF" value="ENVIAR" />
 					</div>
