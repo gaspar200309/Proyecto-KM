@@ -260,6 +260,7 @@ header {
 	position: relative;
 	z-index: 1001;
 	transition: 0.5s;
+	top: 7px;
 }
 
 .hamburger-menu div:before,
@@ -275,10 +276,12 @@ header {
 
 .hamburger-menu div:before {
 	transform: translateY(-7px);
+	left: 0;
 }
 
 .hamburger-menu div:after {
 	transform: translateY(7px);
+	left: 0;
 }
 
 #check {
@@ -358,6 +361,29 @@ header {
 	}
 }
 
+@media (max-width: 1270px) {
+	.nav-btn {
+		font-size: 14px;
+	}
+
+	.search-bar {
+		padding: 0;
+	}
+
+	.navbar-sections > a {
+		font-size: 14px;
+		line-height: var(--line-height-base);
+	}
+
+	.nav-link {
+		padding: 24px 10px;
+	}
+
+	.navlink-dondeEstudiar {
+		padding-bottom: 6px;
+	}
+}
+
 @media (max-width: 920px) {
 	.nav-btn {
 		transform: translateX(0); /* El menú aparecerá en pantallas menores a 920px */
@@ -386,7 +412,7 @@ header {
 		top: 0;
 		left: 0;
 		background-color: #f77f00;
-		height: 100vh;
+		/* height: 100vh; */
 		flex-direction: column;
 		justify-content: space-between;
 		overflow-x: hidden;
@@ -411,6 +437,7 @@ header {
 
 	.nav-links > ul {
 		flex-direction: column;
+		width: 100%;
 	}
 
 	.nav-link {
@@ -427,6 +454,10 @@ header {
 	.nav-link:hover > a {
 		transform: scale(1);
 		background-color: #ffa333;
+	}
+
+	.navbar-sections:hover > a {
+		transform: initial;
 	}
 
 	.dropdown,
@@ -546,7 +577,6 @@ header {
 
 	.nav-btn {
 		flex-direction: column;
-		height: 100vh;
 		overflow-y: auto;
 	}
 }

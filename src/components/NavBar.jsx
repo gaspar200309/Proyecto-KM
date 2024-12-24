@@ -21,6 +21,7 @@ const NavBarReact = React.memo(() => {
 		{
 			label: 'Inicio',
 			to: '/',
+			estilo: '',
 		},
 		{
 			label: 'Carreras',
@@ -33,6 +34,7 @@ const NavBarReact = React.memo(() => {
 				{ label: 'Area economica', to: '/carrera#economia' },
 				{ label: 'Urbanismo y territorio', to: '/carrera#territorio' },
 			], */
+			estilo: '',
 		},
 		{
 			label: 'Donde estudiar',
@@ -42,10 +44,12 @@ const NavBarReact = React.memo(() => {
 		{ label: 'Universidades privadas', to: '#' },
 		{ label: 'Normales', to: '#' },
 	  ], */
+			estilo: 'navlink-dondeEstudiar',
 		},
 		{
 			label: 'Becas',
 			to: '/becas',
+			estilo: '',
 		},
 	]
 
@@ -74,7 +78,7 @@ const NavBarReact = React.memo(() => {
 
 	const renderMenu = (items) =>
 		items.map((item, index) => (
-			<li className="nav-link" style={{ '--i': `${0.6 + index * 0.25}s` }} key={item.label}>
+			<li className={`nav-link ${item.estilo}`} style={{ '--i': `${0.6 + index * 0.25}s` }} key={item.label}>
 				<div className={`navbar-sections`}>
 					<NavLink to={item.to} onClick={closeMenu}>
 						{item.label}
