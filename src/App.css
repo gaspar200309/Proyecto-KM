@@ -19,6 +19,8 @@
 	/* Typography */
 	--font-primary: Futura, 'Roboto', sans-serif;
 	--font-secondary: 'Lora', serif;
+	--label: 1.5rem;
+	--input-font: 1.3rem;
 
 	--h1-size: 37.78px;
 	--h2-size: 22.81px;

@@ -5,18 +5,17 @@ import { Informacion } from '../../components/header/Informacion'
 import InfTest from '../../components/testVocacionalDesc/InfTest'
 import ScrollToTop from '../../components/scrooll/Scrooll'
 
-export default function Inicio () {
-  return (
-    <>
-    <ScrollToTop/>
-      <Informacion/>
-      <hr></hr>
-      <CarreraRecomendada></CarreraRecomendada>
-      <hr></hr>
-      <UniversidadesRec></UniversidadesRec>
-      {/* <InfTest/> */}
-      {/* <Contacto/> */}
-    </>
-  )
+export default function Inicio() {
+	return (
+		<>
+			<ScrollToTop />
+			<Informacion />
+			<hr></hr>
+			<CarreraRecomendada></CarreraRecomendada>
+			<hr></hr>
+			<UniversidadesRec></UniversidadesRec>
+			{/* <InfTest/> */}
+			{/* <Contacto/> */}
+		</>
+	)
 }
-

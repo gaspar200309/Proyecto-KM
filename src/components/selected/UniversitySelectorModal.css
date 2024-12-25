@@ -71,7 +71,7 @@
     display: block;
     padding: 10px 20px;
     background-color: var(--color-neutral-dark);
-    color: var(--color-text);
+    color: #fff;
     border-radius: var(--border-radius);
     cursor: pointer;
     transition: background-color var(--transition-speed), color var(--transition-speed);
