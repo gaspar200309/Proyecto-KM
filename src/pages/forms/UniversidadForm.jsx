@@ -10,6 +10,7 @@ import './Form.css';
 const UniversidadForm = () => {
     const [universidad, setUniversidad] = useState({
       nombre: '',
+      descripcion: '',
       direcciones: [{ direccion: '', telefono: '', fax: '', celular: '', whatsapp: '', correo: '' }],
       tipoEscuela: '',
       esPublica: '',
@@ -23,16 +24,20 @@ const UniversidadForm = () => {
 
     useEffect(() => {
         if (id) {
-          setIsEdit(true);
-          getUniversidadById(id)
-            .then(response => {
-              if (response?.data) {
-                setUniversidad(response.data); // Asegúrate de que response.data sea el objeto esperado.
-              }
-            })
-            .catch(error => console.error("Error fetching universidad:", error));
+            setIsEdit(true);
+            getUniversidadById(id)
+                .then((response) => {
+                    if (response?.data) {
+                        setUniversidad((prev) => ({
+                            ...prev,
+                            ...response.data,
+                        }));
+                    }
+                })
+                .catch((error) => console.error("Error fetching universidad:", error));
         }
-      }, [id]);
+    }, [id]);
+    
       
     
 
@@ -73,29 +78,27 @@ const UniversidadForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData();
-        
+
+    
+        // Asegúrate de que direcciones sea un JSON string
         formData.append('direcciones', JSON.stringify(universidad.direcciones));
-        
-        Object.keys(universidad).forEach(key => {
+    
+        Object.keys(universidad).forEach((key) => {
             if (key !== 'direcciones') {
-                if (key === 'logo') {
-                    formData.append(key, universidad[key]);
-                } else {
-                    formData.append(key, universidad[key]);
-                }
+                formData.append(key, universidad[key]);
             }
         });
-
+    
         if (isEdit) {
             await updateUniversidad(id, formData);
         } else {
             await createUniversidad(formData);
         }
+    
         navigate('/listForm');
     };
-
     
-
+    
     return (
         <div className="form-container1">
             <ScrollToTop />
@@ -113,6 +116,15 @@ const UniversidadForm = () => {
                     placeholder="Nombre"
                     required
                 />
+
+                <textarea
+                    name="descripcion"
+                    value={universidad.descripcion}
+                    onChange={handleChange}
+                    placeholder="Descripción de la universidad"
+                    rows="5"
+                    className="form-textarea"
+                ></textarea>
                 
                 {universidad.direcciones.map((dir, index) => (
                     <div key={index} className="direccion-group">

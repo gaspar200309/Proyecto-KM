@@ -3,7 +3,6 @@ import { useNavigate, useParams, Link } from 'react-router-dom'
 import { createCareer, updateCareer, getCareerById, getUniversidades } from '../../service/api'
 import { Input } from '../../components/inputs/Input'
 import { TextArea } from '../../components/inputs/TextArea'
-import InputText from '../../components/inputs/InputText'
 import Select from '../../components/selected/Selected'
 import './CareerForm.css'
 import UniversitySelectorModal from '../../components/modal/UniversitySelectorModal'
@@ -23,6 +22,7 @@ const CareerForm = () => {
 		duracion: '',
 		imgSrc: '',
 	})
+	console.log(career)
 	const [universidades, setUniversidades] = useState([])
 	const [showModal, setShowModal] = useState(false)
 	const { id } = useParams()

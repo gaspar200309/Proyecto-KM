@@ -26,7 +26,7 @@
     max-width: 400px;
     margin: 20px auto;
     width: 90%; 
-    height: 400px;
+    height: 300px;
   }
   
   .cardU figure {
@@ -57,13 +57,13 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px; 
-    height: 150px;
+    /* gap: 10px; 
+    height: 150px; */
   }
   
   .cardU-content h3 {
     font-size: 16px;
-    color: #f39200;
+    color: #4c5339;
     margin: 0;
   }
   

@@ -36,7 +36,7 @@ export const App2 = () => {
           <Route path="/carrera/:idCar" element={<InformacionCarreras />} />
           <Route path="/listForm" element={<ListForms />} />
           <Route path="/career/new" element={<CareerForm />} />
-          
+          <Route path="/editcareer/:id" element={<CareerForm />} />
 
           <Route path="/university/new" element={<UniversidadForm />} />
           <Route path="/editUniversidad/:id" element={<UniversidadForm />} />

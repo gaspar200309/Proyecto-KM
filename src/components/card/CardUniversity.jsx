@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import './CardUniversity.css'
 import Modal from '../modal/Modal' // Importamos el componente Modal
 
-const CardUniversity = ({ logo, nombre, direcciones, enlace }) => {
+const CardUniversity = ({ logo, nombre, descripcion, direcciones, enlace }) => {
 	const [isModalOpen, setModalOpen] = useState(false)
 
 	const handleModalToggle = () => {
@@ -19,8 +19,7 @@ const CardUniversity = ({ logo, nombre, direcciones, enlace }) => {
 				<div className="cardU-content">
 					<h3>{nombre}</h3>
 					<p className="cardU-text">
-						La universidad mayor de san simon se fundo el 11 de noviembre y tiene 11 facultades y en cada una tiene susa carreras
-						correspondedietnes{' '}
+						{descripcion}
 					</p>
 				</div>
 				<button onClick={handleModalToggle} className="cardU-details-btn">
@@ -75,6 +74,7 @@ const CardUniversity = ({ logo, nombre, direcciones, enlace }) => {
 CardUniversity.propTypes = {
 	logo: PropTypes.string.isRequired,
 	nombre: PropTypes.string.isRequired,
+	descripcion: PropTypes.string,
 	direcciones: PropTypes.arrayOf(
 		PropTypes.shape({
 			direccion: PropTypes.string,

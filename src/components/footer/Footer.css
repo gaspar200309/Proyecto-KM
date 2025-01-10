@@ -56,7 +56,7 @@
 	color: var(--color-primary);
 }
 
-input[type='email'] {
+.pie-pagina input[type='email'] {
 	width: calc(100% - var(--spacing-medium));
 	padding: var(--spacing-small);
 	border-radius: var(--border-radius-base);
@@ -67,7 +67,7 @@ input[type='email'] {
 	color: var(--color-neutral-light);
 }
 
-input[type='submit'].btnF {
+.pie-pagina input[type='submit'].btnF {
   font-family: Futura;
 	background-color: var(--color-primary);
 	color: white;
@@ -79,12 +79,12 @@ input[type='submit'].btnF {
 	font-size: var(--font-size-base);
 }
 
-input[type='submit'].btnF:hover {
+.pie-pagina input[type='submit'].btnF:hover {
 	background-color: var(--color-primary-dark);
 }
 
 .footer {
-	background-color: var(--color-tertiary-dark);
+	background-color: #1c1b1b;
 	text-align: center;
 	padding: var(--spacing-medium) 0;
 }
@@ -103,4 +103,13 @@ input[type='submit'].btnF:hover {
 .redes-sociales  {
 	display: flex;
 	justify-content: start;
+}
+
+.msj{
+	color: var(--color-primary);
+	font-family: var(--font-primary);
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
 }
