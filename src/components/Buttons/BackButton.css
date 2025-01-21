@@ -1,0 +1,27 @@
+.back-button {
+	display: flex;
+	align-items: center;
+	background-color: var(--color-primary);
+	color: var(--blanco);
+	border: none;
+	border-radius: var(--border-radius-base);
+	padding: 0.5rem 1rem;
+	font-size: var(--font-size-base);
+	cursor: pointer;
+	transition: background-color var(--transition-speed);
+	box-shadow: var(--box-shadow-base);
+}
+
+.back-button:hover {
+	background-color: var(--color-primary-dark);
+	box-shadow: var(--box-shadow-hover);
+}
+
+.back-icon {
+	margin-right: 0.5rem;
+	font-size: 1.5rem;
+}
+
+.back-button span {
+	font-family: var(--font-primary);
+}

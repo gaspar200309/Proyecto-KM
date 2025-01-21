@@ -113,3 +113,75 @@
 	align-content: center;
 	align-items: center;
 }
+
+.footer {
+	background-color: #1c1b1b;
+	text-align: center;
+	padding: var(--spacing-medium) 0;
+	position: relative;
+}
+
+.footer h4 {
+	color: var(--color-neutral-light);
+	font-size: var(--font-size-base);
+	margin-bottom: var(--spacing-small);
+	font-family: var(--font-primary);
+}
+
+.footer p {
+	color: var(--color-neutral-light);
+	font-size: var(--font-size-small);
+	margin: 0;
+}
+
+.footer p span.fecha {
+	color: var(--color-primary);
+	font-weight: bold;
+}
+
+.footer .creditos {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: var(--spacing-small);
+	border-top: 1px solid var(--color-neutral-light);
+	margin-top: var(--spacing-medium);
+}
+
+.footer .creditos h4 {
+	color: var(--color-primary);
+	font-size: var(--font-size-medium);
+	margin-bottom: var(--spacing-small);
+}
+
+.footer .creditos a {
+	color: var(--color-primary-light);
+	font-weight: bold;
+	transition: color var(--transition-speed) var(--transition-timing);
+}
+
+.footer .creditos a:hover {
+	color: var(--color-primary);
+}
+
+.footer .logo {
+	margin-bottom: var(--spacing-small);
+}
+
+.link-multicolor {
+	background: linear-gradient(90deg, #e41919, #ff8c00, #1e90ff); /* Rojo, naranja y azul */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-weight: bold;
+	font-size: var(--font-size-base);
+	text-decoration: none;
+	transition: all 0.3s ease-in-out;
+  }
+  
+  .link-multicolor:hover {
+	background: linear-gradient(90deg, #1e90ff, #ff8c00, #ff4500); /* Invertir colores al pasar el mouse */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-shadow: 0px 0px 10px rgba(255, 69, 0, 0.6); /* Efecto de brillo */
+  }
+  

@@ -1,33 +1,42 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { getCareers, deleteCareer } from '../../service/api';
-//import './Listcareeres.css';
+import { ToastContainer, toast } from 'react-toastify'; // Importar react-toastify
+import 'react-toastify/dist/ReactToastify.css'; // Estilos de react-toastify
+import './ListUniversidades.css';
 
 const ListCareer = () => {
-    const [careers, setCareers] = useState([]);
-  const navigate = useNavigate();
-
+  const [careers, setCareers] = useState([]);
+  
   useEffect(() => {
     fetchCareers();
   }, []);
 
-  const fetchCareers  = async () => {
+  const fetchCareers = async () => {
     try {
       const response = await getCareers();
-      console.log(response.data)
-      setCareers(response.data);
+      console.log(response.data);
+      setCareers(response.data.carreras);
     } catch (error) {
-        console.error("Error fetching careers", error);
+      console.error("Error fetching careers", error);
     }
-}
+  };
 
+  const playSound = (type) => {
+    const sound = new Audio(type === 'success' ? '/sounds/success.mp3' : '/sounds/error.mp3');
+    sound.play();
+  };
 
   const handleDelete = async (id) => {
     try {
       await deleteCareer(id);
-      setCareers(careers.filter(univ => univ.id !== id));
+      setCareers(careers.filter(career => career._id !== id));
+      toast.success("Carrera eliminada exitosamente"); // Notificación de éxito
+      playSound('success'); // Reproducir sonido de éxito
     } catch (error) {
       console.error("Error deleting carrera", error);
+      toast.error("Hubo un error al eliminar la carrera"); // Notificación de error
+      playSound('error'); // Reproducir sonido de error
     }
   };
 
@@ -58,6 +67,8 @@ const ListCareer = () => {
           ))}
         </tbody>
       </table>
+
+      <ToastContainer /> {/* Contenedor para las notificaciones */}
     </div>
   );
 };

@@ -1,4 +1,3 @@
-import React from 'react';
 import './InputText.css';
 
 const InputText = ({ name, value, onChange, placeholder, required, label }) => {

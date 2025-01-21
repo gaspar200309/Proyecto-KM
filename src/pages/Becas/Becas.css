@@ -1,19 +1,19 @@
 /* Becas.css */
-.becas-title {
+.becas1-title {
 	text-align: center;
 	font-size: 32px;
 	color: var(--color-primary-dark);
 	margin-block: var(--spacing-large);
 }
 
-.becas-grid {
+.becas1-grid2 {
 	display: grid;
 	grid-template-columns: 1fr; /* Una sola columna que ocupe todo el ancho */
 	gap: var(--spacing-large);
 	padding: var(--spacing-medium);
 }
 
-.beca-card {
+.beca1-card2 {
 	width: 100%; /* Ocupar todo el ancho del contenedor */
 	max-width: none; /* Remover la limitación del ancho máximo */
 	background-color: var(--color-neutral-light);
@@ -28,7 +28,7 @@
 	justify-content: space-between;
 }
 
-.beca-card:hover {
+.beca1-card2:hover {
 	transform: translateY(-10px);
 	box-shadow: var(--box-shadow-hover);
 }
@@ -58,18 +58,11 @@
 }
 
 .descriptionB,
-.important-noteB,
 .average-requiredB {
-	font-size: var(--font-size-base);
+	font-family: var(--font-secondary);
 	color: #683c10;
 }
 
-.important-noteB {
-	background-color: var(--color-secondary-light);
-	padding: var(--spacing-small);
-	border-radius: var(--border-radius-base);
-	font-weight: bold;
-}
 
 .scholarshipsB {
 	margin-top: var(--spacing-medium);
@@ -91,3 +84,19 @@
 	font-weight: bold;
 	font-family: Futura-Oblique;
 }
+
+.important-noteB {
+	font-family: var(--font-secondary); /* Usa la tipografía secundaria */
+  }
+  
+  .addressB {
+	font-size: var(--font-size-medium); /* Tamaño pequeño para dirección */
+	font-family: var(--font-secondary); /* Usa la tipografía secundaria */
+	color: var(--color-tertiary-medium); /* Color terciario medio */
+  }
+  
+  .addressB strong {
+	font-weight: bold;
+	color: var(--color-secondary); 
+  }
+  

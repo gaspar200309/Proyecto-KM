@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 import { getCareerById, getRecommendedCareers } from '../../service/api'
 import ScrollToTop from '../../components/scrooll/Scrooll'
 import Card from '../../components/card/Card'
+import ImagenesApp from '../../assets/ImagenesApp';
 import { ArticulosRecomendados } from '../../components/Articulos/ArticulosRecomendados'
 
 import './InformacionesCarrera.css'
@@ -15,45 +16,37 @@ const InformacionCarreras = () => {
 	const [error, setError] = useState(null)
 
 	const recomendacionesRef = useRef(null)
-
 	const informationArticulos = {
-		sectionTitle: 'Te puede interesar',
+		sectionTitle: 'Recomendaciones para tu futuro',
 		articles: [
 			{
-				title: 'Diseño de Videojuegos',
-				description: '¿Por qué estudiar Diseño de Videojuegos? El Diseño de Videojuegos se encarga de todo el proceso desde la...',
-				imageUrl: 'URL_de_la_imagen_2',
-				link: '/',
+				title: 'Cómo Construir un Currículum Impactante',
+				description: 'Tu currículum es tu carta de presentación. Aprende a destacarte con un diseño profesional, resaltar tus habilidades clave y mostrar tu experiencia de manera que impresione a futuros empleadores.',
+				imageUrl: ImagenesApp.cv,
+				link: '/curriculum-impactante',
 			},
 			{
-				title: 'Diseño de Videojuegos',
-				description: '¿Por qué estudiar Diseño de Videojuegos? El Diseño de Videojuegos se encarga de todo el proceso desde la...',
-				imageUrl: 'URL_de_la_imagen_2',
-				link: '/',
+				title: 'La Tecnología y la IA: Transforma tu Futuro Profesional',
+				description: 'La tecnología y la inteligencia artificial están revolucionando todas las industrias. Descubre cómo puedes aprovechar estas herramientas para mejorar tu carrera y estar preparado para el futuro.',
+				imageUrl: ImagenesApp.imgIA,
+				link: '/tecnologia-ia',
 			},
 			{
-				title: '¿Por qué estudiar Diseño Web?',
-				description:
-					'¿Quieres ser Webmaster? La profesión del Diseñador Web es, al igual que todas las relacionadas con la tecnología y...',
-				imageUrl: 'URL_de_la_imagen_3',
-				link: '/',
+				title: 'La Perseverancia: La Clave para Alcanzar tus Sueños',
+				description: 'El camino al éxito no es fácil, pero la perseverancia es esencial. Aprende cómo mantenerte enfocado, superar los obstáculos y seguir adelante hasta lograr tus metas profesionales.',
+				imageUrl: ImagenesApp.imgMetas,
+				link: '/perseverancia',
 			},
 			{
-				title: 'Diseño de Videojuegos',
-				description: '¿Por qué estudiar Diseño de Videojuegos? El Diseño de Videojuegos se encarga de todo el proceso desde la...',
-				imageUrl: 'URL_de_la_imagen_2',
-				link: '/',
-			},
-			{
-				title: '¿Por qué estudiar Diseño Web?',
-				description:
-					'¿Quieres ser Webmaster? La profesión del Diseñador Web es, al igual que todas las relacionadas con la tecnología y...',
-				imageUrl: 'URL_de_la_imagen_3',
-				link: '/',
+				title: 'El Futuro de las Carreras en la Era Digital',
+				description: 'En un mundo cada vez más digital, es importante elegir una carrera que te permita estar a la vanguardia. Conoce las mejores opciones de estudios y cómo prepararte para un futuro lleno de oportunidades tecnológicas.',
+				imageUrl: ImagenesApp.imgDigital,
+				link: '/futuro-carreras',
 			},
 		],
-	}
-
+	};
+	
+	  
 	useEffect(() => {
 		const fetchCarrera = async () => {
 			try {
@@ -75,10 +68,12 @@ const InformacionCarreras = () => {
 
 	const scrollRecomendaciones = (direction) => {
 		if (recomendacionesRef.current) {
-			const scrollAmount = direction === 'left' ? -300 : 300
-			recomendacionesRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' })
+			const containerWidth = recomendacionesRef.current.offsetWidth; // Ancho visible del contenedor
+			const scrollAmount = direction === 'left' ? -containerWidth : containerWidth; // Desplazarse por el ancho visible
+			recomendacionesRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
 		}
-	}
+	};
+
 
 	if (loading) return <p>Cargando información de la carrera...</p>
 	if (error) return <p>Error al cargar la carrera: {error}</p>
@@ -89,15 +84,15 @@ const InformacionCarreras = () => {
 			<ScrollToTop />
 			<div className="informacion-carrera-container">
 				<div className="Header1">
-						<div className="image-containerC">
-							<img src={carreraSelect.imgSrc} alt={carreraSelect.titulo} />
-							<div className="image-textC">
-								<h1>
-									{carreraSelect.titulo} <span>{carreraSelect.duracion}</span>
-									<span>años</span>
-								</h1>
-							</div>
+					<div className="image-containerC">
+						<img src={carreraSelect.imgSrc} alt={carreraSelect.titulo} />
+						<div className="image-textC">
+							<h1>
+								{carreraSelect.titulo} <span>{carreraSelect.duracion}</span>
+								<span>años</span>
+							</h1>
 						</div>
+					</div>
 
 					<nav className="navigation-barC">
 						<Link to="/">Inicio /</Link>
@@ -139,7 +134,7 @@ const InformacionCarreras = () => {
 								<h2 className="subtitle">Carreras similares: {carreraSelect.area}</h2>
 								<div className="recomendaciones-wrapper">
 									<button className="scroll-button left" onClick={() => scrollRecomendaciones('left')}>
-										{'<'}
+										{'< '}
 									</button>
 									<div className="recomendaciones-container" ref={recomendacionesRef}>
 										{recomendaciones.map((carrera) => (
@@ -160,17 +155,22 @@ const InformacionCarreras = () => {
 
 							<section className="contenidoC container-center">
 								<h2 className="subtitle">Video sobre {carreraSelect.titulo}</h2>
-								<iframe
-									width="560"
-									height="315"
-									src="https://www.youtube.com/embed/R_I--jo9qLY"
-									title="Video sobre la carrera"
-									frameBorder="0"
-									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-									allowFullScreen
-								></iframe>
+								{carreraSelect.videoUrl ? (
+									<iframe
+										width="560"
+										height="315"
+										src={carreraSelect.videoUrl}
+										title={`Video sobre la carrera ${carreraSelect.titulo}`}
+										frameBorder="0"
+										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+										allowFullScreen
+									></iframe>
+								) : (
+									<div className="video-not-available">
+										<p>El video sobre esta carrera todavía no está disponible.</p>
+									</div>
+								)}
 							</section>
-
 							<section className="contenidoC container-center">
 								<h2 className="subtitle">Universidades para Estudiar {carreraSelect.titulo}</h2>
 								<ul className="universidades-list">
@@ -188,7 +188,8 @@ const InformacionCarreras = () => {
 					</div>
 
 					<div className="articulos-informacion-carrera">
-						<ArticulosRecomendados sectionTitle={informationArticulos.sectionTitle} articles={informationArticulos.articles} />
+						<ArticulosRecomendados
+							sectionTitle={informationArticulos.sectionTitle} articles={informationArticulos.articles} />
 					</div>
 				</div>
 			</div>

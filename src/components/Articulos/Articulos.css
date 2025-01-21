@@ -1,3 +1,22 @@
-.container-img-articulo {
-	max-width: 150px;
+.container-articulos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.container-articulos h3 {
+    font-family: Futura-Oblique;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .container-articulos h3 {
+        font-size: 1.5rem;
+    }
 }

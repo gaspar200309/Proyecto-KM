@@ -1,24 +1,23 @@
-import { useNavigate } from 'react-router-dom'
-import './CardArticulo.css'
-
-import imagenPrueba from '../../assets/img/administracion.jpg'
+import { useNavigate } from 'react-router-dom';
+import './CardArticulo.css';
 
 export const CardArticulo = ({ imagen, titulo = '', descripcion, to }) => {
-	const navigate = useNavigate()
+    const navigate = useNavigate();
 
-	const redirigirToArticulo = () => {
-		navigate({ to })
-	}
+    const redirigirToArticulo = (e) => {
+        e.preventDefault();
+        navigate(to);
+    };
 
-	return (
-		<a href={to} className="container-card-articulo">
-			<div className="container-img-articulo">
-				<img src={imagenPrueba} alt="" />
-			</div>
-			<div className="information-article">
-				<h3>{titulo}</h3>
-				<p>{descripcion}</p>
-			</div>
-		</a>
-	)
-}
+    return (
+        <a href={to} className="container-card-articulo" onClick={redirigirToArticulo}>
+            <div className="container-img-articulo">
+                <img src={imagen} alt={titulo} />
+            </div>
+            <div className="information-article">
+                <h3>{titulo}</h3>
+                <p>{descripcion}</p>
+            </div>
+        </a>
+    );
+};

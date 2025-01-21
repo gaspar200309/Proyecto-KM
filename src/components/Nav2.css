@@ -49,7 +49,7 @@ header {
 	position: relative;
 	justify-content: space-between;
 	align-items: center;
-	background-color: transparent;
+	background-color: #fff;
 }
 
 /* .scrolled {
@@ -128,14 +128,13 @@ header {
 }
 
 .nav-link:hover {
-	background: var(--color-tertiary-medium);
+	background: #e2e1e1;
 }
 
 .navbar-sections > a {
 	line-height: 3rem;
 	padding: 0 0.8rem;
-	/* color: #683c10; */
-	color: #fff;
+	color: var(--color-primary);
 	letter-spacing: 1px;
 	font-size: 16px;
 	display: flex;
@@ -248,6 +247,7 @@ header {
 	flex-direction: column;
 	justify-content: space-between; /* Asegura que las líneas estén separadas */
 	position: relative;
+	border: none;
 	cursor: pointer;
 	z-index: 1001;
 }
@@ -260,6 +260,7 @@ header {
 	position: relative;
 	z-index: 1001;
 	transition: 0.5s;
+
 	top: 7px;
 }
 
@@ -285,15 +286,7 @@ header {
 }
 
 #check {
-	position: absolute;
-	top: 50%;
-	right: 1.5rem;
-	transform: translateY(-50%);
-	width: 2.5rem;
-	height: 2.5rem;
-	z-index: 90000;
-	cursor: pointer;
-	opacity: 0;
+	
 	display: none;
 }
 
@@ -402,10 +395,6 @@ header {
 		display: flex;
 	}
 
-	#check {
-		display: block;
-	}
-
 	.nav-btn {
 		display: flex;
 		justify-content: space-between;
@@ -413,18 +402,24 @@ header {
 		position: fixed; /* Mantiene el menú fijo en la pantalla */
 		top: 0;
 		left: 0;
-		background-color: #f77f00;
+		background-color: #f7f3ef;
 		/* height: 100vh; */
 		flex-direction: column;
 		justify-content: space-between;
 		overflow-x: hidden;
 		overflow-y: auto;
-		transform: translateX(100%); /* Menú inicialmente oculto */
-		transition: transform 0.65s ease; /* Suaviza la transición */
+		transform: translateX(100%);
+		transition: transform 0.65s ease; 
+	}
+
+	.nav-btn:hover{
+		background-color: #f7f3ef;
+		transition: background-color 0.65s ease;
 	}
 
 	#check:checked ~ .nav-btn {
 		transform: translateX(0);
+		border-bottom: 1px solid #e47712;
 	}
 
 	#check:checked ~ .nav-btn .nav-link,

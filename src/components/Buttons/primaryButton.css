@@ -1,30 +1,70 @@
+/* Botón Primario */
 .btn-primary {
 	height: 40px;
 	width: 150px;
-}
-
-.btn-primary,
-.btn-tag {
-	border-radius: 5px;
-	font-size: var(--btn-font-primary);
-	background: linear-gradient(45deg, #875100, #683c10);
-	color: #fff;
+	border-radius: var(--border-radius-base);
+	font-size: var(--font-size-base);
+	font-family: var(--font-primary);
+	background: var(--color-primary);
+	color: var(--color-neutral-light);
 	cursor: pointer;
-	padding: 5px;
+	padding: var(--spacing-small);
 	border: none;
-}
-
-.config-btn-primary > label {
+	box-shadow: var(--box-shadow-base);
+	transition: background-color var(--transition-speed) var(--transition-timing),
+	  box-shadow var(--transition-speed) var(--transition-timing);
+  }
+  
+  .btn-primary:hover {
+	background: var(--color-primary-dark);
+	box-shadow: var(--box-shadow-hover);
+  }
+  
+  /* Botón Secundario */
+  .btn-secondary {
+	height: 40px;
+	width: 150px;
+	border-radius: var(--border-radius-secundary);
+	font-family: var(--font-primary);
+	background: var(--color-secondary);
+	color: var(--color-neutral-light);
+	cursor: pointer;
+	border: none;
+	box-shadow: var(--box-shadow-base);
+	transition: background-color var(--transition-speed) var(--transition-timing),
+	  box-shadow var(--transition-speed) var(--transition-timing);
+  }
+  
+  .btn-secondary:hover {
+	background: var(--color-secondary-dark);
+	box-shadow: var(--box-shadow-hover);
+  }
+  
+  /* Botón Remove (Eliminar) */
+  .btn-remove {
+	height: 40px;
+	width: 150px;
+	border-radius: var(--border-radius-base);
+	font-size: var(--font-size-base);
+	font-family: var(--font-primary);
+	background: var(--rojo);
+	color: var(--color-neutral-light);
+	cursor: pointer;
+	padding: var(--spacing-small);
+	border: none;
+	box-shadow: var(--box-shadow-base);
+	transition: background-color var(--transition-speed) var(--transition-timing),
+	  box-shadow var(--transition-speed) var(--transition-timing);
+  }
+  
+  .btn-remove:hover {
+	background: #f76565;
+	box-shadow: var(--box-shadow-hover);
+  }
+  
+  /* Configuración del contenedor de botones */
+  .config-btn-primary > label {
 	font-size: var(--label);
-	padding: 10px;
-}
-
-/* .btn-primary:hover {
-	background-color: var(--color-secondary);
-} */
-
-/*TAGS*/
-.btn-tag {
-	background: #fba834;
-	border-radius: 10px;
-}
+	padding: var(--spacing-small);
+  }
+  

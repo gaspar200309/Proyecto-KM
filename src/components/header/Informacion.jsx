@@ -1,27 +1,26 @@
 import './Informacion.css';
 import ImagenesApp from '../../assets/ImagenesApp';
-import VideoBackground from '../../assets/video/fondoV.mp4'; 
 
 export const Informacion = () => {
   return (
     <>
       <section className="hero-section">
-        <video className="video-background" autoPlay muted loop>
-          <source src={VideoBackground} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <img src={ImagenesApp.kawsay} alt="Fondo Cochabamba" className="image-background" />
         <div className="hero-content">
-          <img src={ImagenesApp.kawsay} alt="Logo" className="hero-logo" />
-          <h1 className="hero-title">ORIENTACIÓN VOCACIONAL</h1>
+          <img src={ImagenesApp.kawsay} alt="Logo" className="hero-logo animate-logo" />
+          <h1 className="hero-title animate-title">ORIENTACIÓN VOCACIONAL EN COCHABAMBA</h1>
+          <p className="hero-description animate-description">
+            Descubre las universidades, carreras y oportunidades académicas en el corazón de Bolivia.
+          </p>
         </div>
       </section>
       <section className="contenido-nosotros contenedor" id="nosotros">
-        <h2 className="titulo-nosotros">Guía Profesiográfica</h2>
-        <div className="texto-nosotros">
+        <h2 className="titulo-nosotros animate-section-title">Guía Profesiográfica de Cochabamba</h2>
+        <div className="texto-nosotros animate-text">
           <p>
-            Bienvenid@ a la página Profesiográfica Semillas. Aquí podrás descubrir información esencial sobre diversos centros de educación superior y las carreras que ofrecen. Este sitio está diseñado para ayudarte a tomar decisiones informadas sobre tu futuro académico y profesional. 
-            Explora las oportunidades que te esperan y encuentra la carrera que mejor se alinee con tus intereses y aspiraciones.
-          </p> {/* este es un  */}
+            Cochabamba ofrece una amplia variedad de instituciones académicas y programas de educación superior. 
+            Explora las universidades y sus carreras, conoce sus ubicaciones en un mapa interactivo, y toma decisiones informadas para construir tu futuro.
+          </p>
         </div>
       </section>
     </>

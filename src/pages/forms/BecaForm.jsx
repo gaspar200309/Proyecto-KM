@@ -4,9 +4,9 @@ import { createBeca, updateBeca, getBecaById } from '../../service/api';
 import ScrollToTop from '../../components/scrooll/Scrooll';
 import InputText from '../../components/inputs/InputText';
 import Select from '../../components/selected/Selected';
-import { IoArrowBackCircleSharp } from 'react-icons/io5';
-
-import './BecaForm.css';
+import './Form.css';
+import { PrimaryButton } from '../../components/Buttons/PrimaryButton';
+import BackButton from '../../components/Buttons/BackButton';
 
 const BecaForm = () => {
 	const [beca, setBeca] = useState({
@@ -79,27 +79,26 @@ const BecaForm = () => {
 	};
 
 	return (
-		<div className="">
+		<div className="form-container1">
 			<ScrollToTop />
-			<Link to="/listForm" className="icon">
-				<IoArrowBackCircleSharp />
-			</Link>
-			<div className="form-headerBeca">
+			<BackButton to="/listForm" />
+			<div className="form-header">
 				<h1>{isEdit ? 'Editar beca' : 'Crear beca'}</h1>
 			</div>
-			<form className="form-container" onSubmit={handleSubmit}>
+			<form onSubmit={handleSubmit}>
 				{/* InputText para los campos de texto */}
 				<InputText
 					name="nombre"
+					label={'Nombre'}
 					value={beca.nombre}
 					onChange={handleChange}
 					placeholder="Nombre"
 					required
 				/>
 
-				{/* Select para seleccionar institución */}
 				<Select
 					name="institucion"
+					label={'Pública/Privada'}
 					value={beca.institucion}
 					onChange={handleChange}
 					options={[
@@ -113,6 +112,7 @@ const BecaForm = () => {
 				<Select
 					name="tipo"
 					value={beca.tipo}
+					label={'Tipo de institución'}
 					onChange={handleChange}
 					options={[
 						{ value: 'universidad', label: 'Universidad' },
@@ -125,6 +125,7 @@ const BecaForm = () => {
 				{/* InputText para textarea */}
 				<InputText
 					name="descripcionUniversidad"
+					label={'Descripción de la Universidad'}
 					value={beca.descripcionUniversidad}
 					onChange={handleChange}
 					placeholder="Descripción de la Universidad"
@@ -135,6 +136,7 @@ const BecaForm = () => {
 				{/* InputText para campo opcional */}
 				<InputText
 					name="importante"
+					label={'Importante'}
 					value={beca.importante}
 					onChange={handleChange}
 					placeholder="Importante (opcional)"
@@ -143,29 +145,21 @@ const BecaForm = () => {
 				{/* InputText para promedio */}
 				<InputText
 					name="promedioRequerido"
+					label={'Promedio Requerido'}
 					value={beca.promedioRequerido}
 					onChange={handleChange}
 					placeholder="Promedio Requerido (opcional)"
 				/>
 
+				<label>Imagen de la beca</label>
+
 				<input
+
 					type="file"
 					name="imgSrc"
 					onChange={handleChange}
 					accept="image/*"
 				/>
-
-				{/* Vista previa de la imagen seleccionada */}
-				{beca.imgSrc && (
-					<div className="image-preview">
-						<h4>Vista previa de la imagen:</h4>
-						<img
-							src={URL.createObjectURL(beca.imgSrc)}
-							alt="Vista previa"
-							className="preview-img"
-						/>
-					</div>
-				)}
 
 				<h3>Beca Social</h3>
 				<InputText
@@ -201,7 +195,7 @@ const BecaForm = () => {
 					placeholder="Dirección (opcional)"
 				/>
 
-				<button type="submit">{isEdit ? 'Actualizar' : 'Crear'}</button>
+				<PrimaryButton type="primary" value={isEdit ? 'Actualizar' : 'Crear'}/>
 			</form>
 		</div>
 	);

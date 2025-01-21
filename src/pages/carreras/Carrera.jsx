@@ -1,137 +1,160 @@
-import './Carrera.css'
-
-import { useState, useEffect } from 'react'
-import { getCareers } from '../../service/api'
-import SearchBar from '../../components/search/Search'
-import ScrollToTop from '../../components/scrooll/Scrooll'
-import Card from '../../components/card/Card'
+import './Carrera.css';
+import { useState, useEffect, useRef, useMemo } from 'react';
+import { getCareers } from '../../service/api';
+import SearchBar from '../../components/search/Search';
+import ScrollToTop from '../../components/scrooll/Scrooll';
+import Card from '../../components/card/Card';
 
 const Carrera = () => {
-	const [carreras, setCarreras] = useState([])
-	const [search, setSearch] = useState('')
-	const [loading, setLoading] = useState(true)
-	const [error, setError] = useState(null)
-	const [areaFilter, setAreaFilter] = useState('')
-	const [nivelFilter, setNivelFilter] = useState('')
+  const [carreras, setCarreras] = useState([]);
+  const [search, setSearch] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [areaFilter, setAreaFilter] = useState('');
+  const [nivelFilter, setNivelFilter] = useState('');
+  const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(true);
 
-	useEffect(() => {
-		const fetchCareers = async () => {
-			try {
-				const response = await getCareers()
-				setCarreras(response.data)
-				console.log(response.data)
-			} catch (error) {
-				setError(error.message)
-			} finally {
-				setLoading(false)
-			}
-		}
+  const observer = useRef();
+  const lastCardRef = useRef();
+  const pageSize = 8;
 
-		fetchCareers()
-	}, [])
+  const fetchCareers = async (page) => {
+    try {
+      setLoading(true);
+      const res = await getCareers({ page, limit: pageSize });
+      const response = res.data;
 
-	useEffect(() => {
-		const hash = window.location.hash
-		if (hash) {
-			const element = document.querySelector(hash)
-			if (element) {
-				element.scrollIntoView({ behavior: 'smooth' })
-			}
-		}
-	}, [])
+      setCarreras((prev) => {
+        const combined = [...prev, ...response.carreras];
+        return Array.from(new Set(combined.map((c) => c._id))).map((id) =>
+          combined.find((carrera) => carrera._id === id)
+        );
+      });
 
-	const handleSearchChange = (event) => setSearch(event.target.value)
+      setHasMore(response.carreras.length === pageSize);
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-	const handleAreaChange = (event) => setAreaFilter(event.target.value)
+  useEffect(() => {
+    fetchCareers(page);
+  }, [page]);
 
-	const handleNivelChange = (event) => setNivelFilter(event.target.value)
+  useEffect(() => {
+    if (loading) return;
+    if (observer.current) observer.current.disconnect();
 
-	const filteredCarreras = carreras.filter((carrera) => {
-		const matchesSearch = carrera.titulo.toLowerCase().includes(search.toLowerCase())
-		const matchesArea = areaFilter ? carrera.area === areaFilter : true
-		const matchesNivel = nivelFilter ? carrera.nivel === nivelFilter : true
-		return matchesSearch && matchesArea && matchesNivel
-	})
+    observer.current = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && hasMore) {
+          setPage((prevPage) => prevPage + 1);
+        }
+      },
+      { threshold: 1 }
+    );
 
-	const uniqueAreas = [...new Set(carreras.map((carrera) => carrera.area))]
-	const uniqueNiveles = [...new Set(carreras.map((carrera) => carrera.nivel))]
+    if (lastCardRef.current) observer.current.observe(lastCardRef.current);
+  }, [loading, hasMore]);
 
-	const transformToId = (area) => {
-		switch (area) {
-			case 'ÁREA DE SALUD':
-				return 'salud'
-			case 'ÁREA TECNOLÓGICA':
-				return 'tecnologia'
-			case 'ÁREA ECONÓMICA':
-				return 'economia'
-			case 'ÁREA URBANISMO Y TERRITORIO':
-				return 'territorio'
-		}
-	}
+  const handleSearchChange = (event) => setSearch(event.target.value);
+  const handleAreaChange = (event) => setAreaFilter(event.target.value);
+  const handleNivelChange = (event) => setNivelFilter(event.target.value);
 
-	if (loading) return <p>Cargando carreras...</p>
-	if (error) return <p>Error al cargar carreras: {error}</p>
+  const filteredCarreras = useMemo(
+    () =>
+      carreras.filter((carrera) => {
+        const matchesSearch = carrera.titulo.toLowerCase().includes(search.toLowerCase());
+        const matchesArea = areaFilter ? carrera.area === areaFilter : true;
+        const matchesNivel = nivelFilter ? carrera.nivel === nivelFilter : true;
+        return matchesSearch && matchesArea && matchesNivel;
+      }),
+    [carreras, search, areaFilter, nivelFilter]
+  );
 
-	return (
-		<>
-			<ScrollToTop />
-			<SearchBar searchValue={search} onSearchChange={handleSearchChange} placeholder="Buscar Carreras" />
-			<div className="filters">
-				<label>
-					Área:
-					<select value={areaFilter} onChange={handleAreaChange}>
-						<option value="">Todas</option>
-						{uniqueAreas.map((area) => (
-							<option key={area} value={area}>
-								{area}
-							</option>
-						))}
-					</select>
-				</label>
-				<label>
-					Nivel:
-					<select value={nivelFilter} onChange={handleNivelChange}>
-						<option value="">Todos</option>
-						{uniqueNiveles.map((nivel) => (
-							<option key={nivel} value={nivel}>
-								{nivel.replace('-', ' ').toUpperCase()}
-							</option>
-						))}
-					</select>
-				</label>
-			</div>
-			<div>
-				{filteredCarreras.length === 0 ? (
-					<p>No se encontraron carreras.</p>
-				) : (
-					Object.entries(
-						filteredCarreras.reduce((acc, carrera) => {
-							if (!acc[carrera.area]) acc[carrera.area] = []
-							acc[carrera.area].push(carrera)
-							return acc
-						}, {})
-					).map(([area, carrerasEnArea]) => (
-						<div key={area} className={`areas ${area.toLowerCase().replace(/\s+/g, '-')}`}>
-							<h2 className="titulo-area" id={transformToId(area)}>
-								{area}
-							</h2>
-							<div className="container-card">
-								{carrerasEnArea.map((carrera) => (
-									<Card
-										key={carrera._id}
-										imgSrc={carrera.imgSrc}
-										titulo={carrera.titulo}
-										descripcion={carrera.descripcion}
-										id={carrera._id}
-									/>
-								))}
-							</div>
-						</div>
-					))
-				)}
-			</div>
-		</>
-	)
-}
+  const groupedCarreras = useMemo(
+    () =>
+      Object.entries(
+        filteredCarreras.reduce((acc, carrera) => {
+          if (!acc[carrera.area]) acc[carrera.area] = {};
+          if (!acc[carrera.area][carrera.nivel]) acc[carrera.area][carrera.nivel] = [];
+          acc[carrera.area][carrera.nivel].push(carrera);
+          return acc;
+        }, {})
+      ),
+    [filteredCarreras]
+  );
 
-export default Carrera
+  const uniqueAreas = useMemo(() => [...new Set(carreras.map((carrera) => carrera.area))], [carreras]);
+  const uniqueNiveles = useMemo(() => [...new Set(carreras.map((carrera) => carrera.nivel))], [carreras]);
+
+  if (error) return <p>Error al cargar carreras: {error}</p>;
+
+  return (
+    <>
+      <ScrollToTop />
+      <SearchBar searchValue={search} onSearchChange={handleSearchChange} placeholder="Buscar Carreras" />
+      <div className="filters">
+        <label>
+          Área:
+          <select value={areaFilter} onChange={handleAreaChange}>
+            <option value="">Todas</option>
+            {uniqueAreas.map((area) => (
+              <option key={area} value={area}>
+                {area}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label>
+          Nivel:
+          <select value={nivelFilter} onChange={handleNivelChange}>
+            <option value="">Todos</option>
+            {uniqueNiveles.map((nivel) => (
+              <option key={nivel} value={nivel}>
+                {nivel.replace('-', ' ').toUpperCase()}
+              </option>
+            ))}
+          </select>
+        </label>
+      </div>
+      <div>
+        {groupedCarreras.length === 0 ? (
+          <p>No se encontraron carreras.</p>
+        ) : (
+          groupedCarreras.map(([area, niveles]) => (
+            <div key={area} className={`areas ${area.toLowerCase().replace(/\s+/g, '-')}`}>
+              <h2 className="titulo-area">{area}</h2>
+              {Object.entries(niveles).map(([nivel, carrerasEnNivel]) => (
+                <div key={nivel} className="nivel-group">
+                  <h4 className='nivelTitle'>{nivel.replace('-', ' ').toUpperCase()}</h4>
+                  <div className="container-card">
+                    {carrerasEnNivel.map((carrera, index) => {
+                      const isLastCard = carrerasEnNivel.length === index + 1;
+                      return (
+                        <Card
+                          ref={isLastCard ? lastCardRef : null}
+                          key={carrera._id}
+                          imgSrc={carrera.imgSrc}
+                          titulo={carrera.titulo}
+                          descripcion={carrera.descripcion}
+                          id={carrera._id}
+                        />
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))
+        )}
+      </div>
+      {loading && <p>Cargando más carreras...</p>}
+    </>
+  );
+};
+
+export default Carrera;

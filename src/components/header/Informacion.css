@@ -1,78 +1,120 @@
-.video-background {
+.hero-section {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+  }
+  
+  .image-background {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	z-index: 0;
-}
-
-.hero-section {
-	background-color: #fff;
-	position: relative;
+	z-index: -1;
+	filter: brightness(70%);
+  }
+  
+  .hero-content {
 	text-align: center;
-	color: rgb(7, 2, 2);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 66vh;
-	overflow: hidden;
-}
-/* 
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); 
-  z-index: 1;
-}
- */
-.hero-content {
-	position: relative;
-}
-
-.hero-title {
-	font-family: Futura;
-	font-size: 32px;
-	font-weight: 700;
-	margin-block: 20px;
-	color: #ffff;
-}
-
-.hero-subtitle {
+	color: white;
+  }
+  
+  .hero-logo {
+	width: 150px;
+	margin-bottom: 20px;
+  }
+  
+  .hero-title {
+	font-size: 3rem;
+	font-weight: bold;
+	margin: 10px 0;
+  }
+  
+  .hero-description {
 	font-size: 1.5rem;
-	margin-bottom: 30px;
-	color: var(--color-neutral-dark);
-}
-
-.hero-logo {
-	width: 200px;
-	height: auto;
-	margin: 15px;
-}
-
-/* Contenido adicional de la sección */
-.contenido-nosotros {
+	margin-top: 10px;
+  }
+  
+  /* Animaciones */
+  .animate-logo {
+	animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-title {
+	animation: fadeInUp 2s ease;
+  }
+  
+  .animate-description {
+	animation: fadeInUp 2.5s ease;
+  }
+  
+  .animate-section-title {
+	animation: fadeInUp 1.5s ease;
+  }
+  
+  .animate-text {
+	animation: fadeIn 2s ease;
+  }
+  
+  /* Keyframes */
+  @keyframes fadeInUp {
+	from {
+	  opacity: 0;
+	  transform: translateY(20px);
+	}
+	to {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
+  }
+  
+  @keyframes fadeIn {
+	from {
+	  opacity: 0;
+	}
+	to {
+	  opacity: 1;
+	}
+  }
+  
+  @keyframes float {
+	0%, 100% {
+	  transform: translateY(-10px);
+	}
+	50% {
+	  transform: translateY(10px);
+	}
+  }
+  
+  .contenido-nosotros {
 	padding: 40px 20px;
+	background-color: #f4f4f4;
+	border-radius: 10px;
+	margin: 20px auto;
+	max-width: 1200px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .titulo-nosotros {
+	color: #333;
 	text-align: center;
-}
-
-.titulo-nosotros {
-	font-family: Futura;
+	margin-bottom: 20px;
 	font-size: 2rem;
-	color: var(--color-tertiary-dark);
-	margin-bottom: 26px;
-}
-
-.texto-nosotros p {
-	font-size: 1.5rem;
-	font-family: Futura-texto;
-	color: #936037;
-	color: var(--color-neutral-dark);
-	line-height: var(--line-height-base);
-	margin-bottom: var(--spacing-large);
-}
+  }
+  
+  .texto-nosotros {
+	font-size: 1.2rem;
+	color: #555;
+	line-height: 1.6;
+	text-align: justify;
+  }
+  
+  .mapa-cochabamba {
+	margin-top: 20px;
+  }
+  

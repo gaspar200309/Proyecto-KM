@@ -42,6 +42,8 @@ export const App2 = () => {
           <Route path="/editUniversidad/:id" element={<UniversidadForm />} />
 
           <Route path="/beca/new" element={<BecaForm />} />
+          <Route path="/editBeca/:id" element={<BecaForm />} />
+
           <Route path="/listUniversidades" element={<ListUniversidades />} />
           <Route path="/listCareers" element={<ListCareer />} />
           <Route path="/listBecas" element={<ListBecas />} />

@@ -1,10 +1,4 @@
-:root {
-	--primary-color: #683c10;
-	--secondary-color: #936037;
-	--text-color: #080808;
-	--background-color: #fff;
-	--orange-accent: #f39224;
-}
+
 
 .informacion-carrera-container {
 	max-width: 100%;
@@ -72,7 +66,7 @@
 .contentC {
 	display: flex;
 	justify-content: flex-start;
-	padding: 30px;
+	padding: 26px 0 0 30px;
 	width: 80%;
 }
 
@@ -131,24 +125,23 @@
 .recomendaciones-wrapper {
 	position: relative;
 	width: 100%;
-	/* overflow: hidden; */
+	overflow: hidden;
 }
 
 .recomendaciones-container {
 	display: flex;
 	gap: 15px;
-	overflow-x: auto;
+	overflow: hidden; /* Esto asegura que solo las tarjetas visibles se muestren */
 	scroll-behavior: smooth;
-	scrollbar-width: none;
-	-ms-overflow-style: none;
 	padding: 15px 0;
-}
+  }
+  .recomendaciones-container .card {
+	flex: 0 0 calc(33.33% - 15px); /* Cada tarjeta ocupa un tercio del ancho del contenedor menos el espacio del gap */
+  }
 
-.recomendaciones-container::-webkit-scrollbar {
-	display: none;
-}
 
-.scroll-button {
+
+  .scroll-button {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
@@ -164,13 +157,13 @@
 	z-index: 10;
 	cursor: pointer;
 	transition: background-color 0.3s ease;
-}
+  }
 
 .scroll-button.left {
-	left: -5%;
+	left: 5px;
 }
 .scroll-button.right {
-	right: -5%;
+	right: 5px;
 }
 
 .universidad-logo {
@@ -208,6 +201,29 @@
 	height: 315px;
 }
 
+.articulos-informacion-carrera {
+    display: flex;
+    flex-direction: column; /* Asegura que los artículos se apilen en columna */
+    gap: 20px; /* Añade un espacio entre los artículos */
+    align-items: stretch; /* Opcional: ajusta el ancho de los artículos al contenedor */
+}
+
+.video-not-available {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    border: 2px dashed var(--primary-color);
+    border-radius: 10px;
+    color: var(--secondary-color);
+    font-family: Futura-texto;
+    font-size: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.05);
+    text-align: center;
+    padding: 20px;
+}
+
+
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {
 	.image-textC {
@@ -226,16 +242,21 @@
 	.contentC-contenido {
 		padding: 0 10px;
 	}
+	.container-contenido{
+		flex-direction: column;
+	}
 
 	.recomendaciones-container .card {
-		min-width: calc(50% - 15px);
-		height: 30rem;
+		flex: 0 0 50%; 
+	  }
+	  .articulos-informacion-carrera {
+		display: flex;
+		flex-direction: column; /* Asegura que los artículos se apilen en columna */
+		gap: 20px; /* Añade un espacio entre los artículos */
+		align-items: stretch; /* Opcional: ajusta el ancho de los artículos al contenedor */
 	}
-	.recomendaciones-wrapper {
-		margin: auto;
-	}
+	
 }
-
 @media screen and (max-width: 480px) {
 	.image-textC h1 {
 		font-size: 1.5rem;
@@ -246,18 +267,11 @@
 	}
 
 	.recomendaciones-container .card {
-		min-width: 100%;
-	}
-
+		flex: 0 0 100%; 
+	  }
 	.scroll-button {
 		width: 30px;
 		height: 30px;
 	}
-	.recomendaciones-wrapper {
-		margin: auto;
-	}
-
-	.recomendaciones-wrapper {
-		margin: auto;
-	}
+	
 }

@@ -31,8 +31,12 @@ export const PieDePagina = () => {
 						<p>Miercoles: 08:30am - 18:30pm</p>
 						<p>Jueves: 08:30am - 18:30pm</p> */}
 						<div className="redes-sociales redes-pie">
-							<a href="https://www.facebook.com/KawsayMuju"><FaFacebook className="redes-icons" /></a>
-							<a href="https://www.instagram.com/kawsaymuju/"><FaInstagramSquare className="redes-icons" /></a>
+							<a href="https://www.facebook.com/KawsayMuju">
+								<FaFacebook className="redes-icons" />
+							</a>
+							<a href="https://www.instagram.com/kawsaymuju/">
+								<FaInstagramSquare className="redes-icons" />
+							</a>
 						</div>
 					</div>
 					<div className="info">
@@ -42,15 +46,25 @@ export const PieDePagina = () => {
 						<input type="submit" className="btnF" value="ENVIAR" />
 					</div>
 				</div>
-				<div className="msj">
-					<h2>"Descubre tu camino y construye tu propia historia"</h2>
-				</div>
+				
 			</div>
 			<footer className="footer">
+				<div className="logo">
+					<h2>"Descubre tu camino y construye tu propia historia"</h2>
+				</div>
 				<h4>Copyright © 2024 Kawsay Muju. Todos los derechos reservados.</h4>
-				<p>
- 					<span className="fecha"></span> &copy; Desarrollado por la empresa SoftCraft-bol 
-				</p>
+				<div className="creditos">
+					<h4>
+						Desarrollado por -&gt;
+						<a href="https://www.softcraftbol.com/" target="_blank" className="link-multicolor">
+						<img src="https://www.softcraftbol.com/assets/logoSoftCraft-yGORptqy.png" alt="SoftCraft" height={'30px'} />SoftCraft-bol
+						</a>
+					</h4>
+
+					<p>
+						<span className="fecha"></span> &copy; Todos los derechos reservados.
+					</p>
+				</div>
 			</footer>
 		</>
 	)
