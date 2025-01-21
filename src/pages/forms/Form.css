@@ -1,145 +1,148 @@
+/* Container styles */
 .form-container1 {
   width: 100%;
   max-width: 1200px;
   margin: 5% auto;
-  padding: 20px;
-  box-sizing: border-box;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
+/* Header styles */
 .form-header {
-  
-  margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #f0f0f0;
 }
 
 .form-header h1 {
-  font-size: 2em;
-  color: #333;
+  color: #2c3e50;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
 }
 
-.form-back-link {
-  display: flex;
-  align-items: center;
-  font-size: 1.5em;
-  color: #007BFF;
-  text-decoration: none;
+/* Section styles */
+.section-title {
+  color: #34495e;
+  font-size: 1.25rem;
+  margin: 1.5rem 0 1rem;
 }
 
-.form-back-link:hover {
-  color: #0056b3;
-}
-
-
-
+/* Form group styles */
 .input-group,
-.direccion-group {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 10px;
+.direccion-group,
+.dynamic-fields-section,
+.basic-info,
+.selectors,
+.university-section,
+.image-upload {
   background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-button {
-  background-color: #007BFF;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1em;
+/* Fields container */
+.fields-container {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-button:hover {
-  background-color: #0056b3;
+/* Field row styles */
+.field-row {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
 }
 
-.btn-add,
-.btn-remove {
-  background-color: #28a745;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+/* Image preview styles */
+
+
+/* Button container styles */
+.form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #f0f0f0;
 }
 
-.btn-remove {
-  background-color: #dc3545;
-}
-
-input[type="file"] {
-  margin-top: 15px;
-}
-
-textarea {
-  width: 100%;
-  height: 100px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: none;
-}
-
-input,
-select {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1em;
-}
-
-select {
-  height: 45px;
-}
-
-.form-input-file {
-  margin-top: 15px;
-}
-
-.btn-submit {
-  background-color: #007BFF;
-  color: white;
-  font-size: 1.2em;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.btn-submit:hover {
-  background-color: #0056b3;
-}
-
-
-
+/* Responsive grid for direccion fields */
 @media (min-width: 768px) {
   .direccion-group {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
   }
-
-  .direccion-group input {
-    grid-column: span 1;
-  }
-
-  .form-container1 {
-    padding: 40px;
+  
+  .fields-container {
+      grid-template-columns: repeat(2, 1fr);
   }
 }
 
+@media (min-width: 1024px) {
+  .direccion-group {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Responsive adjustments for smaller screens */
 @media (max-width: 767px) {
-  .form-header h1 {
-    font-size: 1.5em;
+  .form-container1 {
+      margin: 0;
+      padding: 1rem;
+      border-radius: 0;
   }
 
-  button {
-    width: 100%;
-    margin-top: 10px;
+  .form-header h1 {
+      font-size: 1.5rem;
   }
+
+  .field-row {
+      flex-direction: column;
+  }
+  
+  .preview-img {
+      max-width: 100%;
+  }
+}
+
+/* Dynamic sections spacing */
+.dynamic-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+/* Input styles consistency */
+input[type="file"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* TextArea consistency */
+textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  resize: vertical;
+}
+
+/* Select consistency */
+select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  background-color: white;
 }

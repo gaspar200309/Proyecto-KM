@@ -1,175 +1,145 @@
-.cardU-details-btn {
-    background-color: #f39200;
-    color: #ffffff;
-    font-weight: bold;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .cardU-details-btn:hover {
-    background-color: #ffa733;
-  }
-  
-  .cardU {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-top: 15px solid #f39200;
-    border-bottom: 15px solid #f3b461;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    max-width: 400px;
-    margin: 20px auto;
-    width: 90%; 
-    height: 400px;
-  }
-  
-  .cardU figure {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    padding: var(--spacing-medium);
-    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
-    height: 120px;
-    width: 100%;
-  }
-  
-  .cardU-img {
-    max-width: 100px; 
-    max-height: 100px;
-    height: auto;
-    width: auto;
-    object-fit: contain;
-  }
-  
-  .cardU:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .cardU-content {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px; 
-    height: 150px;
-  }
-  
-  .cardU-content h3 {
-    font-size: 16px;
-    color: #f39200;
-    margin: 0;
-  }
-  
-  .cardU-content p {
-    font-size: 14px;
-    margin: 0 0 10px 0;
-  }
-  
-  .cardU-text {
-    font-size: var(--pL-size);
-    font-family: Futura-texto;
-    height: 30%;
-    margin: 5px;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    /* overflow: hidden; */
-    text-overflow: ellipsis;
-    line-clamp: 3; 
-  }
-  
-  
-  .cardU-details-btn {
-    background-color: #f39200;
-    color: #ffffff;
-    font-weight: bold;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    align-self: center;
-    margin: auto;
-  }
-  
-  .cardU-details-btn:hover {
-    background-color: #ffa733;
-  }
-  
-  @media (max-width: 768px) {
-    .cardU {
-      max-width: 100%;
-      padding: 10px;
-    }
-  
-    .cardU-content h3 {
-      font-size: 14px; 
-    }
-  
-    .cardU-text {
-      font-size: 12px;
-    }
-  
-    .cardU-details-btn {
-      padding: 8px 15px;
-      font-size: 14px;
-    }
-  }
-  
-  .contenido-cardU {
-    padding: 5px var(--spacing-medium);
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    overflow: auto;
-    text-align: center;
-  }
-  
-  .contenido-cardU p {
-    font-size: 14px;
-    font-family: Futura-texto;
-    text-align: center;
-    margin-bottom: var(--spacing-small);
-    color: var(--color-neutral-dark);
-  }
-  
-  .contenido-cardU p span {
-    color: var(--highlight-color);
-    font-weight: bold;
-  }
+/* Estilos para el contenedor de las tarjetas */
+.container-cardU {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px, 1fr)); /* Tres columnas ajustables */
+  gap: 20px;
+  padding: 20px;
+  justify-items: center; /* Centra las tarjetas */
+  justify-content: center; /* Centra el contenido horizontalmente */
+}
+
+/* Ajustes para pantallas de 1024px o menos */
+@media (max-width: 1024px) {
   .container-cardU {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px;
-    padding: 20px;
-    justify-items: center !important; 
-    justify-content: start !important; 
-    align-items: start !important; 
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
   }
-  
-  .container-cardU.single,
-  .container-cardU.double {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+/* Ajustes para pantallas de 768px o menos */
+@media (max-width: 768px) {
+  .container-cardU {
+    grid-template-columns: 1fr; /* Una columna */
   }
-  
-  @media (max-width: 1024px) {
-    .container-cardU {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .container-cardU {
-      grid-template-columns: 1fr; 
-    }
-  }
+}
+
+/* Estilos para las tarjetas */
+.cardU {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-top: 15px solid #f39200;
+  border-bottom: 15px solid #f3b461;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 400px;
+  margin: 20px auto;
+  width: 90%;
+  height: 300px;
+  justify-self: center; /* Centra cada tarjeta individualmente */
+}
+
+/* Estilos para el botón de detalles dentro de la tarjeta */
+.cardU-details-btn {
+  background-color: #f39200;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center; /* Esto debería centrar el botón */
+}
+
+/* Efecto hover para el botón */
+.cardU-details-btn:hover {
+  background-color: #ffa733;
+}
+
+/* Estilos para el contenido dentro de la tarjeta */
+.cardU-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos para el título dentro de la tarjeta */
+.cardU-content h3 {
+  font-size: 16px;
+  color: #4c5339;
+  margin: 0;
+}
+
+/* Estilos para los párrafos dentro de la tarjeta */
+.cardU-content p {
+  font-size: 14px;
+  margin: 0 0 10px 0;
+}
+
+/* Estilo de texto dentro de la tarjeta para limitar el número de líneas */
+.cardU-text {
+  font-size: var(--pL-size);
+  font-family: Futura-texto;
+  height: 30%;
+  margin: 5px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  line-clamp: 3;
+}
+
+/* Estilos para las imágenes dentro de la tarjeta */
+.cardU figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: var(--spacing-medium);
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+  height: 120px;
+  width: 100%;
+}
+
+/* Estilos para las imágenes dentro de la tarjeta */
+.cardU-img {
+  max-width: 100px;
+  max-height: 100px;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Efecto hover para la tarjeta */
+.cardU:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el contenedor del contenido dentro de la tarjeta */
+.contenido-cardU {
+  padding: 5px var(--spacing-medium);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: auto;
+  text-align: center;
+}
+
+/* Estilos para los párrafos dentro del contenedor de la tarjeta */
+.contenido-cardU p {
+  font-size: 14px;
+  font-family: Futura-texto;
+  text-align: center;
+  margin-bottom: var(--spacing-small);
+  color: var(--color-neutral-dark);
+}
+
+/* Resaltar texto dentro del contenedor de la tarjeta */
+.contenido-cardU p span {
+  color: var(--highlight-color);
+  font-weight: bold;
+}

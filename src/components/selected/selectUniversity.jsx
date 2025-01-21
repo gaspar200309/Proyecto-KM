@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react'
 import './UniversitySelectorModal.css'
 import Modal from '../modal/Modal'
 import { PrimaryButton } from '../Buttons/PrimaryButton'
+import InputText from '../inputs/InputText'
 
 const UniversitySelector = ({ universidades, selectedUniversities, setSelectedUniversities, onClose }) => {
 	const [selectedUniIds, setSelectedUniIds] = useState(selectedUniversities || [])
@@ -37,13 +38,9 @@ const UniversitySelector = ({ universidades, selectedUniversities, setSelectedUn
 	return (
 		<Modal isOpen={true} onClose={onClose}>
 			<h3>Seleccionar Universidades</h3>
-			<input
-				type="text"
-				placeholder="Buscar universidad..."
-				value={searchTerm}
-				onChange={(e) => setSearchTerm(e.target.value)}
-				className="search-input"
-			/>
+			<div className="search-career">
+				<InputText type="text" placeholder="Buscar universidad..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+			</div>
 			<div className="scrollable-list">
 				<ul>
 					{filteredUniversities.map((university) => (
@@ -61,8 +58,8 @@ const UniversitySelector = ({ universidades, selectedUniversities, setSelectedUn
 				</ul>
 			</div>
 			<div style={{ display: 'flex', gap: '10px', marginTop: '15px' }}>
-				<PrimaryButton type="button" onClick={handleSave} value="Guardar selección" />
-				<PrimaryButton type="button" onClick={clearSelections} style={{ backgroundColor: '#b20000' }} value="limpiar seleccion" />
+				<PrimaryButton buttonStyle='primary' type="button" onClick={handleSave} value="Guardar selección" />
+				<PrimaryButton buttonStyle='secondary' type="button" onClick={clearSelections} style={{ backgroundColor: '#b20000' }} value="limpiar seleccion" />
 			</div>
 		</Modal>
 	)

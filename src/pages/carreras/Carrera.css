@@ -76,7 +76,11 @@
 	margin: 10px;
 	font-size: var(--pLL-size);
 }
-
+.nivelTitle{
+	font-size: 1em;
+	color: #936037;
+	text-align: center;
+}
 /* Responsivo para el conte	nedor */
 @media (max-width: 768px) {
 	.container-card {
@@ -87,6 +91,7 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
+		margin: 30px;
     }
     .filters label {
         width: 100%;
@@ -107,6 +112,7 @@
         flex-direction: column;
         align-items: center;
         gap: 15px;
+
     }
     .filters select {
         padding: 8px;

@@ -6,8 +6,9 @@ export const TextArea = ({
   className = "",
   id,
   placeholder = "",
-  register,
+  register = null, // Por defecto null si no se usa react-hook-form
   errors = null,
+  ...props // Agrega un spread para manejar otras props opcionales
 }) => {
   return (
     <div className="config-input">
@@ -16,14 +17,14 @@ export const TextArea = ({
       <textarea
         name={name}
         id={id}
-        className={className}
+        className={`${className} ${errors && errors[name] ? "error" : ""}`} // Agrega la clase "error" si hay errores
         placeholder={placeholder}
-        {...register}
-        rows={"4"}
+        {...(register ? register(name) : props)} // Aplica register si está definido
+        rows="4"
       />
 
-      {errors && errors[id] && (
-        <span className="error-validation">{errors[id].message}</span>
+      {errors && errors[name] && (
+        <span className="error-validation">{errors[name].message}</span>
       )}
     </div>
   );

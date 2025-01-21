@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaRegEyeSlash } from "react-icons/fa";
 import { IoEyeOutline } from "react-icons/io5";
-import { saveToken, saveUser } from './authFunctions';
+import { saveToken } from './authFunctions';
 import { loginUser } from '../../service/api';
 import ScrollToTop from '../../components/scrooll/Scrooll';
 import './Login.css';
+import { PrimaryButton } from '../../components/Buttons/PrimaryButton';
+import InputText from '../../components/inputs/InputText';
 
 export default function LoginUser() {
   const [credentials, setCredentials] = useState({
@@ -13,7 +15,7 @@ export default function LoginUser() {
     password: ''
   });
 
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(true);
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
@@ -52,33 +54,33 @@ export default function LoginUser() {
   return (
     <div className="login-container">
       <ScrollToTop />
-      <div className="login-form card">
+      <div className="login-form">
         <h2>Inicia sesión</h2>
         <form onSubmit={handleSubmit}>
-          <label>Correo electrónico</label>
-          <input
+          <InputText
+            label="Usuario"
             type="text"
             name="username"
             value={credentials.username}
             onChange={handleChange}
             required
           />
-          <label>Contraseña</label>
           <div className="password-container">
-            <input
+            <InputText
               type={showPassword ? "text" : "password"}
               name="password"
+              label="Contraseña"
               value={credentials.password}
               onChange={handleChange}
               required
             />
             {error && <p className="error-message">{error}</p>}
-            {/* <button type="button" onClick={toggleShowPassword} className="toggle-password">
+            <button type="button" onClick={toggleShowPassword} className="toggle-password">
               {showPassword ? <IoEyeOutline /> : <FaRegEyeSlash />}
-            </button> */}
+            </button>
           </div>
           <Link to="/reset">¿Olvidaste la contraseña?</Link>
-          <button className="button-primary" type="submit">Ingresar</button>
+          <PrimaryButton type="primary" value="Ingresar" />
         </form>
       </div>
     </div>

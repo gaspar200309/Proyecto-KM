@@ -79,7 +79,7 @@ html {
 }
 
 body {
-	font-family: Futura;
+	font-family: var(--font-primary);
 	font-size: var(--font-size-base);
 	line-height: var(--line-height-base);
 	color: var(--color-neutral-dark);

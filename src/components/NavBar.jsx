@@ -109,7 +109,7 @@ const NavBarReact = React.memo(() => {
 			<div className="container2">
 				{/* <div className="search-bar">{shouldShowBuscador && <Buscador />}</div> */}
 				<div className="logo-KM-navbar">
-					<img src={ImagenesApp.logo} alt="Logo KM" />
+					<img src={ImagenesApp.kawsay} alt="Logo KM" />
 				</div>
 				<input type="checkbox" id="check" checked={isMenuOpen} onChange={toggleMenu} aria-label="Toggle menu" />
 				<div className="nav-btn">

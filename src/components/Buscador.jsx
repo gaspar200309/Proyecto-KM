@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'; // Importa Link para navegación
-import { getCareers } from '../service/api';
+import { getCareers1 } from '../service/api';
 import { FaSearch } from "react-icons/fa";
 import './EstilosBuscador.css';
 
@@ -13,7 +13,7 @@ const Buscador = ({ onSearch }) => {
   useEffect(() => {
     const fetchCareers = async () => {
       try {
-        const { data } = await getCareers();
+        const { data } = await getCareers1();
         const validCareers = data.filter(
           (career) => career && career.titulo && typeof career.titulo === 'string'
         );

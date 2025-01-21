@@ -1,35 +1,95 @@
 .container-card-articulo {
-	display: flex;
-	width: 100%;
-	box-shadow: 10px 10px 40px 0 rgba(52, 58, 64, 0.1);
-	border-radius: 5px;
-	background: #fff;
-	transition: all 0.3s ease;
-	margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background: #fff;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    margin-bottom: 1rem;
 }
 
 .container-card-articulo:hover {
-	scale: 1.03;
+    transform: scale(1.03);
+}
+
+.container-img-articulo {
+    max-width: 150px;
+    min-width: 100px;
+    overflow: hidden;
+    border-radius: 5px;
 }
 
 .container-img-articulo img {
-	max-width: 100px;
-	min-height: 150px;
-	object-fit: cover;
-	border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .information-article {
-	padding: 15px;
+    flex-grow: 1;
+    padding: 1rem;
+    text-align: left;
 }
 
 .information-article h3 {
-	font-family: Futura-Oblique;
-	color: var(--primary-color);
+    font-family: Futura-Oblique;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
 }
 
 .information-article p {
-	font-family: Futura-texto;
-	font-size: 1.5rem;
-	color: black;
+    font-family: Futura-texto;
+    font-size: 1.4rem;
+    color: #333;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .container-card-articulo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .container-img-articulo {
+        max-width: 100%;
+        min-width: unset;
+        height: auto;
+    }
+
+    .container-img-articulo img {
+        width: 100%;
+        height: auto;
+    }
+
+    .information-article {
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    .information-article h3 {
+        font-size: 1.5rem;
+    }
+
+    .information-article p {
+        font-size: 1.2rem;
+    }
+}
+@media screen and (max-width: 480px) {
+    .container-card-articulo {
+        gap: 0.5rem;
+        width: 80vw;
+    }
+
+    .information-article h3 {
+        font-size: 1.3rem;
+    }
+
+    .information-article p {
+        font-size: 1rem;
+    }
 }

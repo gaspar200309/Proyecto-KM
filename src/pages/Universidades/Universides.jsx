@@ -14,6 +14,7 @@ const Universidades = () => {
     const fetchUniversidades = async () => {
       try {
         const response = await getUniversidades();
+        console.log(response.data);
         setUniversidades(response.data);
       } catch (error) {
         console.error("Error al obtener las universidades", error);
@@ -111,6 +112,7 @@ const Universidades = () => {
                   key={u.id}
                   logo={u.logo}
                   nombre={u.nombre}
+                  descripcion={u.descripcion}
                   direcciones={u.direcciones}
                   enlace={u.enlace}
                 />

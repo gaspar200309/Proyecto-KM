@@ -9,10 +9,16 @@ import fondosParaPaginasWeb from './img/fondosParaPaginasWeb.jpg'
 import ingenieriaDemandaCivil from './img/ingenieriaDemandaCivil.jpg'
 import ingineriaSistemas from './img/ingineriaSistemas.jpg'
 import FondoGraduados from './img/FondoGraduados.jpg'
+import cv from './img/curriculum.png'
 import FondoInicio from './img/Fondo.png'
+import ia from './img/ia.png'
+import metas from './img/metas.png'
+import digital from './img/digital.png'
+import kawsay from './logos/LogoKM.png'
+
 
 //lOGOS DE UNIVERSIDADES
-import emi from './img/emi.png'
+/* import emi from './img/emi.png'
 import usip from './img/usip.png'
 import unicen from './img/unicen.png'
 import upb from './img/upb.png'
@@ -26,10 +32,10 @@ import Unitepc from './img/Unitepc.png'
 import Ulat from './img/Ulat.png'
 import UniversidadSelesiana from './img/UniversidadSelesiana.png'
 import Upal from './img/Upal.png'
-import Esfm from './img/Esfm.png'
+import Esfm from './img/Esfm.png' */
 
 //Institutos
-import Sayarinapaj from './img/Sayarinapaj.png'
+/* import Sayarinapaj from './img/Sayarinapaj.png'
 import Itic from './img/Itic.png'
 import Itmac from './img/Itmac.png'
 import Itpab from './img/Itpab.png'
@@ -43,13 +49,12 @@ import Cetam from './img/Ceiam.png'
 import itpm from './img/Itpm.png'
 import Itait from './img/Itait.png'
 import Etsalud from './img/Etsalud.png'
-import Itsi from './img/Itsi.png'
-import kawsay from './logos/LogoKM.png'
+import Itsi from './img/Itsi.png' */
 /* import logo from './logos/Log2.png' */
 
 
 // carreras
-import administracion from './img/CarrerasImg/adminitración.jpg'
+/* import administracion from './img/CarrerasImg/adminitración.jpg'
 import Agricola from './img/CarrerasImg/agricola.jpg'
 import Agroindustrial from './img/CarrerasImg/agroindustrial.jpg'
 import Agronomica from './img/CarrerasImg/agronomica.jpg'
@@ -94,33 +99,35 @@ import UPBbecas from './img/UPBbecas.jpg'
 import UCBbecas from './img/UCBbecas.png'
 import PatinioBecas from './img/patinioBeca.png'
 import UnitepcBeca from './img/UnitepcBeca.png'
-import EmiBeca from './img/emiBeca.jpg'
+import EmiBeca from './img/emiBeca.jpg' */
 //Cambios en la image
 
 
 
 export default {
   "imgNosotros": nosotros,
-  //"imgComunicacion": comunicacion,
   "imgContacto": contacto,
   "imgEco": eco,
-  //"imgEconomia": Economia,
   "imgFondoInicio": fondo,
   "imgFondo": FondoInicio,
   "imgFondosParaPaginasWeb": fondosParaPaginasWeb,
   "imgInginieriaCivil": ingenieriaDemandaCivil,
   "imgInginieriaSistemas": ingineriaSistemas,
   "imgFondo2": FondoGraduados,
+  "cv": cv,
+  "imgIA": ia,
+  "imgMetas": metas,
+  "imgDigital": digital,
   //Becas
-  "imgUPBBecas": UPBbecas,
+/*   "imgUPBBecas": UPBbecas,
   "imgUCBbecas": UCBbecas,
   "imgPatino": PatinioBecas,
   "imgUnitepcBecas": UnitepcBeca,
-  "imgEmiBecas": EmiBeca,
+  "imgEmiBecas": EmiBeca, */
 
 
   //Universidades
-  "imgEscudo": escudo,
+/*   "imgEscudo": escudo,
   "imgEmi": emi,
   "imgUsip": usip,
   "imgUnicen": unicen,
@@ -136,9 +143,9 @@ export default {
   "imgUlat": Ulat,
   "imgUpal": Upal,
   "imgEsfm": Esfm,
-
+ */
   //Institutos 
-  "imgSayarinapaj": Sayarinapaj,
+/*   "imgSayarinapaj": Sayarinapaj,
   "imgItic": Itic,
   "imgItmac": Itmac,
   "imgItp": Itp,
@@ -152,10 +159,11 @@ export default {
   "imgItpmejillones": itpm,
   "imgItait": Itait,
   "imgEtsalud": Etsalud,
-  "imgItsi": Itsi,
+  "imgItsi": Itsi, */
   "kawsay": kawsay,
   /* "logo": logo, */
   // Carreras 
+  /* 
  "imgAdministracion": administracion,
  "imgAgricola":Agricola,
  "imgAgroindustrial": Agroindustrial,
@@ -197,6 +205,6 @@ export default {
  "imgTrabajoSocial": trabajoSocial,
  "imgTurismo": turismo,
  "imgVeterinaria": veterinaria,
-
+ */
 
 }

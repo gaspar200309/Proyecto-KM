@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { getBecas, deleteBeca } from '../../service/api';
-//import './Listbecaes.css';
+import './ListUniversidades.css';
 
 const Listbeca = () => {
     const [becas, setBecas] = useState([]);
@@ -25,7 +25,8 @@ const Listbeca = () => {
   const handleDelete = async (id) => {
     try {
       await deleteBeca(id);
-      setBecas(becas.filter(bec => bec.id !== id));
+      setBecas(becas.filter(bec => bec._id !== id));
+      fetchBecas();
     } catch (error) {
       console.error("Error deleting carrera", error);
     }
@@ -51,7 +52,7 @@ const Listbeca = () => {
               <td>{beca.institucion}</td>
               <td>{beca.nivel}</td>
               <td>
-                <Link to={`/editbeca/${beca._id}`} className="btn-edit">Editar</Link>
+                <Link to={`/editBeca/${beca._id}`} className="btn-edit">Editar</Link>
                 <button className="btn-delete" onClick={() => handleDelete(beca._id)}>Eliminar</button>
               </td>
             </tr>

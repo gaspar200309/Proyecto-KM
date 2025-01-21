@@ -36,12 +36,14 @@ export const App2 = () => {
           <Route path="/carrera/:idCar" element={<InformacionCarreras />} />
           <Route path="/listForm" element={<ListForms />} />
           <Route path="/career/new" element={<CareerForm />} />
-          
+          <Route path="/editcareer/:id" element={<CareerForm />} />
 
           <Route path="/university/new" element={<UniversidadForm />} />
           <Route path="/editUniversidad/:id" element={<UniversidadForm />} />
 
           <Route path="/beca/new" element={<BecaForm />} />
+          <Route path="/editBeca/:id" element={<BecaForm />} />
+
           <Route path="/listUniversidades" element={<ListUniversidades />} />
           <Route path="/listCareers" element={<ListCareer />} />
           <Route path="/listBecas" element={<ListBecas />} />
