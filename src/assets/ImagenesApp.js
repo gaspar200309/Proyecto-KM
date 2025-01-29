@@ -15,7 +15,7 @@ import ia from './img/ia.png'
 import metas from './img/metas.png'
 import digital from './img/digital.png'
 import kawsay from './logos/log2.webp'
-import kawsay2 from './logos/logo1.webp'
+//import kawsay2 from './logos/logo1.webp'
 
 
 //lOGOS DE UNIVERSIDADES
@@ -162,7 +162,7 @@ export default {
   "imgEtsalud": Etsalud,
   "imgItsi": Itsi, */
   "kawsay": kawsay,
-  "kawsay2": kawsay2
+  //"kawsay2": kawsay2
   /* "logo": logo, */
   // Carreras 
   /* 
