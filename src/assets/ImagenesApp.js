@@ -2,7 +2,7 @@ import nosotros from './img/nosotros.jpg'
 //import comunicacion from './img/comunicacion.jpg'
 import escudo from './img/escudo.png'
 import contacto from './img/contacto.jpg'
-import eco from './img/eco.jpg'
+import eco from './img/eco.webp'
 //import Economia from './img/Economia.jpg'
 import fondo from './img/fondo.jpg'
 import fondosParaPaginasWeb from './img/fondosParaPaginasWeb.jpg'
@@ -14,7 +14,8 @@ import FondoInicio from './img/Fondo.png'
 import ia from './img/ia.png'
 import metas from './img/metas.png'
 import digital from './img/digital.png'
-import kawsay from './logos/LogoKM.png'
+import kawsay from './logos/log2.webp'
+//import kawsay2 from './logos/logo1.webp'
 
 
 //lOGOS DE UNIVERSIDADES
@@ -161,6 +162,7 @@ export default {
   "imgEtsalud": Etsalud,
   "imgItsi": Itsi, */
   "kawsay": kawsay,
+  //"kawsay2": kawsay2
   /* "logo": logo, */
   // Carreras 
   /* 
