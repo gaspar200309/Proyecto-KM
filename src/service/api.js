@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const baseURL =  "http://localhost:3000";
-/* const baseURL = process.env.NODE_ENV === 'production'
+/*const baseURL =  "http://localhost:3000";*/
+const baseURL = process.env.NODE_ENV === 'production'
   ? "https://backend-km-git-main-gaspar200309s-projects.vercel.app"
   : "https://backend-km.vercel.app/";
- */
+ 
 
 const api = axios.create({
   baseURL: baseURL,
