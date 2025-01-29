@@ -5,7 +5,10 @@ export const Informacion = () => {
   return (
     <>
       <section className="hero-section">
-        <img src={ImagenesApp.kawsay} alt="Fondo Cochabamba" className="image-background" />
+        <div className="hero-background">
+          <img src={ImagenesApp.imgEco} alt="Fondo Cochabamba" className="image-background" />
+          <div className="overlay"></div>
+        </div>
         <div className="hero-content">
           <img src={ImagenesApp.kawsay} alt="Logo" className="hero-logo animate-logo" />
           <h1 className="hero-title animate-title">ORIENTACIÓN VOCACIONAL EN COCHABAMBA</h1>
@@ -14,6 +17,7 @@ export const Informacion = () => {
           </p>
         </div>
       </section>
+      
       <section className="contenido-nosotros contenedor" id="nosotros">
         <h2 className="titulo-nosotros animate-section-title">Guía Profesiográfica de Cochabamba</h2>
         <div className="texto-nosotros animate-text">
