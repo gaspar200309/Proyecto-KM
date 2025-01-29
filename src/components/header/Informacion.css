@@ -6,67 +6,77 @@
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	color: #333; /* Color de texto oscuro para contraste */
+	color: #333; /* Texto oscuro para mejor contraste */
 	overflow: hidden;
-  }
-  
-  .hero-background {
+}
+
+.hero-background {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-  }
-  
-  .image-background {
+}
+
+.image-background {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	filter: brightness(0.8) contrast(1.1); /* Ajusta brillo y contraste */
-  }
-  
-  .overlay {
+	filter: brightness(0.5) contrast(0.85); /* Más blanco y menos contraste */
+}
+
+.overlay {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: rgba(255, 255, 255, 0.5); /* Superposición blanca semi-transparente */
-  }
-  
-  .hero-content {
+	background: linear-gradient(
+		rgba(255, 255, 255, 0.5),
+		rgba(255, 255, 255, 0.7)
+	); /* Gradiente blanco */
+	backdrop-filter: blur(10px); /* Mayor suavidad en el fondo */
+}
+
+.hero-content {
 	position: relative;
 	z-index: 2;
 	max-width: 800px;
 	padding: 20px;
-  }
-  
-  .hero-logo {
+	text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.9); /* Suaviza el texto sin bordes duros */
+}
+
+/* ✅ Aplica el mismo efecto de brillo blanco al logo */
+.hero-logo {
 	width: 150px;
 	margin-bottom: 20px;
-  }
-  
-  .hero-title {
+	filter: drop-shadow(0px 0px 15px rgba(255, 255, 255, 0.8)); /* Brillo blanco */
+}
+
+.hero-title {
 	font-size: 2.5rem;
 	font-weight: bold;
-  }
-  
-  .hero-description {
+	color: #f8f2f2; /* Color claro para el texto */
+}
+
+.hero-description {
 	font-size: 1.2rem;
 	margin-top: 10px;
-  }
-  
-  .contenido-nosotros {
+	color: #ebe3e3;
+}
+
+.contenido-nosotros {
 	padding: 50px 20px;
 	background: #f9f9f9;
 	text-align: center;
-  }
-  
-  .titulo-nosotros {
+	border: none; /* Asegurar que no haya bordes */
+}
+
+.titulo-nosotros {
 	font-size: 2rem;
 	font-weight: bold;
 	margin-bottom: 20px;
-  }
-  
-  .texto-nosotros {
+}
+
+.texto-nosotros {
 	font-size: 1.1rem;
 	max-width: 600px;
 	margin: auto;
-  }
-  
+	color: #333;
+}

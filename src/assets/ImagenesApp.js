@@ -14,7 +14,8 @@ import FondoInicio from './img/Fondo.png'
 import ia from './img/ia.png'
 import metas from './img/metas.png'
 import digital from './img/digital.png'
-import kawsay from './logos/LogoKM.png'
+import kawsay from './logos/log2.png'
+import kawsay2 from './logos/logoKM.png'
 
 
 //lOGOS DE UNIVERSIDADES
@@ -161,6 +162,7 @@ export default {
   "imgEtsalud": Etsalud,
   "imgItsi": Itsi, */
   "kawsay": kawsay,
+  "kawsay2": kawsay2
   /* "logo": logo, */
   // Carreras 
   /* 
