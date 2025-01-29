@@ -152,7 +152,6 @@ const Carrera = () => {
           ))
         )}
       </div>
-      {loading && <p>Cargando más carreras...</p>}
     </>
   );
 };
